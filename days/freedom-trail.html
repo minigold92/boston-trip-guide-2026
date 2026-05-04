@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Freedom Trail — 보스턴 현장 가이드</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25,35,35,.12);
+      min-height: 100vh;
+    }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(14,106,100,.18), transparent 50%), linear-gradient(315deg, rgba(157,26,63,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid var(--teal);
+    }
+    h1 { margin: 0; color: var(--teal-dark); font-size: 28px; line-height: 1.18; letter-spacing: -0.5px; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 10px 14px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto; padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--wash);
+      text-decoration: none; color: var(--teal-dark);
+      font-size: 13px; font-weight: 800;
+    }
+    nav a:active, nav a:hover { background: var(--mint); }
+    main { padding: 16px 18px 60px; }
+    h2 { margin: 0 0 12px; color: var(--wine); font-size: 22px; line-height: 1.2; }
+    p { margin: 0 0 12px; }
+    .lead { color: #364045; font-size: 15px; margin-bottom: 16px; }
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.warn { background: #fdecea; border-color: var(--warn); }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.warn strong { color: var(--warn); }
+    .box.tip  strong { color: var(--teal-dark); }
+    .ft-list { display: grid; gap: 8px; margin: 12px 0; }
+    .ft-stop {
+      display: grid; grid-template-columns: 36px 1fr; gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line); border-radius: 10px;
+      background: #fff;
+    }
+    .ft-num {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      background: var(--wine); color: #fff;
+      border-radius: 50%;
+      font-weight: 900; font-size: 14px;
+    }
+    .ft-stop strong { color: var(--teal-dark); font-size: 14.5px; }
+    .ft-stop .desc { display: block; color: #475055; font-size: 13px; margin-top: 2px; }
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 24px; }
+      main { padding: 14px 14px 60px; }
+      nav a { font-size: 12px; padding: 7px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Freedom Trail</h1>
+  </header>
+  <nav>
+    <a href="../index.html">🏠 Home</a>
+    <a href="mon.html">월 동선</a>
+  </nav>
+  <main>
+    <p class="lead">보도에 깔린 빨간 줄/벽돌 따라 걸으면 끝. 4km, 사진만 찍고 흘리면 1.5–2시간.</p>
+
+    <a href="https://www.google.com/maps/dir/Boston+Common,+Boston,+MA/Old+North+Church,+193+Salem+St,+Boston,+MA+02113" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:16px;padding:8px 14px;background:var(--teal);color:#fff;border-radius:999px;text-decoration:none;font-size:13px;font-weight:800;">Google Maps 도보 경로 열기 →</a>
+
+    <div class="ft-list">
+      <div class="ft-stop">
+        <div class="ft-num">1</div>
+        <div>
+          <strong>Boston Common</strong>
+          <span class="desc">시작점. 큰 잔디 공원, 안내판에서 빨간 줄 시작. 사진 찍고 출발.</span>
+        </div>
+      </div>
+      <div class="ft-stop">
+        <div class="ft-num">2</div>
+        <div>
+          <strong>Massachusetts State House</strong>
+          <span class="desc">금색 돔이 인상적. 정면 사진 1장으로 충분.</span>
+        </div>
+      </div>
+      <div class="ft-stop">
+        <div class="ft-num">3</div>
+        <div>
+          <strong>Granary Burying Ground</strong>
+          <span class="desc">독립 영웅들 묘지. 폴 리비어, 새뮤얼 애덤스 묘비 확인. 약 5분.</span>
+        </div>
+      </div>
+      <div class="ft-stop">
+        <div class="ft-num">4</div>
+        <div>
+          <strong>Old State House</strong>
+          <span class="desc">빨간 벽돌 + 황금 사자/유니콘 장식. 건물 앞 바닥에 보스턴 학살 표식 있음.</span>
+        </div>
+      </div>
+      <div class="ft-stop">
+        <div class="ft-num">5</div>
+        <div>
+          <strong>Faneuil Hall / Quincy Market</strong>
+          <span class="desc">시장+선물샵+화장실. 구경하며 통과. 배고프면 여기서 간식.</span>
+        </div>
+      </div>
+      <div class="ft-stop">
+        <div class="ft-num">6</div>
+        <div>
+          <strong>Paul Revere House</strong>
+          <span class="desc">미국 최고령 목조주택 (1680년). 외관 사진만 찍으면 됨. 내부 입장 $6 — 패스 권장.</span>
+        </div>
+      </div>
+      <div class="ft-stop">
+        <div class="ft-num">7</div>
+        <div>
+          <strong>Old North Church</strong>
+          <span class="desc">흰 첨탑이 상징. "한 번이면 육로, 두 번이면 바닷길" 등불 명소. 여기서 끊고 → North End 점심.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tip">
+      <strong>오늘 코스 컷:</strong> Bunker Hill / USS Constitution까지가 풀코스인데 강 건너 더 가야 함. 오늘은 Old North Church에서 끊고 점심 → Cambridge로 이동.
+    </div>
+  </main>
+</div>
+</body>
+</html>

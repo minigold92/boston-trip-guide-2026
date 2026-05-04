@@ -289,6 +289,7 @@
     </header>
 
     <nav aria-label="섹션 이동">
+      <a href="#hub">🏠 허브</a>
       <a href="#go-now">🚀 출발 체크</a>
       <a href="#mon">📅 월 (오늘)</a>
       <a href="#tue">📅 화</a>
@@ -305,6 +306,118 @@
     </nav>
 
     <main>
+
+      <!-- 0. 보스턴 가이드 허브 -->
+      <section id="hub">
+        <style>
+          .hub-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+          }
+          .hub-card .eyebrow { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: 0.3px; margin: 0 0 2px; text-transform: uppercase; }
+          .hub-card h4 { margin: 0; color: var(--teal-dark); font-size: 15px; line-height: 1.25; }
+          .hub-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+          .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 10px 0 0; }
+          @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } }
+        </style>
+        <h2>🏠 보스턴 가이드 허브</h2>
+        <p class="lead">필요한 페이지로 바로 점프. 매장에서는 매장 페이지를, 이동중엔 일자별 페이지를.</p>
+
+        <h3>📚 풀스펙 가이드</h3>
+        <div class="cards">
+          <div class="hub-card">
+            <p class="eyebrow">풀스펙</p>
+            <h4>🛒 Codex 쇼핑·동선 풀스펙</h4>
+            <p>모든 매장·세트·수량</p>
+            <a class="btn" href="shopping.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">풀스펙</p>
+            <h4>🎁 Codex 선물 풀스펙</h4>
+            <p>사람별 + CVS·MFA·NB 등 옵션</p>
+            <a class="btn" href="gift.html">바로가기</a>
+          </div>
+        </div>
+
+        <h3>🏪 매장별 — 현장에서 카트 채우기</h3>
+        <div class="cards">
+          <div class="hub-card">
+            <p class="eyebrow">TJ · 월 메인</p>
+            <h4>🛒 TJ 748 Cambridge</h4>
+            <p>한정 토트 + 대량 쇼핑</p>
+            <a class="btn" href="stores/tj-748.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">TJ · 화 보충</p>
+            <h4>🛒 TJ 500 Boylston</h4>
+            <p>Back Bay 다운타운</p>
+            <a class="btn" href="stores/tj-500.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">TJ · 호텔 옆</p>
+            <h4>🛒 TJ Fort Point</h4>
+            <p>마감 보충</p>
+            <a class="btn" href="stores/tj-fortpoint.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">Harvard · 월 14:30</p>
+            <h4>🎓 Harvard Coop+Shop</h4>
+            <p>모자/후드/굿즈</p>
+            <a class="btn" href="stores/harvard.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">Whole Foods · 도보 5분</p>
+            <h4>🛒 Whole Foods Seaport</h4>
+            <p>RXBAR/Hu</p>
+            <a class="btn" href="stores/wholefoods.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">CVS · 출발 전 + 보충</p>
+            <h4>💊 CVS</h4>
+            <p>Hydro Seal/Burt's Bees</p>
+            <a class="btn" href="stores/cvs.html">바로가기</a>
+          </div>
+        </div>
+
+        <h3>📅 일자별 동선</h3>
+        <div class="cards">
+          <div class="hub-card">
+            <p class="eyebrow">월 5/4 · 풀 동선</p>
+            <h4>📅 월 5/4 풀 동선</h4>
+            <p>Freedom Trail+Harvard+TJ</p>
+            <a class="btn" href="days/mon.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">화 5/5 · 짧은 오후</p>
+            <h4>📅 화 5/5 짧은 오후</h4>
+            <p>약속 사이</p>
+            <a class="btn" href="days/tue.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">수 5/6 · 보충+포장</p>
+            <h4>📅 수 5/6 보충+포장</h4>
+            <p>Fenway/MFA/포장</p>
+            <a class="btn" href="days/wed.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">목 5/7 · 출국</p>
+            <h4>📅 목 5/7 출국</h4>
+            <p>한국 검역</p>
+            <a class="btn" href="days/thu.html">바로가기</a>
+          </div>
+          <div class="hub-card">
+            <p class="eyebrow">Freedom Trail</p>
+            <h4>🗺️ Freedom Trail 7 stops</h4>
+            <p>빠른 패스</p>
+            <a class="btn" href="days/freedom-trail.html">바로가기</a>
+          </div>
+        </div>
+      </section>
 
       <!-- 1. 지금 출발 체크 -->
       <section id="go-now">

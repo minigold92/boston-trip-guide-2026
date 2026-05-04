@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>화 5/5 — 보스턴 현장 가이드</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25,35,35,.12);
+      min-height: 100vh;
+    }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(14,106,100,.18), transparent 50%), linear-gradient(315deg, rgba(157,26,63,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid var(--teal);
+    }
+    h1 { margin: 0; color: var(--teal-dark); font-size: 28px; line-height: 1.18; letter-spacing: -0.5px; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 10px 14px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto; padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--wash);
+      text-decoration: none; color: var(--teal-dark);
+      font-size: 13px; font-weight: 800;
+    }
+    nav a:active, nav a:hover { background: var(--mint); }
+    main { padding: 16px 18px 60px; }
+    h2 { margin: 0 0 12px; color: var(--wine); font-size: 22px; line-height: 1.2; }
+    p { margin: 0 0 12px; }
+    .lead { color: #364045; font-size: 15px; margin-bottom: 16px; }
+    .timeline { display: grid; gap: 0; margin: 12px 0; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 12px;
+      padding: 12px 4px;
+      border-top: 1px solid var(--line);
+    }
+    .tl-row:first-child { border-top: 0; }
+    .tl-time { color: var(--wine); font-weight: 900; font-size: 13.5px; }
+    .tl-body strong { color: var(--teal-dark); font-size: 15px; }
+    .tl-body .desc { display: block; color: #475055; font-size: 13.5px; margin-top: 3px; }
+    .tl-body .tag { display: inline-block; margin: 4px 4px 0 0; padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 800; }
+    .tag.shop { background: #fff0db; color: #8c5a08; }
+    .tag.see  { background: #e3eef9; color: #194268; }
+    .tag.eat  { background: #f8e3eb; color: var(--wine); }
+    .tag.move { background: #e6f3ee; color: var(--teal-dark); }
+    .tag.opt  { background: #efeef3; color: #4f4660; }
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.warn { background: #fdecea; border-color: var(--warn); }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.warn strong { color: var(--warn); }
+    .box.tip  strong { color: var(--teal-dark); }
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 24px; }
+      main { padding: 14px 14px 60px; }
+      .tl-row { grid-template-columns: 64px 1fr; gap: 10px; padding: 10px 2px; }
+      .tl-time { font-size: 12.5px; }
+      nav a { font-size: 12px; padding: 7px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>화 5/5 — 약속 사이 쇼핑</h1>
+  </header>
+  <nav>
+    <a href="../index.html">🏠 Home</a>
+    <a href="mon.html">월</a>
+    <a href="wed.html">수</a>
+    <a href="thu.html">목</a>
+  </nav>
+  <main>
+    <p class="lead">점심·저녁 약속 둘 다. 사이 비는 시간만 활용. 호텔 도보권 우선.</p>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-time">오전</div>
+        <div class="tl-body">
+          <strong>오전 약속</strong>
+          <span class="desc">일정 확인 후 이동</span>
+          <span class="tag eat">약속</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">오후 (짧은 윈도우)</div>
+        <div class="tl-body">
+          <strong>옵션 A — 호텔 근처 보충</strong>
+          <span class="desc">
+            Whole Foods Seaport — 도보 5분, 간단 식품 보충<br>
+            <a href="../stores/wholefoods.html">→ Whole Foods 매장 상세</a><br><br>
+            또는 TJ Fort Point — 호텔 근처 TJ 지점<br>
+            <a href="../stores/tj-fortpoint.html">→ TJ Fort Point 상세</a>
+          </span>
+          <span class="tag shop">쇼핑</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">오후 (여유 있으면)</div>
+        <div class="tl-body">
+          <strong>옵션 B — Back Bay</strong>
+          <span class="desc">
+            TJ 500 Boylston — <a href="../stores/tj-500.html">→ 상세</a><br>
+            CVS Prudential — <a href="../stores/cvs.html">→ 상세</a><br>
+            BPL(보스턴 공립 도서관) / Copley 광장 사진
+          </span>
+          <span class="tag shop">쇼핑</span>
+          <span class="tag see">관광</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">저녁</div>
+        <div class="tl-body">
+          <strong>저녁 약속</strong>
+          <span class="desc">약속 장소 이동</span>
+          <span class="tag eat">약속</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tip">
+      <strong>전략:</strong> 오늘은 보충 위주. 무거운 쇼핑은 수요일 Fort Point로 미룬다.
+    </div>
+  </main>
+</div>
+</body>
+</html>

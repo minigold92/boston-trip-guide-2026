@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Harvard 쇼핑 — 보스턴 가이드</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25, 35, 35, .12);
+      min-height: 100vh;
+    }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(157,26,63,.18), transparent 50%), linear-gradient(315deg, rgba(14,106,100,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid var(--wine);
+    }
+    h1 {
+      margin: 0;
+      color: var(--wine);
+      font-size: 26px;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 10px 14px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto; padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--wash);
+      text-decoration: none; color: var(--teal-dark);
+      font-size: 13px; font-weight: 800;
+    }
+    nav a:active, nav a:hover { background: var(--mint); }
+    main { padding: 16px 18px 60px; }
+    h2 {
+      margin: 0 0 12px;
+      color: var(--wine);
+      font-size: 22px; line-height: 1.2;
+      display: flex; align-items: center; gap: 8px;
+    }
+    h3 {
+      margin: 22px 0 10px;
+      color: var(--teal-dark);
+      font-size: 17px; line-height: 1.28;
+    }
+    p { margin: 0 0 12px; }
+    ul.checklist { list-style: none; padding: 0; margin: 8px 0; }
+    ul.checklist li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 8px 6px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14.5px;
+    }
+    ul.checklist li:last-child { border-bottom: 0; }
+    ul.checklist input[type=checkbox] {
+      margin-top: 6px;
+      width: 18px; height: 18px;
+      accent-color: var(--check);
+      flex: 0 0 auto;
+    }
+    ul.checklist .price { color: var(--wine); font-weight: 800; font-size: 13px; margin-left: 4px; }
+    ul.checklist .qty { color: var(--teal); font-weight: 800; font-size: 12.5px; margin-left: 4px; }
+    ul.checklist .note { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+    ul.checklist label { flex: 1; cursor: pointer; min-width: 0; }
+    ul.checklist .thumb {
+      flex: 0 0 auto;
+      width: 64px; height: 64px;
+      border-radius: 8px;
+      object-fit: contain;
+      object-position: center;
+      background: #f7f7f5;
+      border: 1px solid #eef1f0;
+      padding: 2px;
+    }
+    ul.checklist .thumb-link { flex: 0 0 auto; line-height: 0; }
+    @media (max-width: 480px) {
+      ul.checklist .thumb { width: 56px; height: 56px; }
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 36px; padding: 6px 12px;
+      margin: 4px 4px 4px 0;
+      border: 1px solid var(--teal);
+      border-radius: 999px;
+      background: var(--teal); color: #fff;
+      text-decoration: none;
+      font-size: 13px; font-weight: 800;
+    }
+    .btn.sec { background: #fff; color: var(--teal); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 4px; }
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.warn { background: #fdecea; border-color: var(--warn); }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.warn strong { color: var(--warn); }
+    .box.tip  strong { color: var(--teal-dark); }
+    .check-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .check-card.go {
+      border-left: 5px solid var(--check);
+      background: linear-gradient(90deg, rgba(22,160,133,.06), #fff 30%);
+    }
+    .store-info {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .store-info .name { font-weight: 900; color: var(--teal-dark); font-size: 16px; }
+    .store-info .addr { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .store-info .time { color: var(--wine); font-weight: 800; font-size: 13px; margin-top: 4px; }
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 22px; }
+      main { padding: 14px 14px 60px; }
+      h2 { font-size: 19px; }
+      h3 { font-size: 16px; }
+      ul.checklist li { font-size: 14px; }
+      nav a { font-size: 12px; padding: 7px 10px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; box-shadow: none; }
+      nav { display: none; }
+      .btn { background: #fff; color: var(--teal); border-color: var(--teal); }
+      header { background: #fff; }
+      ul.checklist input[type=checkbox] { width: 14px; height: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>🎓 Harvard 쇼핑</h1>
+      <p style="margin:8px 0 0; color:#2d3a3e; font-size:15px; font-weight:500;">Harvard Coop + Harvard Shop — 월요일 14:30–16:00</p>
+    </header>
+
+    <nav aria-label="페이지 이동">
+      <a href="../index.html">🏠 Home</a>
+      <a href="#stores">📍 매장</a>
+      <a href="#clothes">👕 의류·모자</a>
+      <a href="#goods">🎁 소형굿즈</a>
+    </nav>
+
+    <main>
+
+      <section id="stores">
+        <h2>📍 매장 정보</h2>
+
+        <div class="store-info">
+          <div class="name">Harvard Coop</div>
+          <div class="addr">1400 Massachusetts Ave, Cambridge, MA 02138</div>
+          <div class="time">월–금 09:00–20:00 / 토 10:00–18:00 / 일 12:00–17:00</div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Harvard+Coop+1400+Massachusetts+Ave+Cambridge" target="_blank" rel="noreferrer">지도 보기</a>
+          </div>
+        </div>
+
+        <div class="store-info">
+          <div class="name">Harvard Shop</div>
+          <div class="addr">52 John F Kennedy St, Cambridge, MA 02138</div>
+          <div class="time">매일 10:00–20:00</div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Harvard+Shop+52+John+F+Kennedy+St+Cambridge" target="_blank" rel="noreferrer">지도 보기</a>
+          </div>
+        </div>
+
+        <div class="box tip">
+          <strong>두 매장 도보 5분.</strong> 의류는 Coop이 더 큼. 소형 굿즈는 Harvard Shop 깔끔.
+        </div>
+      </section>
+
+      <section id="clothes">
+        <h2>👕 의류·모자</h2>
+
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="h1">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/38_harvard_classic_h_hat_product.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/38_harvard_classic_h_hat_product.jpg" alt=""></a>
+            <label for="h1"><strong>Classic H Hat</strong> <span class="price">$30</span><span class="note">기본 빨간/네이비 모자. 가장 무난한 선물.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h2">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/37_harvard_hoodie_product.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/37_harvard_hoodie_product.jpg" alt=""></a>
+            <label for="h2"><strong>Hoodie / Crewneck</strong> <span class="price">$48–65</span><span class="note">사이즈 먼저 확인. Coop 재고가 더 다양.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h3">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/39_harvard_baby_onesie_product.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/39_harvard_baby_onesie_product.jpg" alt=""></a>
+            <label for="h3"><strong>Baby Onesie</strong> <span class="price">$15</span><span class="note">아기 있는 친구/친척 선물용. 0-3M / 3-6M 확인.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h4">
+            <label for="h4"><strong>Kids Tee</strong><span class="note">아이 사이즈 미리 파악하고 가기.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h5">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/42_harvard_crest_tote_product.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/42_harvard_crest_tote_product.jpg" alt=""></a>
+            <label for="h5"><strong>Crest Tote</strong> <span class="price">$44.99</span><span class="note">캔버스 토트. 여성 선물로 인기.</span></label>
+          </li>
+        </ul>
+      </section>
+
+      <section id="goods">
+        <h2>🎁 소형굿즈</h2>
+
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="h6">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/63_harvard_red_pen.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/63_harvard_red_pen.png" alt=""></a>
+            <label for="h6"><strong>Red Pen</strong><span class="note">회사 동료 미니선물. 여러 개 집어두기.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h7">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/62_harvard_crest_magnet.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/62_harvard_crest_magnet.jpg" alt=""></a>
+            <label for="h7"><strong>Crest Magnet</strong> <span class="price">$6.99</span><span class="note">냉장고 자석. 가볍고 부피 無.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h8">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/66_harvard_crest_sticker.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/66_harvard_crest_sticker.png" alt=""></a>
+            <label for="h8"><strong>Crest Sticker</strong><span class="note">노트북/다이어리 꾸미기용.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h9">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/64_harvard_folder.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/64_harvard_folder.jpg" alt=""></a>
+            <label for="h9"><strong>Folder</strong><span class="note">실용 선물. 학생 있는 가족에게.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h10">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/65_harvard_pencil.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/65_harvard_pencil.jpg" alt=""></a>
+            <label for="h10"><strong>Pencil</strong><span class="note">펜 세트로 묶어 포장하면 선물용.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h11">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/61_harvard_keychain_plushie.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/61_harvard_keychain_plushie.jpg" alt=""></a>
+            <label for="h11"><strong>Keychain Plushie</strong> <span class="price">$16.99</span><span class="note">아이·조카 선물. 하버드 곰 인형 열쇠고리.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h12">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/67_harvard_lanyard.jpg" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/67_harvard_lanyard.jpg" alt=""></a>
+            <label for="h12"><strong>Lanyard</strong><span class="note">사원증/교통카드 줄. 실용적 선물.</span></label>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

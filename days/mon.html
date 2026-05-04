@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>월 5/4 — 보스턴 현장 가이드</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25,35,35,.12);
+      min-height: 100vh;
+    }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(14,106,100,.18), transparent 50%), linear-gradient(315deg, rgba(157,26,63,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid var(--teal);
+    }
+    h1 { margin: 0; color: var(--teal-dark); font-size: 28px; line-height: 1.18; letter-spacing: -0.5px; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 10px 14px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto; padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--wash);
+      text-decoration: none; color: var(--teal-dark);
+      font-size: 13px; font-weight: 800;
+    }
+    nav a:active, nav a:hover { background: var(--mint); }
+    main { padding: 16px 18px 60px; }
+    h2 { margin: 0 0 12px; color: var(--wine); font-size: 22px; line-height: 1.2; }
+    p { margin: 0 0 12px; }
+    .lead { color: #364045; font-size: 15px; margin-bottom: 16px; }
+    .timeline { display: grid; gap: 0; margin: 12px 0; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 12px;
+      padding: 12px 4px;
+      border-top: 1px solid var(--line);
+    }
+    .tl-row:first-child { border-top: 0; }
+    .tl-time { color: var(--wine); font-weight: 900; font-size: 13.5px; }
+    .tl-body strong { color: var(--teal-dark); font-size: 15px; }
+    .tl-body .desc { display: block; color: #475055; font-size: 13.5px; margin-top: 3px; }
+    .tl-body .tag { display: inline-block; margin: 4px 4px 0 0; padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 800; }
+    .tag.shop { background: #fff0db; color: #8c5a08; }
+    .tag.see  { background: #e3eef9; color: #194268; }
+    .tag.eat  { background: #f8e3eb; color: var(--wine); }
+    .tag.move { background: #e6f3ee; color: var(--teal-dark); }
+    .tag.opt  { background: #efeef3; color: #4f4660; }
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.warn { background: #fdecea; border-color: var(--warn); }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.warn strong { color: var(--warn); }
+    .box.tip  strong { color: var(--teal-dark); }
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 24px; }
+      main { padding: 14px 14px 60px; }
+      .tl-row { grid-template-columns: 64px 1fr; gap: 10px; padding: 10px 2px; }
+      .tl-time { font-size: 12.5px; }
+      nav a { font-size: 12px; padding: 7px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>월 5/4 — 풀 동선</h1>
+  </header>
+  <nav>
+    <a href="../index.html">🏠 Home</a>
+    <a href="tue.html">화</a>
+    <a href="wed.html">수</a>
+    <a href="thu.html">목</a>
+    <a href="freedom-trail.html">Freedom Trail</a>
+  </nav>
+  <main>
+    <p class="lead">오늘이 메인 관광일. 아침 Freedom Trail → North End 점심 → Harvard → TJ 빅 쇼핑 → Seaport 저녁.</p>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-time">09:00</div>
+        <div class="tl-body">
+          <strong>호텔 출발</strong>
+          <span class="desc">Hyatt Place Seaport 체크아웃 후 도보 10분 → Tea Party Ships 방향</span>
+          <span class="tag move">도보</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">09:15–09:25</div>
+        <div class="tl-body">
+          <strong>Tea Party Ships 외관</strong>
+          <span class="desc">사진만 찍고 통과. Gift Shop 패스.</span>
+          <span class="tag see">관광</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">09:35–11:30</div>
+        <div class="tl-body">
+          <strong>Freedom Trail 빠른 패스</strong>
+          <span class="desc">Boston Common → Old North Church까지 7 스톱 사진 코스. 상세 지도 참고.</span>
+          <span class="tag see">관광</span>
+          <br><a href="../days/freedom-trail.html">→ Freedom Trail 상세 보기</a>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">11:45–12:45</div>
+        <div class="tl-body">
+          <strong>North End 점심</strong>
+          <span class="desc">
+            1순위: Neptune Oyster — 랍스터롤 $35-40, 11:30 도착 권장 (웨이팅 없이 입장)<br>
+            2순위: Pauli's North End<br>
+            3순위: Monica's Mercato 샌드위치<br>
+            디저트: Mike's Pastry 카놀리<br>
+            <em>피자 X — 어제 먹음</em>
+          </span>
+          <span class="tag eat">식사</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">12:50–13:00</div>
+        <div class="tl-body">
+          <strong>Boston Harbor 사진</strong>
+          <span class="desc">Long Wharf에서 항구 사진 1장.</span>
+          <span class="tag see">관광</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">13:05–13:40</div>
+        <div class="tl-body">
+          <strong>Red Line 지하철 이동</strong>
+          <span class="desc">Aquarium → State → Park St → Harvard 순서로 환승</span>
+          <span class="tag move">지하철</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">13:45–14:30</div>
+        <div class="tl-body">
+          <strong>Harvard Yard 사진</strong>
+          <span class="desc">John Harvard 동상, Widener Library 배경 컷</span>
+          <span class="tag see">관광</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">14:30–16:00</div>
+        <div class="tl-body">
+          <strong>Harvard Shop + Coop 쇼핑</strong>
+          <span class="desc">공식 굿즈 매장. 후드, 티셔츠, 모자 중점.</span>
+          <span class="tag shop">쇼핑</span>
+          <br><a href="../stores/harvard.html">→ Harvard 매장 상세</a>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">16:15–17:45</div>
+        <div class="tl-body">
+          <strong>TJ 748 Memorial 메인 쇼핑</strong>
+          <span class="desc">오늘의 핵심 쇼핑. 식품 + 굿즈 풀 스캔.</span>
+          <span class="tag shop">쇼핑</span>
+          <br><a href="../stores/tj-748.html">→ TJ 748 Memorial 상세</a>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">18:00–18:45</div>
+        <div class="tl-body">
+          <strong>우버 호텔 복귀</strong>
+          <span class="desc">Cambridge → Seaport. 약 $30 분담.</span>
+          <span class="tag move">우버</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">19:30–21:00</div>
+        <div class="tl-body">
+          <strong>Seaport 저녁</strong>
+          <span class="desc">Row 34 굴 바 또는 Loco Taqueria 타코</span>
+          <span class="tag eat">식사</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">21:15</div>
+        <div class="tl-body">
+          <strong>옵션: View Boston 전망대</strong>
+          <span class="desc">Prudential 꼭대기 야경. 피곤하면 패스.</span>
+          <span class="tag opt">옵션</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tip">
+      <strong>오늘 끝나면:</strong> 관광 90% 종료, Harvard 굿즈 100%, TJ 1차 70%.
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Whole Foods 쇼핑 — 보스턴 가이드</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25, 35, 35, .12);
+      min-height: 100vh;
+    }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(44,107,26,.18), transparent 50%), linear-gradient(315deg, rgba(14,106,100,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid #2c6b1a;
+    }
+    h1 {
+      margin: 0;
+      color: #2c6b1a;
+      font-size: 26px;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 10px 14px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto; padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--wash);
+      text-decoration: none; color: var(--teal-dark);
+      font-size: 13px; font-weight: 800;
+    }
+    nav a:active, nav a:hover { background: var(--mint); }
+    main { padding: 16px 18px 60px; }
+    h2 {
+      margin: 0 0 12px;
+      color: var(--teal-dark);
+      font-size: 22px; line-height: 1.2;
+      display: flex; align-items: center; gap: 8px;
+    }
+    h3 {
+      margin: 22px 0 10px;
+      color: var(--teal-dark);
+      font-size: 17px; line-height: 1.28;
+    }
+    p { margin: 0 0 12px; }
+    ul.checklist { list-style: none; padding: 0; margin: 8px 0; }
+    ul.checklist li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 8px 6px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14.5px;
+    }
+    ul.checklist li:last-child { border-bottom: 0; }
+    ul.checklist input[type=checkbox] {
+      margin-top: 6px;
+      width: 18px; height: 18px;
+      accent-color: var(--check);
+      flex: 0 0 auto;
+    }
+    ul.checklist .price { color: var(--wine); font-weight: 800; font-size: 13px; margin-left: 4px; }
+    ul.checklist .qty { color: var(--teal); font-weight: 800; font-size: 12.5px; margin-left: 4px; }
+    ul.checklist .note { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+    ul.checklist label { flex: 1; cursor: pointer; min-width: 0; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 36px; padding: 6px 12px;
+      margin: 4px 4px 4px 0;
+      border: 1px solid var(--teal);
+      border-radius: 999px;
+      background: var(--teal); color: #fff;
+      text-decoration: none;
+      font-size: 13px; font-weight: 800;
+    }
+    .btn.sec { background: #fff; color: var(--teal); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 4px; }
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.tip  strong { color: var(--teal-dark); }
+    .store-info {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .store-info .name { font-weight: 900; color: var(--teal-dark); font-size: 16px; }
+    .store-info .addr { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .store-info .time { color: var(--wine); font-weight: 800; font-size: 13px; margin-top: 4px; }
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 22px; }
+      main { padding: 14px 14px 60px; }
+      h2 { font-size: 19px; }
+      h3 { font-size: 16px; }
+      ul.checklist li { font-size: 14px; }
+      nav a { font-size: 12px; padding: 7px 10px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; box-shadow: none; }
+      nav { display: none; }
+      .btn { background: #fff; color: var(--teal); border-color: var(--teal); }
+      header { background: #fff; }
+      ul.checklist input[type=checkbox] { width: 14px; height: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>🥦 Whole Foods 쇼핑</h1>
+      <p style="margin:8px 0 0; color:#2d3a3e; font-size:15px; font-weight:500;">Seaport — 화/수 보충 쇼핑</p>
+    </header>
+
+    <nav aria-label="페이지 이동">
+      <a href="../index.html">🏠 Home</a>
+      <a href="#store">📍 매장</a>
+      <a href="#items">🛒 구매 목록</a>
+    </nav>
+
+    <main>
+
+      <section id="store">
+        <h2>📍 매장 정보</h2>
+
+        <div class="store-info">
+          <div class="name">Whole Foods Market Seaport</div>
+          <div class="addr">호텔(Hyatt Place Seaport) 도보 5분</div>
+          <div class="time">매일 07:00–22:00</div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Whole+Foods+Market+Seaport+Boston" target="_blank" rel="noreferrer">지도 보기</a>
+          </div>
+        </div>
+
+        <div class="box tip">
+          <strong>TJ보다 한 단계 위 프리미엄 미국 브랜드.</strong> 호텔 도보 5분이라 어떤 시간이든 보충 가능.
+        </div>
+      </section>
+
+      <section id="items">
+        <h2>🛒 구매 목록</h2>
+
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="w1">
+            <label for="w1"><strong>RXBAR Chocolate Sea Salt</strong> <span class="qty">5–10개</span><span class="note">단백질 바. 깔끔한 원재료 선호하는 지인 선물용.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="w2">
+            <label for="w2"><strong>KIND Bar Dark Chocolate Nuts &amp; Sea Salt</strong> <span class="qty">5–10개</span><span class="note">한국에서도 구할 수 있지만 여기가 훨씬 저렴.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="w3">
+            <label for="w3"><strong>Hu Chocolate Bar</strong> <span class="qty">3–5개</span><span class="note">부서장 / 친한 친구 프리미엄 선물. 깔끔한 패키지.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="w4">
+            <label for="w4"><strong>Justin's Peanut Butter Cups</strong> <span class="qty">3–5개</span><span class="note">리스 대비 프리미엄 버전. 유기농 원재료.</span></label>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

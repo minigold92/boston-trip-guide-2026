@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>TJ 748 Memorial Dr — 쇼핑 가이드</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25, 35, 35, .12);
+      min-height: 100vh;
+    }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .topbar a.btn { margin: 0; }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(14,106,100,.18), transparent 50%), linear-gradient(315deg, rgba(157,26,63,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid var(--teal);
+    }
+    h1 {
+      margin: 0;
+      color: var(--teal-dark);
+      font-size: 24px;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+    }
+    .subtitle { margin: 8px 0 0; color: #2d3a3e; font-size: 14px; font-weight: 500; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.8); border: 1px solid rgba(14,106,100,.25); color: #2d3a3e; font-size: 12px; font-weight: 700; }
+    .pill.warn { background: #fff0eb; border-color: #f3a994; color: var(--warn); }
+    main { padding: 16px 18px 60px; }
+    section { margin: 24px 0 32px; scroll-margin-top: 60px; }
+    h2 {
+      margin: 0 0 12px;
+      color: var(--wine);
+      font-size: 20px; line-height: 1.2;
+      display: flex; align-items: center; gap: 8px;
+    }
+    h3 {
+      margin: 20px 0 10px;
+      color: var(--teal-dark);
+      font-size: 17px; line-height: 1.28;
+    }
+    p { margin: 0 0 12px; }
+    .lead { color: #364045; font-size: 15px; margin-bottom: 16px; }
+    ul.checklist { list-style: none; padding: 0; margin: 8px 0; }
+    ul.checklist li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 8px 6px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14.5px;
+    }
+    ul.checklist li:last-child { border-bottom: 0; }
+    ul.checklist input[type=checkbox] {
+      margin-top: 6px;
+      width: 18px; height: 18px;
+      accent-color: var(--check);
+      flex: 0 0 auto;
+    }
+    ul.checklist .price { color: var(--wine); font-weight: 800; font-size: 13px; margin-left: 4px; }
+    ul.checklist .qty { color: var(--teal); font-weight: 800; font-size: 12.5px; margin-left: 4px; }
+    ul.checklist .note { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+    ul.checklist label { flex: 1; cursor: pointer; min-width: 0; }
+    ul.checklist .thumb {
+      flex: 0 0 auto;
+      width: 64px; height: 64px;
+      border-radius: 8px;
+      object-fit: contain;
+      object-position: center;
+      background: #f7f7f5;
+      border: 1px solid #eef1f0;
+      padding: 2px;
+    }
+    ul.checklist .thumb-link { flex: 0 0 auto; line-height: 0; }
+    @media (max-width: 480px) {
+      ul.checklist .thumb { width: 56px; height: 56px; }
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 36px; padding: 6px 12px;
+      margin: 4px 4px 4px 0;
+      border: 1px solid var(--teal);
+      border-radius: 999px;
+      background: var(--teal); color: #fff;
+      text-decoration: none;
+      font-size: 13px; font-weight: 800;
+    }
+    .btn.sec { background: #fff; color: var(--teal); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 4px; }
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.warn { background: #fdecea; border-color: var(--warn); }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.warn strong { color: var(--warn); }
+    .box.tip  strong { color: var(--teal-dark); }
+    .store-card {
+      border: 1px solid var(--line); border-radius: 12px;
+      background: #fff; padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .store-card .badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+    .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 800; }
+    .b-tj   { background: #fff0db; color: #8c5a08; }
+    .b-day  { background: var(--wash); color: var(--teal-dark); border: 1px solid var(--line); }
+    footer { padding: 16px 18px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 20px; }
+      main { padding: 14px 14px 60px; }
+      h2 { font-size: 18px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; box-shadow: none; }
+      .topbar { display: none; }
+      .btn { background: #fff; color: var(--teal); border-color: var(--teal); }
+      header { background: #fff; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <a class="btn sec" href="../index.html">&#127968; Home</a>
+      <span style="font-size:13px; color:var(--muted); font-weight:700;">TJ 748 Memorial Dr</span>
+    </div>
+
+    <header>
+      <h1>Trader Joe's<br>748 Memorial Dr, Cambridge</h1>
+      <p class="subtitle">월요일 메인 쇼핑 — 16:15~17:45 · Cambridge 본진 풀라인 매장</p>
+      <div class="pills">
+        <span class="pill">Full-size 매장</span>
+        <span class="pill">월 16:15 도착 목표</span>
+        <span class="pill warn">한정 토트 즉시 잡기</span>
+      </div>
+    </header>
+
+    <main>
+      <div class="btn-row">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+748+Memorial+Dr+Cambridge" target="_blank" rel="noreferrer">Google Maps</a>
+        <a class="btn sec" href="../index.html#shop-tj">전체 TJ 리스트</a>
+      </div>
+
+      <div class="box">
+        <strong>입장 직후 스크립트:</strong> 직원에게 바로 물어보기 —<br>
+        "Is there a bag limit today? Do you have Mini Canvas Totes?"<br>
+        <span style="color:var(--muted); font-size:13px;">한정 토트 재고 파악 + 1인 구매 제한 수 확인 먼저. 그 다음 카트 채우기.</span>
+      </div>
+
+      <!-- 토트백 섹션 -->
+      <section id="a-totes">
+        <h2>&#127860; 토트백</h2>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="a_1">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/45_tj_mini_pastel_canvas_totes_official.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/45_tj_mini_pastel_canvas_totes_official.png" alt="Canvas Tote"></a>
+            <label for="a_1"><strong>Canvas Tote Bag</strong> <span class="qty">와이프/엄마용 1-3개</span><span class="note">한정. 보이면 즉시 잡기.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_2">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png" alt="Mini Canvas Tote"></a>
+            <label for="a_2"><strong>Mini Canvas Tote</strong> <span class="price">$2.99</span> <span class="qty">친한친구/여동생 4-6개</span><span class="note">매장별 1인 제한 있을 수 있음.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_3">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png" alt="Mini Insulated Tote"></a>
+            <label for="a_3"><strong>Mini Insulated Tote</strong> <span class="price">$3.99</span> <span class="qty">와이프 1개</span><span class="note">부피 큼. 한정.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_4">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/14_trader_joes_mini_tote.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/14_trader_joes_mini_tote.png" alt="Reusable Bag"></a>
+            <label for="a_4"><strong>Reusable Bag (일반)</strong> <span class="qty">10-12개</span><span class="note">회사 친한 10명 미니세트 포장용. 한정 토트 안 되면 통일.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_5">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/46_tj_lavender_canvas_tote_reddit.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/46_tj_lavender_canvas_tote_reddit.png" alt="Lavender Tote"></a>
+            <label for="a_5"><strong>Lavender Tote</strong> <span class="price">$3.99-6.99</span> <span class="qty">있으면 잡기</span><span class="note">시즌 한정. 748 Memorial에 가장 잘 있음.</span></label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 간식·쿠키 섹션 -->
+      <section id="a-snacks">
+        <h2>&#127850; 간식·쿠키</h2>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="a_6">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/33_tj_dark_chocolate_pb_cups.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/33_tj_dark_chocolate_pb_cups.png" alt="Dark Chocolate PB Cups"></a>
+            <label for="a_6"><strong>Dark Chocolate Peanut Butter Cups</strong> <span class="price">$3-5</span> <span class="qty">큰통 4-6봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_7">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/35_tj_mini_pretzels.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/35_tj_mini_pretzels.png" alt="Dark Chocolate Mini Pretzels"></a>
+            <label for="a_7"><strong>Dark Chocolate Mini Pretzels</strong> <span class="qty">3-5봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_8">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png" alt="Sweet Onion Pretzels"></a>
+            <label for="a_8"><strong>Sweet Onion Pretzels</strong> <span class="qty">2-3봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_9">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" alt="Pinks &amp; Whites Cookies"></a>
+            <label for="a_9"><strong>Pinks &amp; Whites Cookies</strong> <span class="qty">2봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_10">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png" alt="Garlic Butter Nut Mix"></a>
+            <label for="a_10"><strong>Garlic Butter Nut Mix</strong> <span class="price">$6.99</span> <span class="qty">남동생/매형용 3-4봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_11">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/30_tj_crunchy_chili_onion.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/30_tj_crunchy_chili_onion.png" alt="Crunchy Chili Onion Tortilla Chips"></a>
+            <label for="a_11"><strong>Crunchy Chili Onion Tortilla Chips</strong> <span class="qty">2-3봉</span><span class="note">Takis 느낌, 호불호 적음.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_12">
+            <label for="a_12"><strong>Speculoos Cookie Butter</strong> <span class="qty">2-4병</span><span class="note">잼 코너 베이지 라벨. 한국에 팔지만 가격차 큼.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_13">
+            <label for="a_13"><strong>Soft Baked Snickerdoodles</strong> <span class="qty">2-4봉</span><span class="note">시나몬 쿠키. 봉지 디자인은 매장 가서 확인.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_14">
+            <label for="a_14"><strong>Dried Sweetened Mango</strong> <span class="qty">2-3봉</span><span class="note">건과일 코너. 노란 봉지.</span></label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 시즈닝 섹션 -->
+      <section id="a-seasoning">
+        <h2>&#127798; 시즈닝</h2>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="a_15">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/29_tj_nori_furikake.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/29_tj_nori_furikake.png" alt="Nori Komi Furikake"></a>
+            <label for="a_15"><strong>Nori Komi Furikake</strong> <span class="price">$2.99</span> <span class="qty">3-5개</span><span class="note">Everything But The Bagel 대체 1순위. 검역 안전.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_16">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/32_tj_umami_seasoning.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/32_tj_umami_seasoning.png" alt="Mushroom Umami Seasoning"></a>
+            <label for="a_16"><strong>Mushroom &amp; Company Umami Seasoning</strong> <span class="price">$3</span> <span class="qty">3-5개</span><span class="note">요리하는 동료/부서장용.</span></label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 화장품 섹션 -->
+      <section id="a-beauty">
+        <h2>&#128132; 화장품</h2>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="a_17">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/34_tj_hand_cream.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/34_tj_hand_cream.png" alt="Hand Cream"></a>
+            <label for="a_17"><strong>Ultra Moisturizing Hand Cream</strong> <span class="price">$4.99</span> <span class="qty">와이프/누나/여동생 3-5개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="a_18">
+            <a class="thumb-link" href="../boston_guide_assets/screenshots/47_tj_dewy_skin_serum_reddit.png" target="_blank"><img class="thumb" src="../boston_guide_assets/screenshots/47_tj_dewy_skin_serum_reddit.png" alt="Dewy Skin Serum"></a>
+            <label for="a_18"><strong>Dewy Skin Serum</strong> <span class="price">$9.99</span> <span class="qty">와이프 1개</span><span class="note">748 Memorial에서 잘 풀림. 있으면 잡기.</span></label>
+          </li>
+        </ul>
+      </section>
+
+      <div class="box warn">
+        <strong>사지 말 것:</strong> Hold the Cone Mini Ice Cream (보냉백 없음 — 다 녹음). Everything But The Bagel (한국 검역 X — 양귀비씨 이슈).
+      </div>
+
+      <div class="box tip">
+        <strong>다음 보충:</strong> 748에서 한정 토트 못 잡았으면 <a href="tj-500.html">TJ 500 Boylston</a> (화요일) 또는 <a href="tj-fortpoint.html">TJ Fort Point</a> (수요일 마감).
+      </div>
+    </main>
+
+    <footer>
+      영업시간: 월-금 8AM-9PM &nbsp;|&nbsp;
+      <a href="https://www.traderjoes.com/home/stores/details/50" target="_blank" rel="noreferrer">공식 사이트에서 시간 확인</a>
+    </footer>
+  </div>
+</body>
+</html>
