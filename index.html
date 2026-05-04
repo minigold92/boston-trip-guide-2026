@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>보스턴 5/4-5/7 현장 가이드 (남자 둘, 빡센 코스)</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5d6b72;
+      --line: #d8e0e3;
+      --paper: #fffdf7;
+      --wash: #f1f5f1;
+      --mint: #d8ecdf;
+      --teal: #0e6a64;
+      --teal-dark: #074a45;
+      --wine: #9d1a3f;
+      --gold: #b67a14;
+      --blue: #1f4c75;
+      --check: #16a085;
+      --warn: #c0392b;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #e9efe9;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+      font-size: 16px;
+    }
+    a { color: var(--teal); }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 70px rgba(25, 35, 35, .12);
+      min-height: 100vh;
+    }
+    header {
+      padding: 26px 20px 22px;
+      background: linear-gradient(135deg, rgba(14,106,100,.18), transparent 50%), linear-gradient(315deg, rgba(157,26,63,.14), transparent 45%), #fbf6e8;
+      border-bottom: 2px solid var(--teal);
+    }
+    h1 {
+      margin: 0;
+      color: var(--teal-dark);
+      font-size: 28px;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+    }
+    .subtitle { margin: 10px 0 0; color: #2d3a3e; font-size: 15px; font-weight: 500; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.8); border: 1px solid rgba(14,106,100,.25); color: #2d3a3e; font-size: 12px; font-weight: 700; }
+    .pill.warn { background: #fff0eb; border-color: #f3a994; color: var(--warn); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 10px 14px;
+      background: rgba(255,253,247,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto; padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--wash);
+      text-decoration: none; color: var(--teal-dark);
+      font-size: 13px; font-weight: 800;
+    }
+    nav a:active, nav a:hover { background: var(--mint); }
+    main { padding: 16px 18px 60px; }
+    section { margin: 26px 0 36px; scroll-margin-top: 64px; }
+    h2 {
+      margin: 0 0 12px;
+      color: var(--wine);
+      font-size: 22px; line-height: 1.2;
+      display: flex; align-items: center; gap: 8px;
+    }
+    h3 {
+      margin: 22px 0 10px;
+      color: var(--teal-dark);
+      font-size: 17px; line-height: 1.28;
+    }
+    h4 { margin: 12px 0 6px; color: var(--blue); font-size: 15px; }
+    p { margin: 0 0 12px; }
+    .lead { color: #364045; font-size: 15px; margin-bottom: 16px; }
+
+    /* 체크리스트 카드 */
+    .check-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .check-card.go {
+      border-left: 5px solid var(--check);
+      background: linear-gradient(90deg, rgba(22,160,133,.06), #fff 30%);
+    }
+    .check-card.warn {
+      border-left: 5px solid var(--warn);
+      background: linear-gradient(90deg, rgba(192,57,43,.06), #fff 30%);
+    }
+    .check-card.gold {
+      border-left: 5px solid var(--gold);
+      background: linear-gradient(90deg, rgba(182,122,20,.07), #fff 30%);
+    }
+    .check-card .eyebrow { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: 0.3px; margin: 0 0 4px; text-transform: uppercase; }
+
+    /* 체크박스 리스트 */
+    ul.checklist { list-style: none; padding: 0; margin: 8px 0; }
+    ul.checklist li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 8px 6px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14.5px;
+    }
+    ul.checklist li:last-child { border-bottom: 0; }
+    ul.checklist input[type=checkbox] {
+      margin-top: 6px;
+      width: 18px; height: 18px;
+      accent-color: var(--check);
+      flex: 0 0 auto;
+    }
+    ul.checklist .price { color: var(--wine); font-weight: 800; font-size: 13px; margin-left: 4px; }
+    ul.checklist .qty { color: var(--teal); font-weight: 800; font-size: 12.5px; margin-left: 4px; }
+    ul.checklist .note { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+    ul.checklist label { flex: 1; cursor: pointer; min-width: 0; }
+    ul.checklist .thumb {
+      flex: 0 0 auto;
+      width: 64px; height: 64px;
+      border-radius: 8px;
+      object-fit: contain;
+      object-position: center;
+      background: #f7f7f5;
+      border: 1px solid #eef1f0;
+      padding: 2px;
+    }
+    ul.checklist .thumb-link { flex: 0 0 auto; line-height: 0; }
+    @media (max-width: 480px) {
+      ul.checklist .thumb { width: 56px; height: 56px; }
+    }
+
+    /* 일정 타임라인 */
+    .timeline { display: grid; gap: 0; margin: 12px 0; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 12px;
+      padding: 12px 4px;
+      border-top: 1px solid var(--line);
+    }
+    .tl-row:first-child { border-top: 0; }
+    .tl-time {
+      color: var(--wine); font-weight: 900; font-size: 13.5px;
+    }
+    .tl-body strong { color: var(--teal-dark); font-size: 15px; }
+    .tl-body .desc { display: block; color: #475055; font-size: 13.5px; margin-top: 3px; }
+    .tl-body .tag { display: inline-block; margin: 4px 4px 0 0; padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 800; }
+    .tag.shop { background: #fff0db; color: #8c5a08; }
+    .tag.see { background: #e3eef9; color: #194268; }
+    .tag.eat { background: #f8e3eb; color: var(--wine); }
+    .tag.move { background: #e6f3ee; color: var(--teal-dark); }
+    .tag.opt { background: #efeef3; color: #4f4660; }
+
+    /* 버튼 */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 36px; padding: 6px 12px;
+      margin: 4px 4px 4px 0;
+      border: 1px solid var(--teal);
+      border-radius: 999px;
+      background: var(--teal); color: #fff;
+      text-decoration: none;
+      font-size: 13px; font-weight: 800;
+    }
+    .btn.sec { background: #fff; color: var(--teal); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 4px; }
+
+    /* 박스 */
+    .box {
+      padding: 12px 14px; margin: 12px 0;
+      border-radius: 10px;
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      font-size: 14px;
+    }
+    .box.warn { background: #fdecea; border-color: var(--warn); }
+    .box.tip  { background: #e7f5f0; border-color: var(--check); }
+    .box strong { color: #6b4a05; }
+    .box.warn strong { color: var(--warn); }
+    .box.tip  strong { color: var(--teal-dark); }
+
+    /* Freedom Trail 스토프 */
+    .ft-list { display: grid; gap: 8px; margin: 12px 0; }
+    .ft-stop {
+      display: grid; grid-template-columns: 36px 1fr; gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line); border-radius: 10px;
+      background: #fff;
+    }
+    .ft-num {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      background: var(--wine); color: #fff;
+      border-radius: 50%;
+      font-weight: 900; font-size: 14px;
+    }
+    .ft-stop strong { color: var(--teal-dark); font-size: 14.5px; }
+    .ft-stop .desc { display: block; color: #475055; font-size: 13px; margin-top: 2px; }
+
+    /* 사람별 분배 카드 */
+    .gift-grid { display: grid; gap: 10px; }
+    .gift-card {
+      border: 1px solid var(--line); border-radius: 10px;
+      background: #fff; padding: 12px 14px;
+    }
+    .gift-card .head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 10px; margin-bottom: 6px;
+    }
+    .gift-card h4 { margin: 0; font-size: 15.5px; color: var(--teal-dark); }
+    .gift-card .price { color: var(--wine); font-weight: 900; font-size: 13px; white-space: nowrap; }
+    .gift-card ul { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; }
+    .gift-card li { margin: 2px 0; }
+
+    /* 매장별 정보 */
+    .store-card {
+      border: 1px solid var(--line); border-radius: 12px;
+      background: #fff; padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .store-card .badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+    .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 800; }
+    .b-tj   { background: #fff0db; color: #8c5a08; }
+    .b-wf   { background: #e3f1de; color: #2c6b1a; }
+    .b-cvs  { background: #fce5e5; color: var(--warn); }
+    .b-hv   { background: #f8e3eb; color: var(--wine); }
+    .b-tea  { background: #e3eef9; color: #194268; }
+    .b-day  { background: var(--wash); color: var(--teal-dark); border: 1px solid var(--line); }
+
+    /* 아이콘 */
+    .icon { font-style: normal; }
+
+    /* 모바일 최적화 */
+    @media (max-width: 480px) {
+      header { padding: 22px 16px 18px; }
+      h1 { font-size: 24px; }
+      main { padding: 14px 14px 60px; }
+      h2 { font-size: 19px; }
+      h3 { font-size: 16px; }
+      .tl-row { grid-template-columns: 64px 1fr; gap: 10px; padding: 10px 2px; }
+      .tl-time { font-size: 12.5px; }
+      ul.checklist li { font-size: 14px; }
+      nav a { font-size: 12px; padding: 7px 10px; }
+    }
+
+    /* 인쇄 */
+    @page { size: A4 portrait; margin: 12mm; }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; box-shadow: none; }
+      nav { display: none; }
+      .btn { background: #fff; color: var(--teal); border-color: var(--teal); }
+      header { background: #fff; }
+      section { break-inside: avoid; }
+      .check-card, .gift-card, .store-card, .ft-stop { break-inside: avoid; }
+      ul.checklist input[type=checkbox] { width: 14px; height: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>보스턴 5/4-5/7<br>현장 가이드</h1>
+      <p class="subtitle">남자 둘, 관광은 가볍게 · 쇼핑은 확실하게. <strong>오늘(월) 풀데이가 메인</strong>.</p>
+      <div class="pills">
+        <span class="pill">Hyatt Seaport 기준</span>
+        <span class="pill">Freedom Trail 빠른 패스</span>
+        <span class="pill">TJ + Harvard + CVS + Whole Foods</span>
+        <span class="pill warn">화요일 점심·저녁 약속 있음</span>
+        <span class="pill warn">목요일 12:30 비행</span>
+      </div>
+    </header>
+
+    <nav aria-label="섹션 이동">
+      <a href="#go-now">🚀 출발 체크</a>
+      <a href="#mon">📅 월 (오늘)</a>
+      <a href="#tue">📅 화</a>
+      <a href="#wed">📅 수</a>
+      <a href="#thu">📅 목</a>
+      <a href="#freedom">🗺️ Freedom Trail</a>
+      <a href="#shop-tj">🛒 TJ</a>
+      <a href="#shop-wf">🛒 Whole Foods</a>
+      <a href="#shop-hv">🎓 Harvard</a>
+      <a href="#shop-cvs">💊 CVS</a>
+      <a href="#tj-stores">📍 TJ 매장 비교</a>
+      <a href="#people">🎁 사람별</a>
+      <a href="#warn">⚠️ 검역</a>
+    </nav>
+
+    <main>
+
+      <!-- 1. 지금 출발 체크 -->
+      <section id="go-now">
+        <h2>🚀 호텔 나가기 전 5분 체크</h2>
+        <div class="check-card go">
+          <p class="eyebrow">필수 챙길 것</p>
+          <ul class="checklist">
+            <li><input type="checkbox" id="g1"><label for="g1">신용카드 + 현금 $40 (소액 가게 대비)</label></li>
+            <li><input type="checkbox" id="g2"><label for="g2">물 1병 (Freedom Trail 4km 도보)</label></li>
+            <li><input type="checkbox" id="g3"><label for="g3">충전기 + 보조배터리 (지도/사진 많이 씀)</label></li>
+            <li><input type="checkbox" id="g4"><label for="g4">접는 에코백 1-2개 (쇼핑백 받을 때)</label></li>
+            <li><input type="checkbox" id="g5"><label for="g5">선글라스 + 모자 (5월 햇빛 강함)</label></li>
+            <li><input type="checkbox" id="g6"><label for="g6">우산 또는 가벼운 자켓 (변덕스러움)</label></li>
+          </ul>
+        </div>
+        <div class="check-card warn">
+          <p class="eyebrow">발 물집 방지 — 진짜 중요</p>
+          <ul class="checklist">
+            <li><input type="checkbox" id="g7"><label for="g7"><strong>호텔 옆 CVS Seaport(91 Seaport Blvd)</strong>에서 <strong>Band-Aid Hydro Seal</strong> 사서 발에 미리 붙이기<span class="note">오늘 도보만 6-8km. 나중에 후회 X. $7 정도, 5분 컷.</span></label></li>
+            <li><input type="checkbox" id="g8"><label for="g8">편한 운동화로 갈아 신기 (구두/슬립온 X)</label></li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=CVS+Pharmacy+91+Seaport+Blvd+Boston" target="_blank" rel="noreferrer">CVS Seaport 지도</a>
+          </div>
+        </div>
+        <div class="check-card gold">
+          <p class="eyebrow">알아둘 것</p>
+          <ul class="checklist">
+            <li><input type="checkbox" id="g9"><label for="g9">CharlieCard 또는 Apple Pay로 지하철 탑승 가능 (편도 $2.40)</label></li>
+            <li><input type="checkbox" id="g10"><label for="g10">Uber/Lyft가 보스턴 지하철보다 빠를 때 많음 (특히 짐 들 때)</label></li>
+            <li><input type="checkbox" id="g11"><label for="g11">팁 = 음식점 18-20%, 우버 15%, 호텔 청소 $2-5/일</label></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 2. 월요일 풀 동선 -->
+      <section id="mon">
+        <h2>📅 월 5/4 — 풀데이 빡센 코스</h2>
+        <p class="lead">목표: <strong>Freedom Trail 빠른 패스 + North End 시푸드 점심 + Harvard 쇼핑 + TJ 메인 쇼핑</strong>을 하루에. 09:00 출발 필수.</p>
+
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">09:00</div>
+            <div class="tl-body">
+              <strong>호텔 출발</strong>
+              <span class="tag move">이동</span>
+              <span class="desc">Hyatt Place Seaport → 도보 10분 → Tea Party Ships</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">09:15<br>—09:25</div>
+            <div class="tl-body">
+              <strong>Boston Tea Party Ships 외관</strong>
+              <span class="tag see">관광</span>
+              <span class="desc">통과/사진만. <strong>Gift Shop 패스</strong> — Tea Tin은 안 살 거니까 시간 아끼고 바로 Freedom Trail로 출발.</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">09:35<br>—11:30</div>
+            <div class="tl-body">
+              <strong>Freedom Trail 빠른 패스</strong>
+              <span class="tag see">관광</span>
+              <span class="desc">Boston Common 시작 → 빨간 줄 따라 걷기 → Old North Church까지. 사진만 찍고 흘리면 1.5-2시간. 박물관 내부 입장 X.</span>
+              <div class="btn-row">
+                <a class="btn" href="#freedom">🗺️ 정류장 보기</a>
+                <a class="btn sec" href="https://www.google.com/maps/dir/Hyatt+Place+Boston+Seaport+District/Boston+Common/Massachusetts+State+House/Old+State+House+Boston/Faneuil+Hall/Paul+Revere+House/Old+North+Church/?travelmode=walking" target="_blank" rel="noreferrer">전체 도보 경로</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">11:45<br>—12:45</div>
+            <div class="tl-body">
+              <strong>North End 시푸드 점심</strong>
+              <span class="tag eat">식사</span>
+              <span class="desc"><strong>피자 X (어제 먹음).</strong> 보스턴 명물 = 랍스터롤.</span>
+              <ul style="margin:6px 0 0; padding-left:18px; font-size:13.5px;">
+                <li><strong>1순위: Neptune Oyster</strong> — 랍스터롤 명소. 11:30 도착이면 라인 짧음. 핫/콜드 둘 다 시켜보기. ($35-40)</li>
+                <li><strong>2순위: Pauli's North End</strong> — 1파운드 랍스터롤로 유명, 라인 더 짧음.</li>
+                <li><strong>3순위: Monica's Mercato</strong> — 빠른 이탈리안 샌드위치 (라인 길면).</li>
+                <li>디저트: <strong>Mike's Pastry 카놀리</strong> 1개 들고 나오기.</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Neptune+Oyster+63+Salem+St+Boston" target="_blank" rel="noreferrer">Neptune Oyster</a>
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Pauli%27s+North+End+65+Salem+St+Boston" target="_blank" rel="noreferrer">Pauli's</a>
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Mike%27s+Pastry+300+Hanover+St+Boston" target="_blank" rel="noreferrer">Mike's Pastry</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">12:50<br>—13:00</div>
+            <div class="tl-body">
+              <strong>Boston Harbor 사진</strong>
+              <span class="tag see">관광</span>
+              <span class="desc">Long Wharf 또는 Christopher Columbus Park 5분. 패스해도 됨.</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">13:05<br>—13:40</div>
+            <div class="tl-body">
+              <strong>Red Line으로 Harvard</strong>
+              <span class="tag move">이동</span>
+              <span class="desc">Aquarium역 → State → Park St → Harvard 환승 35분. 또는 우버 ~$25 (직선 25분).</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">13:45<br>—14:30</div>
+            <div class="tl-body">
+              <strong>Harvard Yard 사진 산책</strong>
+              <span class="tag see">관광</span>
+              <span class="desc">John Harvard 동상(발 만지기) + Widener Library 외관 + Memorial Hall. 빠르게 한 바퀴.</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">14:30<br>—16:00</div>
+            <div class="tl-body">
+              <strong>Harvard Shop + Harvard Coop</strong>
+              <span class="tag shop">메인 쇼핑</span>
+              <span class="desc">Cap, Hoodie, Onesie, 펜/마그넷/스티커 다 결정. <strong>대학 굿즈는 여기서 끝</strong>.</span>
+              <div class="btn-row">
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Harvard+Shop+52+John+F+Kennedy+St+Cambridge" target="_blank" rel="noreferrer">Harvard Shop</a>
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Harvard+Coop+1400+Massachusetts+Ave+Cambridge" target="_blank" rel="noreferrer">Harvard Coop</a>
+                <a class="btn sec" href="#shop-hv">📋 쇼핑 리스트</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">16:15<br>—17:45</div>
+            <div class="tl-body">
+              <strong>🔥 Trader Joe's 748 Memorial</strong>
+              <span class="tag shop">메인 쇼핑</span>
+              <span class="desc">이번 여행 핵심. 토트 + 간식 + 시즈닝 풀카트. <strong>입구에서 "Is there a bag limit today?" 먼저 물어봐</strong>.</span>
+              <div class="btn-row">
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+748+Memorial+Dr+Cambridge" target="_blank" rel="noreferrer">TJ 748 Memorial</a>
+                <a class="btn sec" href="#shop-tj">📋 쇼핑 리스트</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">18:00<br>—18:45</div>
+            <div class="tl-body">
+              <strong>우버로 호텔 복귀</strong>
+              <span class="tag move">이동</span>
+              <span class="desc">쇼핑백 6-8개 들고 지하철 X. 우버 $30~ 분담하면 1인 $15.</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">19:30<br>—21:00</div>
+            <div class="tl-body">
+              <strong>Seaport에서 저녁</strong>
+              <span class="tag eat">식사</span>
+              <span class="desc">호텔 도보권. <strong>Row 34</strong>(굴/시푸드), <strong>Mastro's</strong>(스테이크 비쌈), <strong>Yankee Lobster</strong>(캐주얼), <strong>Loco Taqueria</strong>(타코 가성비). 남자 둘이면 Row 34 또는 Loco 추천.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Row+34+383+Congress+St+Boston" target="_blank" rel="noreferrer">Row 34</a>
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Loco+Taqueria+Seaport" target="_blank" rel="noreferrer">Loco</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">21:15<br>(옵션)</div>
+            <div class="tl-body">
+              <strong>View Boston 전망대</strong>
+              <span class="tag opt">옵션</span>
+              <span class="desc">맑고 체력 남으면. 마지막 입장 21:15. 흐리거나 피곤하면 패스 — 호텔 가서 토트 분류/포장 정리하는 게 더 가치 있음.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=View+Boston+800+Boylston+St" target="_blank" rel="noreferrer">View Boston</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box tip">
+          <strong>오늘 끝나면 이게 됐을 것:</strong> 관광 90% 종료, Harvard 굿즈 100%, TJ 1차 쇼핑(가족용 토트/간식) 70%. 화·수는 부족분 보충 + 약속 사이 시간 활용.
+        </div>
+      </section>
+
+      <!-- 3. 화요일 -->
+      <section id="tue">
+        <h2>📅 화 5/5 — 짧은 오후 윈도우</h2>
+        <p class="lead">점심·저녁 약속이 둘 다 있음. 사이 비는 시간만 활용. <strong>호텔에서 짧게</strong> 또는 <strong>약속 장소 근처에서 짧게</strong>.</p>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">오전</div>
+            <div class="tl-body">
+              <strong>약속 일정</strong>
+              <span class="tag opt">개인</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">오후<br>(짧음)</div>
+            <div class="tl-body">
+              <strong>옵션 A: 호텔 근처 보충</strong>
+              <span class="tag shop">쇼핑</span>
+              <span class="desc"><strong>Whole Foods Seaport</strong>(도보 5분)에서 RXBAR/KIND/Hu/Justin's. 또는 <strong>TJ Fort Point</strong>에서 부족분 보충.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Whole+Foods+Seaport+Boston" target="_blank" rel="noreferrer">Whole Foods Seaport</a>
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+44+Thomson+Pl+Boston" target="_blank" rel="noreferrer">TJ Fort Point</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">오후<br>(여유)</div>
+            <div class="tl-body">
+              <strong>옵션 B: Back Bay 빠른 코스</strong>
+              <span class="tag shop">쇼핑</span>
+              <span class="desc">2시간 이상 비면 — TJ 500 Boylston(대량 보충) → 옆 CVS Prudential(약국템) → BPL/Copley 사진. 1시간 안짝.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/dir/Trader+Joe%27s+500+Boylston+St+Boston/CVS+Pharmacy+800+Boylston+St+Boston/Boston+Public+Library/?travelmode=walking" target="_blank" rel="noreferrer">도보 경로</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">저녁</div>
+            <div class="tl-body">
+              <strong>약속 일정</strong>
+              <span class="tag opt">개인</span>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <strong>화요일 전략:</strong> 욕심 X. 약속 사이 1-2시간 윈도우면 호텔 도보권 Whole Foods·TJ Fort Point가 정답. 시간 더 있으면 Back Bay.
+        </div>
+      </section>
+
+      <!-- 4. 수요일 -->
+      <section id="wed">
+        <h2>📅 수 5/6 — 보충 + 포장일</h2>
+        <p class="lead">월요일 빠진 거 마저 채우고 짐 정리. 비/흐림이면 실내 위주.</p>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">오전</div>
+            <div class="tl-body">
+              <strong>옵션 1: Fenway / Red Sox Team Store</strong>
+              <span class="tag shop">쇼핑</span>
+              <span class="desc">친한친구/매형용 Red Sox cap/볼/키체인. Fenway Park 외관 사진.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Red+Sox+Team+Store+Fenway+Park" target="_blank" rel="noreferrer">Team Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">오전<br>(대안)</div>
+            <div class="tl-body">
+              <strong>옵션 2: MFA 또는 Gardner</strong>
+              <span class="tag opt">옵션</span>
+              <span class="desc">와이프/엄마/누나 좋아하면 MFA Shop tote/scarf. 비 오는 날 실내 코스로 좋음.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Museum+of+Fine+Arts+Boston" target="_blank" rel="noreferrer">MFA</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">오후</div>
+            <div class="tl-body">
+              <strong>TJ Fort Point + CVS Seaport 마지막 보충</strong>
+              <span class="tag shop">쇼핑</span>
+              <span class="desc">호텔 옆이라 캐리 부담 없음. 부족한 토트/간식/약국템 마무리.</span>
+              <div class="btn-row">
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+44+Thomson+Pl+Boston" target="_blank" rel="noreferrer">TJ Fort Point</a>
+                <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=CVS+91+Seaport+Blvd+Boston" target="_blank" rel="noreferrer">CVS Seaport</a>
+              </div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">저녁</div>
+            <div class="tl-body">
+              <strong>호텔에서 포장 마라톤</strong>
+              <span class="tag opt">정리</span>
+              <span class="desc">지퍼백 소분 + 토트별 분배 + 캐리어 패킹. 액체/오일/시럽은 위탁 수하물에. 술/시즈닝/초콜릿 신고 기준 확인.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 목요일 -->
+      <section id="thu">
+        <h2>📅 목 5/7 — 출국</h2>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">아침</div>
+            <div class="tl-body">
+              <strong>체크아웃 + 공항 이동</strong>
+              <span class="tag move">이동</span>
+              <span class="desc">12:30 비행. 국제선이면 09:30-10:00 공항 도착 기준 = 호텔 08:30-09:00 출발. Logan Airport는 Seaport에서 우버 15분 / Silver Line 무료 (BCEC역).</span>
+            </div>
+          </div>
+        </div>
+        <div class="box warn">
+          <strong>한국 입국 신고 주의:</strong> 식품 총합 $200 이하 면세. 견과/시즈닝/시리얼/초콜릿은 가능. <strong>고기/육류 가공품/포피 시드 함유(Everything But The Bagel) X</strong>. 액체류는 100ml 이상이면 무조건 위탁.
+        </div>
+      </section>
+
+      <!-- Freedom Trail 상세 -->
+      <section id="freedom">
+        <h2>🗺️ Freedom Trail 빠른 패스</h2>
+        <p class="lead"><strong>보도에 깔린 빨간 줄/벽돌 따라 걸으면 끝.</strong> 4km, 보스턴 다운타운 가로지름. 사진만 찍고 흘리면 1.5-2시간.</p>
+        <div class="ft-list">
+          <div class="ft-stop">
+            <div class="ft-num">1</div>
+            <div>
+              <strong>Boston Common</strong>
+              <span class="desc">시작점. 큰 잔디 공원. 안내판에서 빨간 줄 시작.</span>
+            </div>
+          </div>
+          <div class="ft-stop">
+            <div class="ft-num">2</div>
+            <div>
+              <strong>Massachusetts State House</strong>
+              <span class="desc">금색 돔이 인상적. 사진 1장.</span>
+            </div>
+          </div>
+          <div class="ft-stop">
+            <div class="ft-num">3</div>
+            <div>
+              <strong>Granary Burying Ground</strong>
+              <span class="desc">독립 영웅들 묘지(폴 리비어, 새뮤얼 애덤스). 5분.</span>
+            </div>
+          </div>
+          <div class="ft-stop">
+            <div class="ft-num">4</div>
+            <div>
+              <strong>Old State House</strong>
+              <span class="desc">빨간 벽돌 + 황금 사자/유니콘. 앞 바닥에 보스턴 학살 표식.</span>
+            </div>
+          </div>
+          <div class="ft-stop">
+            <div class="ft-num">5</div>
+            <div>
+              <strong>Faneuil Hall / Quincy Market</strong>
+              <span class="desc">시장 + 기념품 가게 + 화장실. 통과만, 점심은 North End에서.</span>
+            </div>
+          </div>
+          <div class="ft-stop">
+            <div class="ft-num">6</div>
+            <div>
+              <strong>Paul Revere House</strong>
+              <span class="desc">미국에서 가장 오래된 목조 주택 (1680). 외관만 ($6 입장 패스).</span>
+            </div>
+          </div>
+          <div class="ft-stop">
+            <div class="ft-num">7</div>
+            <div>
+              <strong>Old North Church</strong>
+              <span class="desc">흰 첨탑. "한 번이면 육로, 두 번이면 바닷길" 등불 신호 명소. 여기서 끝내고 바로 North End 점심.</span>
+            </div>
+          </div>
+        </div>
+        <div class="box tip">
+          <strong>요령:</strong> Bunker Hill / USS Constitution까지가 풀코스인데 강 건너 더 가야 함. <strong>오늘은 Old North Church에서 끊고 점심 → Cambridge 이동</strong>이 효율적.
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/dir/Boston+Common/Massachusetts+State+House+Boston/Granary+Burying+Ground/Old+State+House+Boston/Faneuil+Hall/Paul+Revere+House/Old+North+Church/?travelmode=walking" target="_blank" rel="noreferrer">전체 도보 경로 열기</a>
+        </div>
+      </section>
+
+      <!-- TJ 쇼핑 -->
+      <section id="shop-tj">
+        <h2>🛒 Trader Joe's 쇼핑 체크리스트</h2>
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-tj">TJ</span>
+            <span class="badge b-day">월 메인</span>
+            <span class="badge b-day">화 보충</span>
+            <span class="badge b-day">수 마감</span>
+          </div>
+          <p class="lead" style="margin:6px 0 0;">월요일 748 Memorial = 메인 카트. 화요일 Fort Point/500 Boylston = 보충. <strong>입구에서 "Is there a bag limit today?" 먼저 물어보기</strong>.</p>
+        </div>
+
+        <h3>🥇 MUST BUY (꼭)</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="t1">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/45_tj_mini_pastel_canvas_totes_official.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/45_tj_mini_pastel_canvas_totes_official.png" alt=""></a>
+            <label for="t1"><strong>Canvas Tote Bag</strong> <span class="qty">와이프/엄마용 1-3개</span><span class="note">한정. 보이면 즉시 잡기.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t2">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png" alt=""></a>
+            <label for="t2"><strong>Mini Canvas Tote</strong> <span class="price">$2.99</span> <span class="qty">친한친구/여동생 4-6개</span><span class="note">매장별 1인 1-6개 제한 가능.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t3">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/14_trader_joes_mini_tote.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/14_trader_joes_mini_tote.png" alt=""></a>
+            <label for="t3"><strong>Reusable Bag (일반)</strong> <span class="qty">10-12개</span><span class="note">회사 친한 10명 미니세트 포장용. 한정 토트 안 되면 통일.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t4">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/33_tj_dark_chocolate_pb_cups.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/33_tj_dark_chocolate_pb_cups.png" alt=""></a>
+            <label for="t4"><strong>Dark Chocolate Peanut Butter Cups</strong> <span class="price">$3-5</span> <span class="qty">큰통 4-6봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t5">
+            <label for="t5"><strong>Speculoos Cookie Butter</strong> <span class="qty">2-4병</span><span class="note">베이지색 라벨, 잼 코너. 한국에 팔지만 가격차 큼. 와이프/누나용.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t6">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/35_tj_mini_pretzels.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/35_tj_mini_pretzels.png" alt=""></a>
+            <label for="t6"><strong>Dark Chocolate Mini Pretzels</strong> <span class="qty">3-5봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t7">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" alt=""></a>
+            <label for="t7"><strong>Soft Baked Snickerdoodles</strong> <span class="qty">2-4봉</span><span class="note">시나몬 쿠키. 봉지 디자인은 매장 가서 확인.</span></label>
+          </li>
+        </ul>
+
+        <h3>🥈 GOOD TO BUY (좋음)</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="t8">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png" alt=""></a>
+            <label for="t8"><strong>Garlic Butter Nut Mix</strong> <span class="price">$6.99</span> <span class="qty">남동생/매형용 3-4봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t9">
+            <label for="t9"><strong>Dried Sweetened Mango</strong> <span class="qty">2-3봉</span><span class="note">건과일 코너. 노란 봉지.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t10">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/30_tj_crunchy_chili_onion.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/30_tj_crunchy_chili_onion.png" alt=""></a>
+            <label for="t10"><strong>Chili Lime Rolled Tortilla Chips</strong> <span class="qty">2-3봉</span><span class="note">Takis 느낌, 호불호 적음.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t11">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png" alt=""></a>
+            <label for="t11"><strong>Sweet Onion Pretzels</strong> <span class="qty">2-3봉</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t12">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" alt=""></a>
+            <label for="t12"><strong>Pinks &amp; Whites Cookies</strong> <span class="qty">2봉</span></label>
+          </li>
+        </ul>
+
+        <h3>🌶️ 시즈닝 (요리하는 사람용)</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="t13">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/29_tj_nori_furikake.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/29_tj_nori_furikake.png" alt=""></a>
+            <label for="t13"><strong>Nori Komi Furikake</strong> <span class="price">$2.99</span> <span class="qty">3-5개</span><span class="note">Everything But The Bagel 대체 1순위. 검역 안전.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t14">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/32_tj_umami_seasoning.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/32_tj_umami_seasoning.png" alt=""></a>
+            <label for="t14"><strong>Mushroom &amp; Company Umami Seasoning</strong> <span class="price">$3</span> <span class="qty">3-5개</span><span class="note">요리하는 동료/부서장용.</span></label>
+          </li>
+        </ul>
+
+        <h3>💄 가족 보조 선물</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="t15">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/34_tj_hand_cream.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/34_tj_hand_cream.png" alt=""></a>
+            <label for="t15"><strong>Ultra Moisturizing Hand Cream</strong> <span class="price">$4.99</span> <span class="qty">와이프/누나/여동생 3-5개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="t16">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png" alt=""></a>
+            <label for="t16"><strong>Mini Insulated Tote</strong> <span class="price">$3.99</span> <span class="qty">와이프 1개만</span><span class="note">부피 큼. 한정.</span></label>
+          </li>
+        </ul>
+
+        <div class="box warn">
+          <strong>❌ 사지 말 것:</strong> Hold the Cone Mini Ice Cream(보냉백 없음 — 다 녹음). Everything But The Bagel(한국 검역 X — 양귀비씨 이슈).
+        </div>
+
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+748+Memorial+Dr+Cambridge" target="_blank" rel="noreferrer">748 Memorial (월)</a>
+          <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+44+Thomson+Pl+Boston" target="_blank" rel="noreferrer">Fort Point (화·수)</a>
+          <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+500+Boylston+St+Boston" target="_blank" rel="noreferrer">500 Boylston (화)</a>
+        </div>
+      </section>
+
+      <!-- Whole Foods -->
+      <section id="shop-wf">
+        <h2>🛒 Whole Foods Seaport (호텔 도보)</h2>
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-wf">Whole Foods</span>
+            <span class="badge b-day">화·수 보충</span>
+          </div>
+          <p class="lead" style="margin:6px 0 0;">호텔 도보 5분. 화요일 약속 사이 짧게, 또는 수요일 마감 보충용. 미국 프리미엄 브랜드 위주.</p>
+        </div>
+        <ul class="checklist">
+          <li><input type="checkbox" id="w1"><label for="w1"><strong>RXBAR Chocolate Sea Salt</strong> <span class="qty">5-10개</span><span class="note">단백질 바, 운동하는 동료/친구용.</span></label></li>
+          <li><input type="checkbox" id="w2"><label for="w2"><strong>KIND Bar — Dark Chocolate Nuts &amp; Sea Salt</strong> <span class="qty">5-10개</span></label></li>
+          <li><input type="checkbox" id="w3"><label for="w3"><strong>Hu Chocolate Bar</strong> <span class="qty">3-5개</span><span class="note">고급 초콜릿. 부서장/친한친구용.</span></label></li>
+          <li><input type="checkbox" id="w4"><label for="w4"><strong>Justin's Peanut Butter Cups</strong> <span class="qty">3-5개</span><span class="note">TJ PB Cups보다 한 단계 위.</span></label></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Whole+Foods+Market+Seaport+Boston" target="_blank" rel="noreferrer">Whole Foods Seaport 지도</a>
+        </div>
+      </section>
+
+      <!-- Harvard 쇼핑 -->
+      <section id="shop-hv">
+        <h2>🎓 Harvard Coop / Harvard Shop</h2>
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-hv">Harvard</span>
+            <span class="badge b-day">월 메인</span>
+          </div>
+          <p class="lead" style="margin:6px 0 0;">월요일 14:30-16:00. 두 매장 도보 5분 거리. 의류는 Coop이 더 큼, 소형 굿즈는 Harvard Shop이 깔끔.</p>
+        </div>
+
+        <h3>👕 의류 / 모자</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="h1">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/38_harvard_classic_h_hat_product.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/38_harvard_classic_h_hat_product.jpg" alt=""></a>
+            <label for="h1"><strong>Classic H Hat (Cap)</strong> <span class="price">$30</span> <span class="qty">3-5개</span><span class="note">아빠/매형/와이프/본인. 사이즈 리스크 낮음.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h2">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/37_harvard_hoodie_product.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/37_harvard_hoodie_product.jpg" alt=""></a>
+            <label for="h2"><strong>Hoodie 또는 Crewneck</strong> <span class="price">$48-65</span> <span class="qty">1-2개</span><span class="note">와이프/본인. 사이즈 애매하면 크루넥.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h3">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/39_harvard_baby_onesie_product.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/39_harvard_baby_onesie_product.jpg" alt=""></a>
+            <label for="h3"><strong>Baby Onesie</strong> <span class="price">$15</span> <span class="qty">1개</span><span class="note">조카 1살.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h4">
+            <label for="h4"><strong>Kids Tee</strong> <span class="qty">1개</span><span class="note">조카 4살. Onesie와 같은 코너.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h5">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/42_harvard_crest_tote_product.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/42_harvard_crest_tote_product.jpg" alt=""></a>
+            <label for="h5"><strong>Crest Tote Bag</strong> <span class="price">$44.99</span> <span class="qty">1-2개</span><span class="note">와이프/누나용. TJ 토트보다 보스턴 티 남.</span></label>
+          </li>
+        </ul>
+
+        <h3>✏️ 소형 굿즈 (회사 예비 + 가족 보조)</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="h6">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/63_harvard_red_pen.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/63_harvard_red_pen.png" alt=""></a>
+            <label for="h6"><strong>Pen (Red Harvard Pen)</strong> <span class="qty">4-6개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h7">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/62_harvard_crest_magnet.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/62_harvard_crest_magnet.jpg" alt=""></a>
+            <label for="h7"><strong>Crest Magnet</strong> <span class="price">$6.99</span> <span class="qty">4-6개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h8">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/66_harvard_crest_sticker.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/66_harvard_crest_sticker.png" alt=""></a>
+            <label for="h8"><strong>Keychain / Sticker</strong> <span class="qty">4-6개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h9">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/64_harvard_folder.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/64_harvard_folder.jpg" alt=""></a>
+            <label for="h9"><strong>Notebook 또는 Folder</strong> <span class="qty">1-2개</span><span class="note">부서장용.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h10">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/61_harvard_keychain_plushie.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/61_harvard_keychain_plushie.jpg" alt=""></a>
+            <label for="h10"><strong>Keychain Plushie</strong> <span class="price">$16.99</span> <span class="qty">1-2개</span><span class="note">조카 4살 가방용.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="h11">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/67_harvard_lanyard.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/67_harvard_lanyard.jpg" alt=""></a>
+            <label for="h11"><strong>Lanyard</strong> <span class="qty">선택</span><span class="note">부서장 프리미엄 세트용.</span></label>
+          </li>
+        </ul>
+
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Harvard+Shop+52+John+F+Kennedy+St+Cambridge" target="_blank" rel="noreferrer">Harvard Shop</a>
+          <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=Harvard+Coop+1400+Massachusetts+Ave+Cambridge" target="_blank" rel="noreferrer">Harvard Coop</a>
+        </div>
+      </section>
+
+      <!-- CVS -->
+      <section id="shop-cvs">
+        <h2>💊 CVS — 약국템 + 보충 선물</h2>
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-cvs">CVS</span>
+            <span class="badge b-day">월 출발 전 (호텔 옆)</span>
+            <span class="badge b-day">화 Prudential</span>
+          </div>
+          <p class="lead" style="margin:6px 0 0;">메인 선물 X. <strong>발 물집 방지 + 가족 실용 보조 + 본인 상비</strong>가 핵심. 호텔 옆 91 Seaport / Prudential 안 800 Boylston / 587 Boylston 중 편한 곳.</p>
+        </div>
+        <h3>🦶 본인용 (오늘 출발 전!)</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="c1">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/74_pharmacy_band_aid_hydro_seal.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/74_pharmacy_band_aid_hydro_seal.jpg" alt=""></a>
+            <label for="c1"><strong>Band-Aid Hydro Seal</strong> <span class="price">$8</span><span class="note">물집 방지. 발에 미리 붙이고 출발.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="c2">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/73_pharmacy_advil_liquigels.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/73_pharmacy_advil_liquigels.jpg" alt=""></a>
+            <label for="c2"><strong>Advil Liqui-Gels</strong> <span class="price">$10</span><span class="note">두통/근육통 상비.</span></label>
+          </li>
+        </ul>
+        <h3>🎁 가족/회사 예비 보조</h3>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="c3">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/54_cvs_burts_bees_lip_balm.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/54_cvs_burts_bees_lip_balm.png" alt=""></a>
+            <label for="c3"><strong>Burt's Bees Lip Balm 4팩</strong> <span class="price">$10</span> <span class="qty">회사 예비/여동생/누나</span><span class="note">오리지널/무향이 안전.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="c4">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/71_pharmacy_aquaphor_healing_ointment.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/71_pharmacy_aquaphor_healing_ointment.jpg" alt=""></a>
+            <label for="c4"><strong>Aquaphor Healing Ointment</strong> <span class="price">$6-10</span> <span class="qty">엄마/와이프 1-3개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="c5">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/56_cvs_cerave_daily_lotion.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/56_cvs_cerave_daily_lotion.png" alt=""></a>
+            <label for="c5"><strong>CeraVe Daily Lotion (travel size)</strong> <span class="price">$8-16</span> <span class="qty">와이프 보조</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="c6">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/72_pharmacy_neosporin_ointment.jpg" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/72_pharmacy_neosporin_ointment.jpg" alt=""></a>
+            <label for="c6"><strong>Neosporin</strong> <span class="price">$7</span> <span class="qty">가족 상비 1개</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="c7">
+            <label for="c7"><strong>Reese's / M&amp;Ms 시즈널 팩</strong> <span class="price">$2-8</span> <span class="qty">회사 예비 간식 2-4개</span><span class="note">초콜릿 캐리어 안쪽.</span></label>
+          </li>
+          <li>
+            <input type="checkbox" id="c8">
+            <a class="thumb-link" href="boston_guide_assets/screenshots/57_cvs_crest_whitestrips.png" target="_blank"><img class="thumb" src="boston_guide_assets/screenshots/57_cvs_crest_whitestrips.png" alt=""></a>
+            <label for="c8"><strong>(선택) Crest 3D Whitestrips</strong> <span class="price">$35-80</span> <span class="qty">와이프 또는 본인 1개</span><span class="note">민감성 주의. 고가라 한 명만.</span></label>
+          </li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=CVS+91+Seaport+Blvd+Boston" target="_blank" rel="noreferrer">CVS Seaport</a>
+          <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=CVS+800+Boylston+St+Boston" target="_blank" rel="noreferrer">CVS Prudential</a>
+          <a class="btn sec" href="https://www.google.com/maps/search/?api=1&query=CVS+587+Boylston+St+Boston" target="_blank" rel="noreferrer">CVS 587 Boylston</a>
+        </div>
+      </section>
+
+      <!-- TJ 매장 비교 -->
+      <section id="tj-stores">
+        <h2>📍 Trader Joe's 매장 3곳 가용성</h2>
+        <p class="lead">TJ는 <strong>매장 크기에 따라 품목 차이가 큼</strong>. 한정 토트/시즌템은 큰 매장 우선, 작은 매장은 베이직 위주. 본인 동선에서 어디서 뭘 노릴지 미리 정해두면 시간 절약.</p>
+
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-tj">748 Memorial Dr (Cambridge)</span>
+            <span class="badge b-day">⭐ 메인 (월 16:15)</span>
+          </div>
+          <h3 style="margin:6px 0 6px;">큰 매장 — Cambridge 본진</h3>
+          <p style="margin:0 0 6px; font-size:14px;"><strong>크기</strong>: Full-size, 보스턴권 TJ 중 가장 풀라인. Charles River 옆.</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>✅ 잘 풀리는 것</strong>: 한정 Mini Canvas Tote, Mini Insulated, Lavender Tote, 시즌 한정템, Hand Cream/Dewy Serum, Garlic Butter Nut Mix, 모든 시즈닝/베이직</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>전략</strong>: <strong>여기서 한정 토트 다 잡기</strong>. Harvard 쇼핑 직후 도보 15분 → 풀카트 한 번에. 1차 메인 쇼핑.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+748+Memorial+Dr+Cambridge" target="_blank" rel="noreferrer">지도</a>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-tj">500 Boylston St (Back Bay)</span>
+            <span class="badge b-day">화 보충</span>
+          </div>
+          <h3 style="margin:6px 0 6px;">큰 매장 — 다운타운 본점</h3>
+          <p style="margin:0 0 6px; font-size:14px;"><strong>크기</strong>: Full-size, Back Bay 한복판. Prudential/CVS 옆이라 동선 좋음.</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>✅ 잘 풀리는 것</strong>: 거의 748과 동급. 한정 토트도 보통 있음(단 다운타운이라 빨리 빠짐). 화요일 오전엔 신선한 재고.</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>전략</strong>: <strong>748에서 한정 토트 못 잡았으면 여기서 보충</strong>. Cookie Butter/PB Cups 대량 보충. CVS와 묶어서 1시간 컷.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+500+Boylston+St+Boston" target="_blank" rel="noreferrer">지도</a>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <div class="badges">
+            <span class="badge b-tj">Fort Point — 44 Thomson Pl</span>
+            <span class="badge b-day">화·수 호텔 옆</span>
+          </div>
+          <h3 style="margin:6px 0 6px;">작은 매장 — 호텔 도보 5분</h3>
+          <p style="margin:0 0 6px; font-size:14px;"><strong>크기</strong>: Compact format. 통로 좁고 SKU 적음. <strong>한정 토트는 거의 운빨</strong>.</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>✅ 잘 풀리는 것</strong>: PB Cups, Mini Pretzels, Cookie Butter, Furikake, Mushroom 시즈닝 같은 베이직 SKU. Hand Cream도 보통 있음.</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>❌ 약한 것</strong>: 한정 시즌 토트, Lavender Tote, Mini Insulated, Dewy Skin Serum 같은 신상/한정. 의류/잡화도 빈약.</p>
+          <p style="margin:0 0 4px; font-size:14px;"><strong>전략</strong>: <strong>마감 보충/잊은 거 채우기 전용</strong>. 메인 카트는 절대 여기서 X. 캐리 부담 없으니 수요일 마지막 점검에 최적.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+44+Thomson+Pl+Boston" target="_blank" rel="noreferrer">지도</a>
+          </div>
+        </div>
+
+        <div class="box tip">
+          <strong>품목별 매장 우선순위 요약</strong>
+          <ul style="margin:6px 0 0; padding-left:18px; font-size:13.5px;">
+            <li><strong>한정 토트 (Mini Canvas, Insulated, 시즌)</strong>: 748 Memorial &gt;&gt; 500 Boylston &gt; Fort Point</li>
+            <li><strong>일반 Reusable Bag (10개+ 회사용)</strong>: 어디든 OK, Fort Point도 충분</li>
+            <li><strong>Cookie Butter / PB Cups / Pretzels / Snickerdoodles</strong>: 어디든 OK</li>
+            <li><strong>Furikake / Mushroom 시즈닝</strong>: 어디든 OK</li>
+            <li><strong>Hand Cream / 화장품</strong>: 748 Memorial = 500 Boylston &gt; Fort Point</li>
+            <li><strong>Garlic Butter Nut Mix / Chili Lime Chips / Dried Mango (신상/시즌)</strong>: 748 = 500 Boylston &gt;&gt; Fort Point</li>
+          </ul>
+        </div>
+
+        <div class="box warn">
+          <strong>입구에서 무조건 물어볼 것:</strong> "Is there a bag limit today? Do you have Mini Canvas Totes / Mini Insulated in stock?" — 직원이 위치 알려주거나 "오늘 매진"이라고 대답해줌. 매장 한 바퀴 도는 시간 절약.
+        </div>
+      </section>
+
+      <!-- 사람별 분배 -->
+      <section id="people">
+        <h2>🎁 사람별 분배 메뉴</h2>
+        <p class="lead">매장에서 사진 펼쳐놓고 조합하는 용도. 가격은 세전 대략가.</p>
+
+        <h3>🏢 회사</h3>
+        <div class="gift-grid">
+          <div class="gift-card">
+            <div class="head">
+              <h4>일반 부서원 8명</h4>
+              <span class="price">$1.5-3/명</span>
+            </div>
+            <ul>
+              <li>TJ 큰 봉지(Mini Pretzels/PB Cups/Snickerdoodles 등) 6-8봉을 한국에서 지퍼백 8개로 소분</li>
+              <li>각 지퍼백에 2-3종 섞기</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>회사 친한 10명</h4>
+              <span class="price">$4-8/명</span>
+            </div>
+            <ul>
+              <li>TJ Mini Canvas 또는 일반 Reusable Bag 1개</li>
+              <li>안에 지퍼백 간식 1개 + Burt's Bees Lip Balm 1개 (선택)</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>부서장님 1명 (단정)</h4>
+              <span class="price">$25-40</span>
+            </div>
+            <ul>
+              <li>Harvard Pen + Magnet 또는 Notebook</li>
+              <li>Mushroom &amp; Company 시즈닝 1개</li>
+              <li>Hu Chocolate Bar 1개 (Whole Foods)</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>부서장님 (프리미엄)</h4>
+              <span class="price">$45-65</span>
+            </div>
+            <ul>
+              <li>Harvard Cap 1개</li>
+              <li>Harvard Pen 또는 Lanyard</li>
+              <li>Hu Chocolate Bar 1개 (Whole Foods)</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>회사 예비 4-5개</h4>
+              <span class="price">$2-8/개</span>
+            </div>
+            <ul>
+              <li>Harvard Magnet/Keychain/Pen</li>
+              <li>또는 Burt's Bees Lip Balm</li>
+              <li>또는 RXBAR/KIND 단품</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>👨‍👩‍👧‍👦 가족 + 친한친구</h3>
+        <div class="gift-grid">
+          <div class="gift-card">
+            <div class="head">
+              <h4>와이프 (1순위)</h4>
+              <span class="price">$45-120</span>
+            </div>
+            <ul>
+              <li>TJ Canvas Tote 또는 Harvard Crest Tote</li>
+              <li>안에 → Hu Chocolate + Speculoos Cookie Butter + TJ Hand Cream + Aquaphor + (선택) Crest Whitestrips</li>
+              <li>옵션: MFA Scarf (수요일 가면)</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>친한친구 1명 (꽤 챙김)</h4>
+              <span class="price">$35-70</span>
+            </div>
+            <ul>
+              <li>Harvard Cap 또는 Red Sox Cap</li>
+              <li>TJ Mini Canvas + PB Cups + Speculoos</li>
+              <li>또는 Hu Chocolate</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>엄마</h4>
+              <span class="price">$45-90</span>
+            </div>
+            <ul>
+              <li>TJ Canvas Tote 또는 Harvard Tote</li>
+              <li>Speculoos Cookie Butter 1병 + Hu Chocolate</li>
+              <li>Aquaphor + Hand Cream</li>
+              <li>옵션: Harvard Crewneck</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>아빠</h4>
+              <span class="price">$35-85</span>
+            </div>
+            <ul>
+              <li>Harvard Cap 또는 Red Sox Cap</li>
+              <li>Mushroom 시즈닝 + Garlic Butter Nut Mix</li>
+              <li>Dark Chocolate Mini Pretzels</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>누나</h4>
+              <span class="price">$15-45</span>
+            </div>
+            <ul>
+              <li>TJ Mini Canvas 또는 Insulated Tote</li>
+              <li>TJ Hand Cream + Speculoos Cookie Butter</li>
+              <li>Harvard Magnet</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>남동생</h4>
+              <span class="price">$15-45</span>
+            </div>
+            <ul>
+              <li>TJ Reusable Bag</li>
+              <li>Garlic Butter Nut Mix + PB Cups + Chili Lime Chips</li>
+              <li>Harvard Pen 또는 Cap</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>여동생 2명 (각각)</h4>
+              <span class="price">$10-35</span>
+            </div>
+            <ul>
+              <li>TJ Mini Canvas 또는 Reusable Bag</li>
+              <li>Hand Cream + PB Cups + Burt's Bees Lip Balm</li>
+              <li>Harvard Sticker/Pen</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>매형 / 매부 (각각)</h4>
+              <span class="price">$12-50</span>
+            </div>
+            <ul>
+              <li>TJ Reusable Bag</li>
+              <li>Garlic Butter Nut Mix + Mushroom 시즈닝</li>
+              <li>옵션: Red Sox Cap 또는 Harvard Cap</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>조카 4살</h4>
+              <span class="price">$12-35</span>
+            </div>
+            <ul>
+              <li>Harvard Kids Tee</li>
+              <li>Harvard Keychain Plushie</li>
+              <li>옵션: Make Way for Ducklings 그림책</li>
+            </ul>
+          </div>
+          <div class="gift-card">
+            <div class="head">
+              <h4>조카 1살</h4>
+              <span class="price">$12-30</span>
+            </div>
+            <ul>
+              <li>Harvard Baby Onesie</li>
+              <li>Bib (있으면)</li>
+              <li>부드러운 plush 또는 board book</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box tip">
+          <strong>총 수량 감:</strong> 토트/리유저블 18-22개 · 큰 봉지 간식 8-12개 · Harvard 소형 12-18개 · 가족 메인 8-12개. <strong>회사 30개 + 가족·친한친구 12개 + 예비 5개 ≈ 50개 단위</strong>로 잡으면 됨.
+        </div>
+      </section>
+
+      <!-- 검역 주의 -->
+      <section id="warn">
+        <h2>⚠️ 한국 검역 / 통관</h2>
+        <div class="box warn">
+          <strong>❌ 절대 사지 말 것:</strong>
+          <ul style="margin:6px 0 0; padding-left:18px;">
+            <li><strong>Everything But The Bagel Sesame Seasoning</strong> — 양귀비씨(Poppy Seed) 함유 → 한국 통관 압수 사례 있음. <strong>Nori Komi Furikake로 대체</strong>.</li>
+            <li><strong>육류 가공품</strong> (육포, 소시지, 햄) — 검역법상 금지.</li>
+            <li><strong>생과일/생채소</strong> — 신고 의무 + 압수 가능.</li>
+            <li><strong>Hold the Cone Mini Ice Cream</strong> — 보냉백 없이 캐리어에서 다 녹음.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <strong>✅ OK인 것:</strong>
+          <ul style="margin:6px 0 0; padding-left:18px;">
+            <li>견과류, 시리얼/그래놀라/바, 초콜릿, 쿠키, 시즈닝(허브), 잼/스프레드</li>
+            <li>차/커피, 비식품(토트백/모자/굿즈)</li>
+            <li>화장품/약품 (개인 사용량). Crest Whitestrips는 1통 정도 OK.</li>
+            <li>식품 총합 면세 한도 = $200 (모든 휴대품 합산 $800 면세).</li>
+          </ul>
+        </div>
+        <div class="box tip">
+          <strong>위탁 수하물:</strong> 액체 100ml 이상은 무조건 위탁. 와인/올리브오일/시럽/Speculoos Cookie Butter도 수하물에. 깨질 거 옷으로 감싸기.
+        </div>
+      </section>
+
+    </main>
+
+    <footer style="padding:18px 18px 28px; border-top:1px solid var(--line); background:#fbfaf6; color:var(--muted); font-size:12.5px;">
+      Hyatt Place Boston Seaport District 기준 · 5/4(월) 09:00 출발 · 5/7(목) 12:30 비행 · 남자 둘 여행
+    </footer>
+  </div>
+</body>
+</html>
