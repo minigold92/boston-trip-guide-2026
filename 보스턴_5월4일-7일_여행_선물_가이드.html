@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>보스턴 5/4-5/7 여행 & 선물 가이드</title>
+  <style>
+    :root {
+      --ink: #202426;
+      --muted: #657176;
+      --line: #d9e0e3;
+      --paper: #fffdf8;
+      --wash: #f4f7f6;
+      --teal: #0f5d66;
+      --wine: #8a1538;
+      --green: #386641;
+      --gold: #b47b16;
+      --blue: #234b6d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eef3f1;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.62;
+    }
+
+    a { color: var(--teal); }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      box-shadow: 0 18px 80px rgba(25, 35, 35, 0.12);
+    }
+
+    header {
+      padding: 42px 34px 28px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(15,93,102,0.12), transparent 42%),
+        linear-gradient(315deg, rgba(180,123,22,0.14), transparent 40%),
+        #fbf8ef;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: 0;
+      color: var(--teal);
+    }
+
+    .subtitle {
+      max-width: 860px;
+      margin: 16px 0 0;
+      color: #3f4d50;
+      font-size: 17px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      border: 1px solid rgba(15,93,102,0.18);
+      background: rgba(255,255,255,0.7);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: #32484c;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 10px 22px;
+      background: rgba(255,253,248,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #314447;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    main { padding: 26px 34px 46px; }
+
+    section {
+      margin: 34px 0 46px;
+      scroll-margin-top: 72px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      color: var(--wine);
+      font-size: clamp(23px, 3vw, 32px);
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      color: var(--teal);
+      font-size: 21px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0 0 18px;
+      max-width: 920px;
+      color: #334044;
+      font-size: 16px;
+    }
+
+    .callout {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-left: 5px solid var(--gold);
+      background: #fff5df;
+      border-radius: 8px;
+    }
+
+    .callout strong { color: #744e09; }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 17px;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #edf4f5;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 4px;
+    }
+
+    .map-link,
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid rgba(15,93,102,0.26);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .route-step {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 12px;
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .route-step:first-of-type { border-top: 0; }
+
+    .route-time {
+      color: var(--wine);
+      font-weight: 850;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      table-layout: fixed;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 11px 12px;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: #eaf2f3;
+      color: var(--teal);
+      text-align: left;
+      font-size: 13px;
+    }
+
+    td {
+      font-size: 14px;
+    }
+
+    .price {
+      color: var(--wine);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ok { color: var(--green); font-weight: 800; }
+    .warn { color: var(--gold); font-weight: 800; }
+    .no { color: var(--wine); font-weight: 800; }
+
+    ul {
+      padding-left: 22px;
+      margin: 9px 0 0;
+    }
+
+    li { margin: 8px 0; }
+
+    .day {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 16px;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .day:first-of-type { border-top: 0; }
+
+    .date {
+      font-weight: 850;
+      color: var(--wine);
+    }
+
+    .timeblock {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 12px;
+      margin: 0 0 12px;
+    }
+
+    .time {
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    figure {
+      margin: 16px 0;
+      padding: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+    }
+
+    figure img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      background: #f7f7f7;
+      border-radius: 4px;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-gallery figure img {
+      height: 420px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      margin: 12px 0;
+      padding: 12px 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .source-list {
+      columns: 2;
+      column-gap: 26px;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .source-list li {
+      break-inside: avoid;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 34px 36px;
+      color: var(--muted);
+      font-size: 13px;
+      background: #fbfaf6;
+    }
+
+    @media (max-width: 820px) {
+      header, main, footer { padding-left: 18px; padding-right: 18px; }
+      .grid.two, .grid.three, .gallery { grid-template-columns: 1fr; }
+      .day, .timeblock, .route-step { grid-template-columns: 1fr; gap: 4px; }
+      table { table-layout: auto; }
+      th, td { font-size: 13px; padding: 9px; }
+      .source-list { columns: 1; }
+      figure img { height: 280px; }
+      .product-gallery figure img { height: 360px; }
+    }
+
+    @page {
+      size: 17in 11in;
+      margin: 0.35in;
+    }
+
+    @media print {
+      nav { display: none; }
+      body { background: #fff; }
+      header, main, footer { padding-left: 18px; padding-right: 18px; }
+      .page { max-width: none; box-shadow: none; }
+      section { break-inside: auto; page-break-inside: auto; margin: 20px 0 28px; }
+      h1 { font-size: 38px; }
+      h2 { font-size: 24px; }
+      h3 { font-size: 17px; }
+      th, td { padding: 8px 9px; font-size: 12px; }
+      .lead { max-width: none; }
+      figure img { height: 260px; max-height: 260px; }
+      .product-gallery figure img { height: 300px; max-height: 300px; }
+      .callout { padding: 11px 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>보스턴 5/4-5/7<br>여행 & 선물 가이드</h1>
+      <p class="subtitle">Hyatt Seaport District 숙소 기준. 5/3 밤 산책은 이미 완료한 것으로 보고, 5/4 월요일부터 5/6 수요일까지 “관광 + 쇼핑”을 끝내고 5/7 목요일 12:30 비행은 이동일로 비웁니다.</p>
+      <div class="meta">
+        <span class="pill">동료용 대량 선물과 가족/아내용 선물 분리</span>
+        <span class="pill">New Balance는 메인 플랜에서 제외</span>
+        <span class="pill">Trader Joe's 토트/에코백 구매순서 추가</span>
+        <span class="pill">Google Maps 동선 링크 추가</span>
+        <span class="pill">Prudential View Boston + CVS 보충 쇼핑 추가</span>
+        <span class="pill">실제 받을 사람 29명 기준 배분표</span>
+        <span class="pill">한국어 후기/공식 가격/영업시간 근거 등급 표시</span>
+        <span class="pill">공식/후기 캡처 다수 포함</span>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#decision">핵심 결론</a>
+      <a href="#tj-priority">TJ 상품사진</a>
+      <a href="#harvard-priority">Harvard/MIT</a>
+      <a href="#community-picks">커뮤니티픽</a>
+      <a href="#route-map">동선/지도</a>
+      <a href="#view-boston">View Boston</a>
+      <a href="#cvs-picks">CVS</a>
+      <a href="#gift-allocation">실구매 배분</a>
+      <a href="#tj-stores">TJ 지점</a>
+      <a href="#totes">TJ 에코백</a>
+      <a href="#schedule">일정</a>
+      <a href="#buy">구매 우선순위</a>
+      <a href="#cautions">수하물/한국 반입</a>
+      <a href="#screenshots">캡처</a>
+      <a href="#evidence">후기 근거</a>
+      <a href="#review-map">후기 링크맵</a>
+      <a href="#sources">근거 링크</a>
+    </nav>
+
+    <main>
+      <section id="decision">
+        <h2>핵심 결론</h2>
+        <p class="lead">이번 버전은 New Balance를 메인 플랜에서 빼고, <strong>Trader Joe's + Harvard/MIT 굿즈 + 보스턴 로컬 소품</strong>으로 선물을 끝내는 구성입니다. 회사는 부서원 8명과 동료 10명을 분리하고, 가족은 사람별로 “제대로 챙길 사람 / 적당히 좋은 것 / 가볍게 귀여운 것”으로 나눕니다.</p>
+
+        <div class="grid three">
+          <div class="panel">
+            <span class="tag">대량용</span>
+            <h3>회사동료/가벼운 친구</h3>
+            <p><strong>개당 $3-8</strong>을 기준으로 Trader Joe's Furikake, Mushroom & Company, 초콜릿, Boston magnet/keychain. 재고가 있으면 Mini Canvas Tote를 먼저 집습니다.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">중간급</span>
+            <h3>친한 친구/학생/조카</h3>
+            <p><strong>$20-60/명</strong>. Red Sox cap, Harvard/MIT cap, Harvard/MIT 문구 세트, Trader Joe's Mini Canvas/Insulated Tote+스낵 세트가 좋습니다.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">프리미엄</span>
+            <h3>가족/아내/정말 친한 친구</h3>
+            <p><strong>$30-120+/명</strong>. Harvard/MIT 후드·크루넥, Oohjacquelina 주얼리, MFA 스카프/토트, Taza 초콜릿 묶음, 로컬 향/캔들.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>현장 구매 한 줄 결론:</strong> Trader Joe's에서는 <strong>Mini Canvas Tote Bag이 있으면 1순위</strong>, 없으면 Mini Insulated Tote, 라지 Canvas Tote, Citrus Jute Bag, Reusable Grocery Bag 순서로 봅니다. Harvard/MIT 굿즈는 부모님·형제·조카용 “보스턴 다녀온 티 나는 선물”로 씁니다.
+        </div>
+
+        <div class="callout">
+          <strong>사지 말 것:</strong> <strong>Everything But The Bagel Sesame Seasoning Blend</strong>는 한국 반입 금지/검역 리스크가 있다고 확인했으니 이 문서의 추천 목록에서 제외했습니다. 시즈닝은 Nori Komi Furikake와 Mushroom & Company 위주로만 봅니다.
+        </div>
+      </section>
+
+      <section id="tj-priority">
+        <h2>Trader Joe's 매장에서 보는 순서와 상품 캡처</h2>
+        <p class="lead">이 섹션만 보고 장바구니에 넣으면 됩니다. <strong>Everything But The Bagel은 제외</strong>했고, 공식 페이지에서 잘 보이는 상품은 공식 캡처를, 공식 페이지가 없는 상품은 상품 사진이 잘 보이는 리뷰/상품 페이지 캡처를 넣었습니다.</p>
+
+        <div class="gallery product-gallery">
+          <figure><a href="boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png"><img src="boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png" alt="Trader Joe's Mini Canvas Tote Bag 공식 캡처"></a><figcaption>1순위: Mini Canvas Tote Bag. 공식 캡처, 지역 재고 변동</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png"><img src="boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png" alt="Trader Joe's Mini Insulated Tote 공식 캡처"></a><figcaption>2순위: Mini Insulated Tote Bag. 공식 캡처</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/29_tj_nori_furikake.png"><img src="boston_guide_assets/screenshots/29_tj_nori_furikake.png" alt="Trader Joe's Nori Komi Furikake 공식 캡처"></a><figcaption>3순위: Nori Komi Furikake. 공식 캡처, $2.99</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/32_tj_umami_seasoning.png"><img src="boston_guide_assets/screenshots/32_tj_umami_seasoning.png" alt="Trader Joe's Mushroom & Company Umami Seasoning 상품 캡처"></a><figcaption>4순위: Mushroom & Company Umami. 상품 사진 캡처</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/33_tj_dark_chocolate_pb_cups.png"><img src="boston_guide_assets/screenshots/33_tj_dark_chocolate_pb_cups.png" alt="Trader Joe's Dark Chocolate Peanut Butter Cups 상품 캡처"></a><figcaption>5순위: Dark Chocolate Peanut Butter Cups. 큰 통/소포장 현장 확인</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/35_tj_mini_pretzels.png"><img src="boston_guide_assets/screenshots/35_tj_mini_pretzels.png" alt="Trader Joe's Dark Chocolate Covered Mini Pretzels 상품 캡처"></a><figcaption>6순위: Dark Chocolate Covered Mini Pretzels. 봉지 간식 후보</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/34_tj_hand_cream.png"><img src="boston_guide_assets/screenshots/34_tj_hand_cream.png" alt="Trader Joe's Ultra Moisturizing Hand Cream 상품 캡처"></a><figcaption>7순위: Ultra Moisturizing Hand Cream. 여성 가족/와이프 보조 선물</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/30_tj_crunchy_chili_onion.png"><img src="boston_guide_assets/screenshots/30_tj_crunchy_chili_onion.png" alt="Trader Joe's Crunchy Chili Onion 공식 캡처"></a><figcaption>8순위: Crunchy Chili Onion. 공식 캡처, 요리하는 사람에게만</figcaption></figure>
+        </div>
+
+        <table>
+          <thead><tr><th>순서</th><th>집을 상품</th><th>예상가</th><th>누구에게</th><th>현장 판단</th></tr></thead>
+          <tbody>
+            <tr><td class="ok">1</td><td><strong>Mini Canvas Tote Bag</strong></td><td class="price">$2.99</td><td>부서원, 여동생, 와이프 보조</td><td>있으면 먼저 확보. 재고 없을 가능성이 높음. 색이 예쁜 것 위주로 8-12개까지.</td></tr>
+            <tr><td class="ok">2</td><td><strong>Mini Insulated Tote Bag</strong></td><td class="price">$3.99, 공식 페이지상 지역 재고 변동</td><td>와이프/친한 가족/여성 가족</td><td>선물감은 좋지만 부피가 큼. 1-3개만.</td></tr>
+            <tr><td class="ok">3</td><td><strong>Nori Komi Furikake</strong></td><td class="price">$2.99</td><td>부서원/동료/가족 공용</td><td>Everything But The Bagel 대체 1순위. 김+깨라 설명이 쉽고 가볍다.</td></tr>
+            <tr><td class="ok">4</td><td><strong>Mushroom & Company Multipurpose Umami Seasoning Blend</strong></td><td class="price">$2.99-3.49 전후</td><td>요리하는 동료/가족</td><td>감칠맛 시즈닝. Furikake보다 조금 더 요리하는 사람용.</td></tr>
+            <tr><td>5</td><td><strong>Dark Chocolate Peanut Butter Cups</strong></td><td class="price">소포장/큰 통 매장 확인</td><td>동료, 사무실 간식, 친구</td><td>소포장이 있으면 동료용, 큰 통이면 부서/가족용 공용 간식.</td></tr>
+            <tr><td>6</td><td><strong>Dark Chocolate Covered Mini Pretzels</strong></td><td class="price">$3-5 전후</td><td>예비 선물, 사무실 간식</td><td>맛 호불호 적고 나눠 먹기 좋음. 봉지라 캐리어에 넣기 쉬움.</td></tr>
+            <tr><td>7</td><td><strong>Ultra Moisturizing Hand Cream</strong></td><td class="price">$4.99 전후</td><td>와이프 보조, 누나/여동생</td><td>토트+초콜릿과 묶으면 선물감이 올라감. 액체류라 용량 확인 후 위탁 권장.</td></tr>
+            <tr><td>8</td><td><strong>Crunchy Chili Onion</strong></td><td class="price">$4.49</td><td>요리 좋아하는 사람만</td><td>유리병+오일이라 대량 비추. 위탁수하물에 옷으로 감싸기.</td></tr>
+            <tr><td class="no">사지 말 것</td><td><strong>Everything But The Bagel Sesame Seasoning Blend</strong></td><td>-</td><td>-</td><td>한국 반입 금지/검역 리스크로 제외. 매장에서 보여도 담지 않기.</td></tr>
+          </tbody>
+        </table>
+
+
+      </section>
+
+      <section id="harvard-priority">
+        <h2>Harvard/MIT 굿즈: 매장에서 보는 순서와 상품 사진</h2>
+        <p class="lead">Harvard/MIT는 “보스턴 다녀온 티”가 가장 확실해서 가족과 가까운 사람용으로 씁니다. 위쪽 사진은 공식 상품 이미지를 내려받아 넣었고, 가격은 공식 페이지 기준이라 매장 재고/색상은 현장에서 다시 확인하세요.</p>
+
+        <div class="gallery product-gallery">
+          <figure><a href="boston_guide_assets/screenshots/37_harvard_hoodie_product.jpg"><img src="boston_guide_assets/screenshots/37_harvard_hoodie_product.jpg" alt="Harvard Hooded Crest Sweatshirt 공식 상품 이미지"></a><figcaption>Harvard hoodie. 공식 상품 이미지, 대표가 $48부터</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/38_harvard_classic_h_hat_product.jpg"><img src="boston_guide_assets/screenshots/38_harvard_classic_h_hat_product.jpg" alt="Harvard Classic H Hat 공식 상품 이미지"></a><figcaption>Harvard cap. Classic H Hat 공식 이미지, $30</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/39_harvard_baby_onesie_product.jpg"><img src="boston_guide_assets/screenshots/39_harvard_baby_onesie_product.jpg" alt="Harvard H Infant Onesie 공식 상품 이미지"></a><figcaption>조카 1살 후보: Harvard H Infant Onesie, $15</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/40_mit_hoodie_product.jpg"><img src="boston_guide_assets/screenshots/40_mit_hoodie_product.jpg" alt="MIT League Heritage Hooded Sweatshirt 공식 상품 이미지"></a><figcaption>MIT hoodie. The Coop 공식 이미지, $69.98</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/41_mit_genius_hat_product.jpg"><img src="boston_guide_assets/screenshots/41_mit_genius_hat_product.jpg" alt="MIT Genius Hat 공식 상품 이미지"></a><figcaption>MIT cap 후보. Genius Hat 공식 이미지, $29.98</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/42_harvard_crest_tote_product.jpg"><img src="boston_guide_assets/screenshots/42_harvard_crest_tote_product.jpg" alt="Harvard Crest Tote Bag 공식 상품 이미지"></a><figcaption>Harvard tote 후보. Crest Tote Bag 공식 이미지, $44.99</figcaption></figure>
+        </div>
+
+        <table>
+          <thead><tr><th>순서</th><th>집을 상품</th><th>예상가</th><th>누구에게</th><th>현장 판단</th></tr></thead>
+          <tbody>
+            <tr><td class="ok">1</td><td><strong>Harvard hoodie / crewneck</strong></td><td class="price">$45-100</td><td>엄마, 아빠, 본인, 아주 가까운 가족</td><td>가장 알아보기 쉽고 선물감이 큼. 사이즈를 모르겠으면 후드보다 crewneck, 색은 navy/gray/crimson 중 무난한 것.</td></tr>
+            <tr><td class="ok">2</td><td><strong>Harvard cap</strong></td><td class="price">$28-35</td><td>아빠, 매형, 남동생, 와이프 커플템</td><td>옷 사이즈 리스크가 없어서 안전. 로고가 큰 것보다 Classic H/Est. 1636처럼 단정한 디자인이 오래 씀.</td></tr>
+            <tr><td class="ok">3</td><td><strong>Harvard baby onesie / kids tee</strong></td><td class="price">$15-35</td><td>조카 1살, 조카 4살</td><td>먹는 것보다 기억에 남음. 1살은 onesie/bib, 4살은 kids tee. 사이즈는 한 단계 넉넉하게.</td></tr>
+            <tr><td>4</td><td><strong>MIT hoodie / sweatshirt</strong></td><td class="price">$45-70</td><td>남동생, IT/공대 취향 가족</td><td>Harvard보다 설명은 덜 쉽지만 취향 맞으면 더 센스 있음. 사이즈 확실할 때만 의류로.</td></tr>
+            <tr><td>5</td><td><strong>MIT cap / small accessories</strong></td><td class="price">$8-35</td><td>남동생, 동료 중 친한 사람, 예비 선물</td><td>의류가 애매하면 cap, magnet, sticker, pen, keychain으로 낮추기. 작은 건 부피 대비 효율 좋음.</td></tr>
+            <tr><td>6</td><td><strong>Harvard/MIT tote, mug, stationery</strong></td><td class="price">$5-35</td><td>누나, 여동생, 학생 가족</td><td>토트는 실물이 예쁘면 좋고, 머그는 무거워서 1개 이하. 문구류는 조카/동생/예비용으로 좋음.</td></tr>
+          </tbody>
+        </table>
+
+
+
+        <div class="callout">
+          <strong>실전 판단:</strong> Harvard는 부모님/가족에게 설명이 쉽고, MIT는 남동생이나 공대/IT 감성 있는 사람에게 더 센스 있습니다. 의류 사이즈가 애매하면 바로 cap/tote/stationery로 내려가세요.
+        </div>
+      </section>
+
+      <section id="community-picks">
+        <h2>레딧/최신 커뮤니티 추가 확인</h2>
+        <p class="lead">2026년 5월 4일 기준으로 r/traderjoes, r/boston, r/mbta 쪽 최신 글과 공식 Trader Joe's 신상품 정보를 한 번 더 봤습니다. 결론은 “기존 1순위는 유지하고, 보이면 추가로 집을 것”만 아래에 올리는 게 맞습니다.</p>
+
+        <div class="gallery product-gallery">
+          <figure><a href="boston_guide_assets/screenshots/46_tj_lavender_canvas_tote_reddit.png"><img src="boston_guide_assets/screenshots/46_tj_lavender_canvas_tote_reddit.png" alt="Trader Joe's Lavender Canvas Tote Bag 레딧 상품 캡처"></a><figcaption>Lavender Canvas Tote. 레딧 메가스레드 상품 사진, $3.99</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/47_tj_dewy_skin_serum_reddit.png"><img src="boston_guide_assets/screenshots/47_tj_dewy_skin_serum_reddit.png" alt="Trader Joe's Dewy Skin Serum 레딧 상품 캡처"></a><figcaption>Dewy Skin Serum. 2026년 5월 레딧 리뷰 사진, $9.99</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png"><img src="boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png" alt="Trader Joe's Garlic Butter Nut Mix 레딧 상품 캡처"></a><figcaption>Garlic Butter Nut Mix. 레딧 신상품 사진, $6.99</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png"><img src="boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png" alt="Trader Joe's Sweet Onion Style Pretzel Twists 기사 캡처"></a><figcaption>Sweet Onion Style Pretzel Twists. Parade 2026년 3월 신상품 캡처</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png"><img src="boston_guide_assets/screenshots/50_tj_pinks_whites_cookies_review.png" alt="Trader Joe's Pinks & Whites Cookies 리뷰 캡처"></a><figcaption>Pinks & Whites Cookies. 상품 모양 확인용 리뷰 캡처</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/51_mbta_gifts_wardmaps_store.png"><img src="boston_guide_assets/screenshots/51_mbta_gifts_wardmaps_store.png" alt="MBTA Gifts WardMaps retail store 캡처"></a><figcaption>MBTA Gifts / WardMaps. Porter Square 근처 공식 매장 캡처</figcaption></figure>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <span class="tag">TJ 최신 토트</span>
+            <h3>Lavender Canvas Tote Bag</h3>
+            <p><strong class="price">$3.99</strong>. 공식 상품 목록과 2026년 3월 레딧 토트 재입고/라벤더 토트 글에서 확인. Mini Canvas가 없을 때 와이프 보조, 누나, 여동생, 친한 친구용으로 1-4개만 봅니다. 회사 18명분 대량 구매용은 부피 때문에 비추.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">TJ 최신 스킨케어</span>
+            <h3>Dewy Skin Serum</h3>
+            <p><strong class="price">$9.99</strong>. 2026년 5월 r/traderjoes에서 최근 리뷰가 많이 올라온 신상품. 와이프, 누나, 여동생 중 스킨케어 좋아하는 사람에게만 1-3개. 피부 민감하면 피하고, 1 fl oz라 기내 액체 규정 안에는 들어오지만 위탁이 편합니다.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">TJ 간식/견과</span>
+            <h3>Garlic Butter Nut Mix / Sweet & Spicy Pecans / PB Cups</h3>
+            <p><strong class="price">$3-7 전후</strong>. 레딧 선물 추천 글에서 견과, PB cups, snack mix가 반복 언급됩니다. 부서 공용 간식, 매형, 여동생 남편, 남동생에게 좋고, 견과류 알레르기만 조심하면 실패율이 낮습니다.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">TJ 공용 간식</span>
+            <h3>Sweet Onion Pretzel Twists / Pinks & Whites Cookies</h3>
+            <p><strong class="price">$3-5 전후</strong>. Trader Joe's 2026 봄 신상품/상품 목록에서 확인. 가볍게 먹는 용도로 좋지만 부피가 커서 1-2개만. 개인별 선물보다 부서 테이블에 놓는 간식용입니다.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">보스턴 로컬</span>
+            <h3>MBTA Gifts / WardMaps</h3>
+            <p><strong class="price">$6-25+ 전후</strong>. r/boston/r/mbta에서 T 로고, 지도, 장난감, 오너먼트가 반복 추천됩니다. 조카 4살, 기차 좋아하는 사람, 디자인 좋아하는 가족에게 좋고, Porter Square 쪽이라 Cambridge 동선이 맞을 때만 들릅니다.</p>
+          </div>
+          <div class="panel">
+            <span class="tag">보스턴 가족용</span>
+            <h3>Make Way for Ducklings / Q's Nuts / Taza / Maple Syrup</h3>
+            <p><strong class="price">$8-25 전후</strong>. r/boston 선물 글에서 책, 로컬 견과/초콜릿/메이플이 반복 언급됩니다. 조카, 엄마아빠, 누나/여동생, 매형/여동생 남편에게 좋고 Boston Public Market과 Quincy Market에서 마무리하기 편합니다.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>반영 결론:</strong> Trader Joe's에서 새로 눈여겨볼 것은 <strong>Lavender Canvas Tote, Dewy Skin Serum, Garlic Butter Nut Mix</strong> 정도입니다. 2026 Customer Choice 1위인 soup dumplings나 신상 mochi처럼 냉동인 것은 현지에서 먹는 용도이지 한국 선물용으로는 제외합니다.
+        </div>
+      </section>
+
+      <section id="route-map">
+        <h2>쇼핑 동선 + Google Maps 링크</h2>
+        <p class="lead">숙소가 Seaport라서 한 번에 다 들르기보다, <strong>5/4 Cambridge</strong>, <strong>5/5 Back Bay/Prudential</strong>, <strong>5/6 실내+로컬 마무리</strong>로 쪼개는 게 덜 지칩니다. 아래 링크는 누르면 Google Maps에서 바로 열리게 해뒀습니다.</p>
+
+        <div class="link-row">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hyatt+Seaport+District+Boston">숙소 주변</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Harvard+Shop+Harvard+Square+Cambridge">Harvard Shop</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Coop+Harvard+Square+Cambridge">Harvard Coop</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=MIT+Coop+Kendall+Square+Cambridge">MIT Coop</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+748+Memorial+Dr+Cambridge+MA">TJ 748 Memorial</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+500+Boylston+St+Boston+MA">TJ 500 Boylston</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=View+Boston+800+Boylston+Street+Boston">View Boston</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=CVS+Pharmacy+800+Boylston+Street+Boston">CVS Prudential</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Boston+Public+Market">Boston Public Market</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=MBTAgifts+WardMaps+1731+Massachusetts+Avenue+Cambridge">MBTA Gifts</a>
+        </div>
+
+        <div class="grid three">
+          <div class="panel">
+            <span class="tag">5/4 월</span>
+            <h3>Harvard/MIT + Cambridge TJ</h3>
+            <div class="route-step"><div class="route-time">이동</div><div>Hyatt Seaport → South Station → Red Line Harvard. 택시/우버면 피곤할 때만.</div></div>
+            <div class="route-step"><div class="route-time">1차</div><div>Harvard Shop/Coop에서 부모님·형제·조카용 의류, cap, onesie, 문구류를 먼저 확정.</div></div>
+            <div class="route-step"><div class="route-time">2차</div><div>MIT/Kendall로 내려와 MIT Coop. 남동생/IT 취향 가족용 cap, hoodie, 문구를 봅니다.</div></div>
+            <div class="route-step"><div class="route-time">3차</div><div>체력이 남으면 Trader Joe's 748 Memorial Dr. Fort Point보다 선물 품목 기대치가 높습니다.</div></div>
+          </div>
+
+          <div class="panel">
+            <span class="tag">5/5 화</span>
+            <h3>Back Bay + Prudential 본진</h3>
+            <div class="route-step"><div class="route-time">오전</div><div>Boston Common, Public Garden, Beacon Hill, Boston Public Library/Copley.</div></div>
+            <div class="route-step"><div class="route-time">쇼핑</div><div>Trader Joe's 500 Boylston에서 회사 18명분을 확정. Mini Canvas/TJ 시즈닝/초콜릿은 여기서 승부.</div></div>
+            <div class="route-step"><div class="route-time">보충</div><div>Prudential 안 CVS 800 Boylston 또는 587 Boylston에서 Burt's Bees, Aquaphor, CeraVe, Crest, 사탕류 보충.</div></div>
+            <div class="route-step"><div class="route-time">저녁</div><div>날씨가 맑으면 View Boston. 흐리거나 비 오면 과감히 생략하고 Fenway/식사/숙소 포장으로 전환.</div></div>
+          </div>
+
+          <div class="panel">
+            <span class="tag">5/6 수</span>
+            <h3>비 오는 날 마무리</h3>
+            <div class="route-step"><div class="route-time">오전</div><div>MFA. 와이프/엄마/누나/여동생용 토트, 스카프, 엽서, 미술관 소품.</div></div>
+            <div class="route-step"><div class="route-time">오후</div><div>Gardner Museum. 선물은 무리하지 말고 감상 위주.</div></div>
+            <div class="route-step"><div class="route-time">저녁</div><div>Boston Public Market에서 Q's Nuts, Taza, Curio Spice, Lifebloom, Oohjacquelina 중 빠진 가족 선물 마무리.</div></div>
+            <div class="route-step"><div class="route-time">밤</div><div>숙소에서 회사용 18세트와 가족용을 분리 포장. 액체/오일/유리병은 위탁 쪽으로.</div></div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>실전 이동 팁:</strong> Cambridge에서 MBTA Gifts/WardMaps까지 욕심내려면 Harvard Square에서 Porter Square 방향으로 한 정거장 더 가는 느낌입니다. 조카 4살용 MBTA 장난감/지도 굿즈가 꼭 필요할 때만 넣고, 시간이 빠듯하면 Boston Public Market/Quincy Market에서 로컬 선물로 대체하세요.
+        </div>
+      </section>
+
+      <section id="view-boston">
+        <h2>Prudential Tower 전망대는 “View Boston”으로 검색</h2>
+        <p class="lead">예전 이름인 Skywalk Observatory로 찾으면 헷갈립니다. 지금 갈 곳은 <strong>Prudential Center 800 Boylston St 안의 View Boston</strong>이고, 5/5 Back Bay/Prudential 쇼핑을 끝낸 뒤 날씨가 맑을 때만 넣는 옵션입니다.</p>
+
+        <div class="gallery">
+          <figure><a href="boston_guide_assets/screenshots/52_view_boston_official_hours.png"><img src="boston_guide_assets/screenshots/52_view_boston_official_hours.png" alt="View Boston 공식 운영시간 캡처"></a><figcaption>View Boston 공식 캡처: 매일 10AM-10PM, 마지막 입장 9:15, Prudential Center center court 옆 입구</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/58_tj_500_boylston_store.png"><img src="boston_guide_assets/screenshots/58_tj_500_boylston_store.png" alt="Trader Joe's 500 Boylston 공식 위치 캡처"></a><figcaption>Prudential/Copley 동선 핵심: Trader Joe's 500 Boylston, 매일 9AM-9PM</figcaption></figure>
+        </div>
+
+        <table>
+          <thead><tr><th>판단</th><th>언제 갈지</th><th>왜 좋은지</th><th>주의</th></tr></thead>
+          <tbody>
+            <tr><td class="ok">가도 좋음</td><td>5/5 화 저녁, Trader Joe's 500 Boylston + CVS/Prudential 쇼핑 후</td><td>Boston Common, Charles River, Fenway, Seaport를 한 번에 내려다볼 수 있어 사진 없는 첫날 산책의 아쉬움을 만회하기 좋음.</td><td>맑은 날/해질녘 우선. 비·안개·구름 많으면 돈 대비 만족도가 떨어짐.</td></tr>
+            <tr><td class="warn">보류</td><td>5/6 수 비가 오거나 흐리면</td><td>실내라 갈 수는 있지만 전망대는 시야가 핵심이라 비 오는 날은 MFA/Gardner/Boston Public Market이 더 낫습니다.</td><td>티켓 가격은 날짜/시간대별 변동 가능. 공식 Buy Tickets에서 확인.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="link-row">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=View+Boston+800+Boylston+Street+Boston">Google Maps: View Boston</a>
+          <a class="source-link" href="https://viewboston.com/">공식 사이트</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Prudential+Center+Boston">Google Maps: Prudential Center</a>
+        </div>
+      </section>
+
+      <section id="cvs-picks">
+        <h2>CVS/pharmacy에서 살만한 보충 선물</h2>
+        <p class="lead">CVS는 메인 선물 가게가 아니라 <strong>마지막 보충용</strong>입니다. 먹을 것/시즈닝은 Trader Joe's에서 끝내고, CVS에서는 립밤·보습·치아미백·미국 사탕처럼 “있으면 실용적인 것”만 짧게 봅니다.</p>
+
+        <div class="gallery product-gallery">
+          <figure><a href="boston_guide_assets/screenshots/54_cvs_burts_bees_lip_balm.png"><img src="boston_guide_assets/screenshots/54_cvs_burts_bees_lip_balm.png" alt="Burt's Bees Beeswax Lip Balm 공식 상품 캡처"></a><figcaption>Burt's Bees Beeswax Lip Balm. CVS/드럭스토어 무난템</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/55_cvs_aquaphor_lip_repair.png"><img src="boston_guide_assets/screenshots/55_cvs_aquaphor_lip_repair.png" alt="Aquaphor Lip Repair 공식 상품 캡처"></a><figcaption>Aquaphor Lip Repair. 건조한 입술/피부용 실용템</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/56_cvs_cerave_daily_lotion.png"><img src="boston_guide_assets/screenshots/56_cvs_cerave_daily_lotion.png" alt="CeraVe Daily Moisturizing Lotion 공식 상품 캡처"></a><figcaption>CeraVe Daily Moisturizing Lotion. 가족/아내용 보습 보충 후보</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/57_cvs_crest_whitestrips.png"><img src="boston_guide_assets/screenshots/57_cvs_crest_whitestrips.png" alt="Crest 3D Whitestrips 공식 상품 캡처"></a><figcaption>Crest 3D Whitestrips. 성인용 고가 보충 선물, 민감성 주의</figcaption></figure>
+        </div>
+
+        <table>
+          <thead><tr><th>상품</th><th>예상가</th><th>누구에게</th><th>언제/어디서</th><th>주의</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Burt's Bees Beeswax Lip Balm / multipack</strong></td><td class="price">$4-14</td><td>동료 예비, 가족 공용, 여동생/누나 보조</td><td>5/5 Prudential CVS 또는 587 Boylston CVS</td><td>향/맛이 있는 버전보다 오리지널/무향 계열이 안전. 단품보다 2-4팩이면 나누기 좋음.</td></tr>
+            <tr><td><strong>Aquaphor Lip Repair / Healing Ointment travel size</strong></td><td class="price">$6-10</td><td>엄마아빠, 와이프, 누나/여동생</td><td>5/5 CVS, 5/6 숙소 근처 CVS 보충</td><td>약 선물 느낌보다 보습템 느낌으로. 피부 민감한 사람에게는 오히려 무난할 수 있음.</td></tr>
+            <tr><td><strong>CeraVe Daily Moisturizing Lotion / travel size</strong></td><td class="price">$8-16</td><td>와이프 보조, 누나/여동생, 본인</td><td>5/5 CVS/Prudential</td><td>한국에도 있는 브랜드라 “보스턴 선물” 느낌은 약함. 빠진 선물 보충용으로만.</td></tr>
+            <tr><td><strong>Crest 3D Whitestrips</strong></td><td class="price">$35-80+</td><td>와이프 또는 본인용, 정말 필요한 성인만</td><td>5/5 CVS/Prudential</td><td>민감성/치아 시림 이슈가 있어 아무에게나 뿌리는 선물은 비추. 고가라 한 명만.</td></tr>
+            <tr><td><strong>Altoids, Tic Tac, Reese's, M&M's seasonal pack</strong></td><td class="price">$2-8</td><td>회사 예비/조카 제외 성인 간식</td><td>마지막 날 전날 아무 CVS</td><td>초콜릿은 녹을 수 있으니 캐리어 안쪽. 조카에게는 연령/알레르기 확인 전까지 사탕류 비추.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="link-row">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=CVS+Pharmacy+800+Boylston+Street+Boston">Google Maps: CVS 800 Boylston</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=CVS+Pharmacy+587+Boylston+Street+Boston">Google Maps: CVS 587 Boylston</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=CVS+Pharmacy+91+Seaport+Blvd+Boston">Google Maps: CVS Seaport</a>
+          <a class="source-link" href="https://www.cvs.com/store-locator/boston-ma-pharmacies/800-boylston-street-boston-ma-02199/storeid%3D11200">CVS 800 Boylston 공식 링크</a>
+        </div>
+
+        <div class="callout">
+          <strong>CVS 결론:</strong> 선물의 중심을 CVS로 옮기지는 말고, Trader Joe's/Harvard/로컬 선물을 산 뒤 <strong>Burt's Bees 2-4팩, Aquaphor 1-2개, CeraVe 1개, Crest는 필요하면 1개</strong> 정도만 보충하세요.
+        </div>
+      </section>
+
+      <section id="gift-allocation">
+        <h2>실제 받을 사람 기준 선물 배분안</h2>
+        <p class="lead">총 대상은 <strong>회사 18명</strong>과 <strong>가족/와이프 11명</strong>입니다. 예산과 캐리어를 생각하면, 회사는 Trader Joe's 중심으로 깔끔하게 끝내고 가족은 Harvard/MIT 굿즈와 로컬 선물을 섞는 게 제일 낫습니다.</p>
+
+        <div class="callout">
+          <strong>추천 총구매 감:</strong> Trader Joe's 시즈닝/초콜릿 25-35개, 토트/리유저블백 8-14개, Harvard/MIT 의류 2-4개, Harvard/MIT 모자·문구·키링 6-10개, 로컬 초콜릿/향/주얼리 4-6개. Mini Canvas Tote는 재고가 있으면 먼저 사고, 없으면 Reusable Grocery Bag을 포장재로 씁니다.
+        </div>
+
+        <h3>회사: 부서원 8명과 동료 10명</h3>
+        <table>
+          <thead><tr><th>대상</th><th>등급</th><th>추천 구성</th><th>예상가/명</th><th>수량 메모</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>부서원 8명</td>
+              <td class="ok">꽤 쓸만한 세트</td>
+              <td>Mini Canvas Tote가 있으면 <strong>Mini Canvas Tote + Nori Komi Furikake 또는 Mushroom & Company + 초콜릿 1개</strong>. 없으면 Reusable Grocery Bag + Furikake + Peanut Butter Cups.</td>
+              <td class="price">$7-12</td>
+              <td>8세트. 같이 일하는 사람들은 단품보다 작은 세트가 훨씬 덜 성의 없어 보임.</td>
+            </tr>
+            <tr>
+              <td>동료 10명</td>
+              <td>저렴이 단품</td>
+              <td><strong>Nori Komi Furikake / Mushroom & Company / Dark Chocolate Peanut Butter Cups / Dark Chocolate Covered Mini Pretzels</strong> 중 1개씩.</td>
+              <td class="price">$2-4</td>
+              <td>10개. “미국에서 유명한 Trader Joe's 선물”이라고 말하기 쉬운 것 위주.</td>
+            </tr>
+            <tr>
+              <td>예비 3-5명</td>
+              <td>비상용</td>
+              <td>Dark Chocolate Covered Mini Pretzels, 초콜릿 견과, Boston magnet/keychain.</td>
+              <td class="price">$3-8</td>
+              <td>귀국 후 갑자기 생각나는 사람 대비. 초콜릿 봉지는 사무실 공용 간식으로도 전환 가능.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>가족/와이프: 사람별 추천</h3>
+        <table>
+          <thead><tr><th>대상</th><th>등급</th><th>추천 선물</th><th>예상가</th><th>이유/주의</th></tr></thead>
+          <tbody>
+            <tr><td>와이프</td><td class="ok">제일 챙김</td><td>Oohjacquelina 주얼리 또는 MFA scarf/tote + Mini Canvas/Insulated Tote + Hand Cream/초콜릿</td><td class="price">$45-120</td><td>“여행 중 고른 것” 느낌이 가장 중요. 가방만 주지 말고 주얼리/스카프/향 중 하나를 메인으로.</td></tr>
+            <tr><td>엄마</td><td class="ok">제대로</td><td>Harvard/MIT 크루넥 또는 MFA scarf + Taza Chocolate</td><td class="price">$45-90</td><td>입는 선물이 부담되면 스카프/토트가 안전. 사이즈 모르면 의류보다 소품.</td></tr>
+            <tr><td>아빠</td><td class="ok">제대로</td><td>Harvard cap/crewneck 또는 Red Sox cap + Curio Spice/초콜릿</td><td class="price">$35-85</td><td>로고가 큼직한 후드보다 cap/크루넥이 더 오래 쓰기 좋을 수 있음.</td></tr>
+            <tr><td>누나</td><td>꽤 쓸만함</td><td>MFA tote 또는 Trader Joe's Mini Canvas/Insulated Tote + Hand Cream + 초콜릿</td><td class="price">$15-40</td><td>실사용 가능한 가방+작은 화장품/간식 조합이 안정적.</td></tr>
+            <tr><td>남동생</td><td>꽤 쓸만함</td><td>MIT cap/tee 또는 Harvard/MIT 문구·키링 + Trader Joe's 시즈닝/초콜릿</td><td class="price">$20-45</td><td>학생/IT/공대 감성이 있으면 MIT가 더 센스 있음. 아니면 Harvard가 설명 쉬움.</td></tr>
+            <tr><td>여동생 2명</td><td>꽤 쓸만함</td><td>Mini Canvas Tote가 있으면 각 1개 + Hand Cream/Peanut Butter Cups. 없으면 MFA tote/Harvard canvas bag 중 예쁜 것.</td><td class="price">$10-35/명</td><td>둘이 너무 차이 나지 않게 비슷한 구성으로 맞추기.</td></tr>
+            <tr><td>매형</td><td>적당히</td><td>Red Sox cap 또는 Harvard/MIT cap + Mushroom & Company</td><td class="price">$30-50</td><td>사이즈 없는 cap이 안전. 취향 모르면 시즈닝/초콜릿 세트로 낮춰도 됨.</td></tr>
+            <tr><td>여동생 남편(매제/매부)</td><td>적당히</td><td>Red Sox cap 또는 Harvard/MIT cap + Mushroom & Company/초콜릿. 가볍게 가려면 Garlic Butter Nut Mix나 Sweet & Spicy Pecans.</td><td class="price">$12-50</td><td>매형과 비슷하게 남성/무난 선물로 잡기. 취향을 모르면 cap보다 Trader Joe's 간식+시즈닝 세트가 안전.</td></tr>
+            <tr><td>조카 4살</td><td>귀여운 것</td><td>Harvard/MIT kids tee, Make Way for Ducklings 책/플러시, MBTA 장난감/작은 기차</td><td class="price">$12-35</td><td>식품보다 아이용 굿즈가 기억에 남음. 작은 부품 있는 장난감은 피하고, 책은 부피 대비 선물감 좋음.</td></tr>
+            <tr><td>조카 1살</td><td>귀여운 것</td><td>Harvard/MIT baby onesie/bib, 부드러운 plush, board book</td><td class="price">$12-30</td><td>먹는 선물보다 옷/턱받이/보드북. 사이즈는 넉넉하게.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>한 번에 사야 할 수량 체크리스트</h3>
+        <table>
+          <thead><tr><th>품목</th><th>목표 수량</th><th>우선 구매처</th><th>대체</th></tr></thead>
+          <tbody>
+            <tr><td>Trader Joe's 시즈닝류</td><td>18-24개</td><td>500 Boylston 또는 748 Memorial</td><td>Furikake와 Mushroom & Company만 섞기. Everything But The Bagel은 제외.</td></tr>
+            <tr><td>Trader Joe's 초콜릿/간식</td><td>12-18개</td><td>500 Boylston 또는 748 Memorial</td><td>Peanut Butter Cups, Mini Pretzels, 초콜릿 견과</td></tr>
+            <tr><td>Mini Canvas Tote</td><td>있으면 8-12개</td><td>Trader Joe's 큰 지점</td><td>없으면 Reusable Grocery Bag 10-15개</td></tr>
+            <tr><td>Harvard/MIT 의류</td><td>2-4개</td><td>Harvard Shop, MIT Coop</td><td>사이즈 애매하면 cap/tote로 전환</td></tr>
+            <tr><td>Harvard/MIT cap·문구·키링</td><td>6-10개</td><td>Harvard Shop, MIT Coop</td><td>조카/동생/예비 선물로 분산</td></tr>
+            <tr><td>와이프/엄마용 로컬 선물</td><td>2-4개</td><td>MFA Shop, Boston Public Market</td><td>Oohjacquelina, MFA scarf/tote, Lifebloom, Taza</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="tj-stores">
+        <h2>보스턴 Trader Joe's는 어느 지점으로 가야 하나</h2>
+        <p class="lead">오늘 간 <strong>44 Thomson Place, Fort Point Seaport</strong>는 숙소에서는 최고지만, 선물 쇼핑 본진으로는 작습니다. 에코백/시즈닝/초콜릿을 제대로 보려면 아래 순서로 움직이는 게 낫습니다.</p>
+
+        <div class="gallery">
+          <figure><a href="boston_guide_assets/screenshots/58_tj_500_boylston_store.png"><img src="boston_guide_assets/screenshots/58_tj_500_boylston_store.png" alt="Trader Joe's 500 Boylston 공식 위치와 운영시간 캡처"></a><figcaption>1순위: 500 Boylston. Back Bay/Prudential 동선 본진, 매일 9AM-9PM</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/59_tj_748_memorial_store.png"><img src="boston_guide_assets/screenshots/59_tj_748_memorial_store.png" alt="Trader Joe's Cambridge 748 Memorial 공식 위치와 운영시간 캡처"></a><figcaption>2순위: 748 Memorial Dr. Harvard/MIT 후 붙이기 좋은 Cambridge 후보, 매일 9AM-9PM</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/60_tj_899_boylston_small_store.png"><img src="boston_guide_assets/screenshots/60_tj_899_boylston_small_store.png" alt="Trader Joe's 899 Boylston Back Bay 공식 위치 캡처"></a><figcaption>비추/급할 때만: 899 Boylston. 위치는 좋지만 선물 품목 다양성 기대는 낮게</figcaption></figure>
+          <figure><a href="boston_guide_assets/screenshots/02_trader_joes_fort_point.png"><img src="boston_guide_assets/screenshots/02_trader_joes_fort_point.png" alt="Trader Joe's Fort Point 공식 위치 캡처"></a><figcaption>숙소 보충용: 44 Thomson Pl Fort Point. 이미 확인한 대로 작아서 메인 쇼핑은 비추</figcaption></figure>
+        </div>
+
+        <table>
+          <thead><tr><th>우선순위</th><th>지점</th><th>주소</th><th>언제 묶을지</th><th>판단</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="ok">1</td>
+              <td><strong>Boston (Boylston St) #500</strong></td>
+              <td>500 Boylston St, Boston, MA 02116</td>
+              <td>5/5 Boston Public Library, Copley, Newbury, Prudential 동선</td>
+              <td>가장 추천. Back Bay 중심이고, 899 Boylston의 아주 작은 지점 문제를 피할 수 있는 새/큰 후보. 선물 쇼핑은 여기서 먼저 시도.</td>
+            </tr>
+            <tr>
+              <td class="ok">2</td>
+              <td><strong>Cambridge #502</strong></td>
+              <td>748 Memorial Dr, Cambridge, MA 02139</td>
+              <td>5/4 MIT/Kendall 또는 Harvard/MIT 끝난 뒤</td>
+              <td>Cambridge 일정에 붙이기 좋음. Fort Point보다 본격 장보기 느낌으로 기대. Harvard Square에서 바로는 멀고 MIT 쪽에서 붙이는 게 낫다.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Somerville #560</strong></td>
+              <td>145 Middlesex Ave, Somerville, MA 02145</td>
+              <td>정말 토트/간식 재고를 더 보고 싶을 때 별도 이동</td>
+              <td>Assembly Row 쪽이라 매장형 쇼핑에는 좋지만 Hyatt Seaport 기준 일부러 가야 함. 다른 일정과 안 맞으면 무리하지 말 것.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Brookline #501</strong></td>
+              <td>1317 Beacon St, Brookline, MA 02446</td>
+              <td>Fenway 이후 Coolidge Corner 쪽으로 빠질 때만</td>
+              <td>나쁘지 않지만 이번 일정 핵심 동선에서는 살짝 벗어남. Green Line C를 타게 되는 날이면 후보.</td>
+            </tr>
+            <tr>
+              <td class="warn">보충용</td>
+              <td><strong>Fort Point Seaport #566</strong></td>
+              <td>44 Thomson Place, Boston, MA 02210</td>
+              <td>숙소 복귀 후 빠진 수량 채우기</td>
+              <td>오늘 본 것처럼 작음. 생수, 간식, 초콜릿, 일부 시즈닝 보충용. Mini Canvas Tote나 다양한 선물 재고 기대는 낮게.</td>
+            </tr>
+            <tr>
+              <td class="no">비추</td>
+              <td><strong>Boston - Back Bay #510</strong></td>
+              <td>899 Boylston St, Boston, MA 02115</td>
+              <td>지나가다 아주 급할 때만</td>
+              <td>위치는 좋지만 “작은 Back Bay 지점”으로 유명. 품목 적은 문제를 해결하려는 목적이면 500 Boylston으로 가는 게 낫다.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>내일 액션:</strong> 5/4 Cambridge 일정 중 MIT까지 간다면 <strong>748 Memorial Dr</strong>를 먼저 찍고, 못 갔거나 재고가 약하면 5/5 Copley/BPL 때 <strong>500 Boylston St</strong>를 본진으로 가세요. Fort Point는 밤에 “빠진 초콜릿/시즈닝 보충”만 맡깁니다.
+        </div>
+
+        <div class="link-row">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+500+Boylston+St+Boston+MA">Google Maps: 500 Boylston</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+748+Memorial+Dr+Cambridge+MA">Google Maps: 748 Memorial</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+44+Thomson+Place+Boston+MA">Google Maps: Fort Point</a>
+          <a class="source-link" href="https://locations.traderjoes.com/ma/boston/500/">TJ 500 공식</a>
+          <a class="source-link" href="https://locations.traderjoes.com/ma/cambridge/502/">TJ Cambridge 공식</a>
+        </div>
+      </section>
+
+      <section id="totes">
+        <h2>Trader Joe's 에코백/토트: 현장에서 뭘 사야 하나</h2>
+        <p class="lead">정답은 <strong>Mini Canvas Tote Bag이 보이면 먼저 집기</strong>입니다. 다만 한정/계절 상품이라 Fort Point 매장에 없을 수 있으니, 아래 순서대로 대체하면 됩니다.</p>
+
+        <table>
+          <thead><tr><th>우선순위</th><th>정확한 상품명</th><th>예상가</th><th>누구에게</th><th>현장 판단</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="ok">1</td>
+              <td><strong>Trader Joe's Mini Canvas Tote Bag</strong></td>
+              <td class="price">$2.99</td>
+              <td>아내, 친한 친구, 회사동료 중 센스 있게 챙길 사람</td>
+              <td>있으면 2-6개. 색은 파스텔/네이비/그린/레드/옐로우 계열 중 실물이 예쁜 것. 품절 가능성이 높아 “못 살 수도 있음” 전제.</td>
+            </tr>
+            <tr>
+              <td class="ok">2</td>
+              <td><strong>Trader Joe's Mini Insulated Tote Bag</strong></td>
+              <td class="price">$3.99</td>
+              <td>아내, 친한 친구, 도시락/피크닉 쓰는 사람</td>
+              <td>색이 예쁘면 1-3개. 각 잡힌 보냉백이라 선물감은 좋지만 부피가 있어 대량 구매는 비추.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Trader Joe's Canvas Tote Bag / Large Canvas Tote</strong></td>
+              <td class="price">$3.99 전후</td>
+              <td>가족, 본인, 장바구니 잘 쓰는 사람</td>
+              <td>Mini Canvas가 없을 때 실사용 대체품. 크고 튼튼하지만 “귀여운 유행템” 느낌은 미니보다 약함.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Trader Joe's Citrus Jute Bag</strong></td>
+              <td class="price">$3.99</td>
+              <td>아내/친구 중 여름 느낌 좋아하는 사람</td>
+              <td>레몬/라임 프린트가 예쁘면 1-2개. 마 소재라 여행지 느낌이 있고 가격 대비 선물감 좋음.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>Trader Joe's Reusable Grocery Bag</strong></td>
+              <td class="price">$0.99-1.99</td>
+              <td>회사동료 대량, 급히 수량 맞출 때</td>
+              <td>얇고 가벼운 백업. 안에 초콜릿/시즈닝 하나 넣으면 “봉투”가 아니라 작은 선물 세트처럼 보임.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><strong>Trader Joe's Supernatural Paper Tote</strong></td>
+              <td class="price">$8.99</td>
+              <td>디자인 취향 맞는 가까운 사람</td>
+              <td>가격이 올라가니 실물이 정말 마음에 들 때만. 소재감이 특이해서 호불호 확인 필요.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>토트 안에 넣어서 완성하는 조합</h3>
+        <table>
+          <thead><tr><th>대상</th><th>조합</th><th>예상가</th><th>왜 괜찮나</th></tr></thead>
+          <tbody>
+            <tr><td>회사동료</td><td>Reusable Grocery Bag + Nori Komi Furikake 또는 Mushroom & Company</td><td class="price">$4-7</td><td>가볍고 깨질 위험이 낮음. 여러 명에게 돌리기 좋음. Everything But The Bagel은 제외.</td></tr>
+            <tr><td>친한 친구</td><td>Mini Canvas Tote + Dark Chocolate Peanut Butter Cups + Dark Chocolate Covered Mini Pretzels</td><td class="price">$8-14</td><td>요즘 느낌 나는 토트에 바로 먹을 간식을 넣는 구성이라 선물처럼 보임.</td></tr>
+            <tr><td>요리하는 사람</td><td>Canvas Tote + Mushroom & Company Umami + Nori Komi Furikake + Crunchy Chili Onion</td><td class="price">$12-16</td><td>한국 음식에도 쓰기 쉬운 감칠맛/김깨/칠리 조합. Chili Onion은 유리병이라 위탁.</td></tr>
+            <tr><td>아내/연인</td><td>Mini Insulated Tote 또는 Mini Canvas Tote + Ultra Moisturizing Hand Cream + 초콜릿 1개</td><td class="price">$10-16</td><td>가방만 주는 것보다 훨씬 성의 있어 보이고, 핸드크림은 가격 대비 선물감이 좋음.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>사지 말아야 하는 패턴:</strong> 토트가 귀엽다고 보냉백만 6개 사면 캐리어 공간이 터집니다. Mini Canvas가 없으면 아쉬워하지 말고, Reusable Grocery Bag을 포장재처럼 쓰고 안에 시즈닝/초콜릿을 넣는 쪽이 현실적입니다.
+        </div>
+      </section>
+
+      <section id="schedule">
+        <h2>5/4-5/7 일정</h2>
+
+        <div class="day">
+          <div class="date">5/4 월</div>
+          <div>
+            <div class="timeblock">
+              <div class="time">오전</div>
+              <div><strong>Boston Tea Party Ships & Museum</strong>. 숙소에서 가깝고 첫 일정으로 부담이 낮습니다. 시간이 없으면 투어 대신 Gift Shop/Tea Room만 봐도 됩니다.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">점심-오후</div>
+              <div><strong>Harvard Square/Harvard Yard</strong>. Harvard Shop에서 후드, 크루넥, cap, 문구류를 먼저 해결합니다. 사이즈/색은 빨리 빠질 수 있으니 이 날 사는 게 좋습니다.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">늦은 오후</div>
+              <div><strong>MIT/Kendall</strong>. MIT Coop은 18시 전 방문. 공대/IT/학생 가족에게 줄 MIT 후드·cap·문구류를 봅니다.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">밤</div>
+              <div><strong>Trader Joe's Cambridge 748 Memorial 또는 Fort Point</strong>. MIT 쪽까지 갔으면 748 Memorial Dr를 우선 확인. 너무 늦었으면 Fort Point는 보충용으로만 보고, 본격 선물 쇼핑은 5/5 500 Boylston으로 넘깁니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="date">5/5 화</div>
+          <div>
+            <div class="timeblock">
+              <div class="time">오전</div>
+              <div><strong>Boston Common, Public Garden, Beacon Hill, Boston Public Library</strong>. MFA/Gardner가 화요일 휴관이라 도심 산책+사진 동선으로 씁니다. Trader Joe's 본진은 근처 <strong>500 Boylston St</strong>로 잡습니다.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">오후</div>
+              <div><strong>Trader Joe's 500 Boylston + Newbury/Prudential</strong>. New Balance를 빼고, 500 Boylston에서 부서원/동료용 선물을 확정합니다. Mini Canvas Tote가 있으면 부서원용으로 먼저 확보. 이후 Prudential 쪽 CVS에서 Burt's Bees/Aquaphor/CeraVe 같은 보충 선물을 봅니다.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">늦은 오후</div>
+              <div><strong>Fenway Park / Red Sox Team Store 또는 Harvard/MIT 보충</strong>. 야구를 몰라도 B 로고 cap은 아빠/매형/남동생 후보. Harvard/MIT 굿즈가 부족하면 Cambridge를 다시 가지 말고 이날 소품 위주로만 보충.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">저녁</div>
+              <div><strong>View Boston 옵션</strong>. 하늘이 맑으면 Prudential 안 View Boston을 넣고, 흐리면 생략. Back Bay/Fenway/Seaport 중 숙소 복귀가 편한 곳에서 식사 후 회사용 18명분을 먼저 분리해두면 5/6 가족 선물 쇼핑이 훨씬 편합니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="date">5/6 수</div>
+          <div>
+            <div class="timeblock">
+              <div class="time">오전</div>
+              <div><strong>MFA</strong>. 비 가능성 대응. MFA Shop에서 토트, 스카프, 엽서, 미술관 굿즈를 봅니다.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">오후</div>
+              <div><strong>Isabella Stewart Gardner Museum</strong>. 시간이 빠듯하면 사진/정원 중심으로 보고, 선물은 MFA/Boston Public Market에 집중.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">저녁 전</div>
+              <div><strong>Boston Public Market</strong>. Curio Spice, Q's Nuts, Taza, Lifebloom, Oohjacquelina 등 가족/아내용 로컬 선물 마무리.</div>
+            </div>
+            <div class="timeblock">
+              <div class="time">밤</div>
+              <div><strong>Trader Joe's/CVS/Target 보충</strong>. 빠진 대량 선물과 포장용 쇼핑백을 보충하고, 숙소에서 대상별로 분리 포장. View Boston을 5/5에 못 갔더라도 5/6 비/흐림이면 전망대보다 포장과 수하물 정리가 우선입니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="date">5/7 목</div>
+          <div>관광 없음. 12:30 비행이면 체크아웃, 공항 이동, 수하물 정리만 합니다. 액체·오일·시럽·향수는 위탁 기준으로 다시 확인하세요.</div>
+        </div>
+      </section>
+
+      <section id="buy">
+        <h2>구매 우선순위</h2>
+        <table>
+          <thead><tr><th>순위</th><th>살 것</th><th>왜 먼저인가</th><th>날짜</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Harvard/MIT 의류·모자</td><td>사이즈/색상이 빠질 수 있고, Cambridge 동선은 5/4가 가장 깔끔함.</td><td>5/4</td></tr>
+            <tr><td>2</td><td>Trader Joe's 대량 선물</td><td>회사 18명분은 수량이 중요. Fort Point는 작으니 500 Boylston 또는 748 Memorial에서 본 쇼핑.</td><td>5/4, 5/5</td></tr>
+            <tr><td>3</td><td>CVS 보충 선물</td><td>Burt's Bees/Aquaphor/CeraVe/Crest처럼 빠진 사람을 채우는 실용템. 메인은 아니고 보조.</td><td>5/5</td></tr>
+            <tr><td>4</td><td>View Boston</td><td>맑은 저녁이면 Prudential 쇼핑 후 바로 붙이기 좋음. 흐리면 생략.</td><td>5/5</td></tr>
+            <tr><td>5</td><td>Red Sox cap</td><td>아빠/매형/남동생 후보. 보스턴 느낌이 확실하고 사이즈 리스크가 작음.</td><td>5/5</td></tr>
+            <tr><td>6</td><td>Boston Public Market / MFA 로컬 선물</td><td>와이프/엄마/누나/여동생용으로 성의 있어 보이는 주얼리, 향, 스카프, 초콜릿을 마무리.</td><td>5/6</td></tr>
+            <tr><td>7</td><td>예비 선물</td><td>갑자기 빠진 사람 대비. 초콜릿/마그넷/키링은 마지막에 수량 조절.</td><td>5/6</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="recipients">
+        <h2>받는 사람별 “딱 사면 되는” 리스트</h2>
+
+        <h3>회사동료에게 돌릴 것</h3>
+        <table>
+          <thead><tr><th>상품</th><th>예상가</th><th>권장 수량</th><th>왜 좋나</th><th>사는 곳</th></tr></thead>
+          <tbody>
+            <tr><td>Trader Joe's Nori Komi Furikake</td><td class="price">$2.99</td><td>6-10개</td><td>김+깨 조합이라 한국 입맛에 무난. 가볍고 안 깨져서 1인 1개 돌리기 좋음.</td><td>Trader Joe's Fort Point</td></tr>
+            <tr><td>Trader Joe's Mushroom & Company Multipurpose Umami Seasoning Blend</td><td class="price">$2.99 전후</td><td>3-6개</td><td>감칠맛 시즈닝이라 한국 음식에도 쓰기 좋음. 요리하는 동료에게 Furikake보다 한 단계 센스 있음.</td><td>Trader Joe's</td></tr>
+            <tr><td>Trader Joe's Dark Chocolate Peanut Butter Cups</td><td class="price">$1.29 소포장 기준</td><td>6-12개</td><td>한국 후기에서 가격 대비 맛 좋은 단짠 초콜릿으로 언급. 개별 소포장이면 돌리기 편함.</td><td>Trader Joe's</td></tr>
+            <tr><td>Dark Chocolate Covered Mini Pretzels / Dark Chocolate Covered Cashews</td><td class="price">$3-5 전후</td><td>4-8봉</td><td>사람이 많으면 개별 선물보다 사무실 간식으로 놓기 좋음.</td><td>Trader Joe's</td></tr>
+            <tr><td>Trader Joe's Crunchy Chili Onion</td><td class="price">$4.49</td><td>2-4병</td><td>요리 좋아하는 동료에게만. 유리병+오일이라 위탁수하물에 넣기.</td><td>Trader Joe's</td></tr>
+            <tr><td>Mini Canvas Tote Bag / Reusable Grocery Bag</td><td class="price">$0.99-2.99</td><td>3-8개</td><td>Mini Canvas가 있으면 바로 사고, 없으면 리유저블백을 포장재처럼 써서 시즈닝/초콜릿을 넣기.</td><td>Trader Joe's</td></tr>
+            <tr><td>Boston magnet/keychain</td><td class="price">$5-8</td><td>5-8개</td><td>갑자기 줄 사람이 늘었을 때 마지막 안전빵.</td><td>Quincy Market, Fenway, 공항</td></tr>
+          </tbody>
+        </table>
+
+        <h3>가족용</h3>
+        <table>
+          <thead><tr><th>상품</th><th>예상가</th><th>권장</th><th>왜 좋나</th><th>사는 곳</th></tr></thead>
+          <tbody>
+            <tr><td>Harvard hooded/crest/arc sweatshirt</td><td class="price">$48-85</td><td>1-3개</td><td>보스턴 선물 중 알아보기 쉽고 오래 씀. 부모님/형제/조카 모두 설명이 쉬움.</td><td>5/4 Harvard Shop</td></tr>
+            <tr><td>MIT hoodie/sweatshirt</td><td class="price">$45-90</td><td>1-2개</td><td>공대/IT/학생 가족에게 Harvard보다 더 센스 있음. 사이즈 있는 상품이라 5/4 먼저 해결.</td><td>5/4 MIT Coop</td></tr>
+            <tr><td>Taza Chocolate Disc</td><td class="price">$6.99+</td><td>4-8개</td><td>Somerville 로컬 초콜릿. 맛 여러 개를 묶으면 성의 있어 보임.</td><td>Taza, Boston Public Market 재고</td></tr>
+            <tr><td>Curio Spice</td><td class="price">$9.50-12</td><td>2-3개</td><td>요리하는 가족에게 실용적. 병이 작고 선물감 있음.</td><td>5/6 Boston Public Market</td></tr>
+          </tbody>
+        </table>
+
+        <h3>아내/연인/가까운 사람</h3>
+        <table>
+          <thead><tr><th>상품</th><th>예상가</th><th>권장</th><th>왜 좋나</th><th>사는 곳</th></tr></thead>
+          <tbody>
+            <tr><td>Oohjacquelina custom jewelry</td><td class="price">$25-90+</td><td>1개</td><td>아내/연인용 1순위. 여행 중 직접 골랐다는 느낌이 강함. 이니셜/참 조합이면 더 좋음.</td><td>5/6 Boston Public Market</td></tr>
+            <tr><td>Lifebloom perfume/candle</td><td class="price">$8-30+</td><td>1-2개</td><td>향 취향을 알면 좋음. 향수는 100ml 기내 제한, 캔들은 위탁이 편함.</td><td>5/6 Boston Public Market</td></tr>
+            <tr><td>MFA tote/scarf</td><td class="price">$9.95-52</td><td>1개</td><td>미술관 좋아하는 사람에게 세련된 보스턴 선물. 스카프는 가격대가 올라가지만 선물감 좋음.</td><td>5/6 MFA Shop</td></tr>
+            <tr><td>Trader Joe's Mini Canvas/Insulated Tote + Ultra Moisturizing Hand Cream</td><td class="price">$8-12 전후</td><td>1세트</td><td>가벼운 추가 선물로 좋음. Mini Canvas가 없으면 Mini Insulated나 MFA tote로 대체.</td><td>Trader Joe's</td></tr>
+            <tr><td>CVS Burt's Bees/Aquaphor/CeraVe 보습 세트</td><td class="price">$10-25</td><td>1세트</td><td>보스턴 감성 선물은 아니지만 실용 보충용. Trader Joe's 토트 안에 같이 넣으면 성의 있어 보임.</td><td>5/5 Prudential CVS</td></tr>
+            <tr><td>Harvard/MIT/Red Sox cap</td><td class="price">$30-50</td><td>1-2개</td><td>커플템이나 데일리 소품으로 좋음. 옷 사이즈를 모르면 cap이 안전.</td><td>Harvard Shop, MIT Coop, Fenway</td></tr>
+          </tbody>
+        </table>
+
+        <h3>친한 친구/학생/조카</h3>
+        <table>
+          <thead><tr><th>상품</th><th>예상가</th><th>권장</th><th>왜 좋나</th><th>사는 곳</th></tr></thead>
+          <tbody>
+            <tr><td>Harvard/MIT 펜, 파일, 배지, 노트</td><td class="price">$5-20</td><td>여러 개</td><td>학생/동생용 무난템. 부피 작고 여러 명에게 나누기 좋음.</td><td>Harvard Shop / MIT Coop</td></tr>
+            <tr><td>Red Sox '47 cap</td><td class="price">$35-50</td><td>1개</td><td>보스턴 스포츠 대표. 야구 모르는 사람도 B 로고는 예쁨.</td><td>Fenway Team Store</td></tr>
+            <tr><td>Trader Joe's Mini Canvas Tote + Dark Chocolate Peanut Butter Cups + Hand Cream</td><td class="price">$8-15</td><td>1세트</td><td>가벼운 친구에게는 토트 안에 과자/핸드크림을 넣으면 포장까지 해결. Mini Canvas가 없으면 Reusable Grocery Bag으로 낮춰도 됨.</td><td>Trader Joe's</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="cautions">
+        <h2>수하물·한국 반입·현실 체크</h2>
+        <div class="grid two">
+          <div class="panel">
+            <h3>사면 좋음</h3>
+            <ul>
+              <li>Harvard/MIT 후드·크루넥·cap</li>
+              <li>Red Sox cap</li>
+              <li>Trader Joe's Mini Canvas Tote, Furikake, Mushroom & Company, 초콜릿류</li>
+              <li>Curio Spice, Taza Chocolate, MFA tote/scarf</li>
+              <li>Oohjacquelina jewelry, Lifebloom candle/perfume</li>
+              <li>CVS Burt's Bees, Aquaphor, CeraVe: 메인 선물 말고 보충용</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>굳이 안 사도 됨</h3>
+            <ul>
+              <li>무거운 머그 여러 개</li>
+              <li>흔한 Boston 로고 티셔츠 대량 구매</li>
+              <li>냉동 Trader Joe's, 치즈/유제품</li>
+              <li>유리병 소스 대량</li>
+              <li>New Balance 신발: 이번엔 동선/부피/사이즈 리스크 때문에 제외</li>
+              <li>사이즈 모르는 신발/의류</li>
+              <li>Everything But The Bagel Sesame Seasoning Blend: 한국 반입 금지/검역 리스크로 제외</li>
+              <li>Crest Whitestrips 대량 구매: 민감성/치아 시림 때문에 가족 1명 또는 본인용만</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>한국 입국:</strong> 관세청 영문 안내 기준 일반 휴대품 면세한도는 미화 $800입니다. 신발/옷을 많이 사면 영수증을 남기고, 식품류는 육류/가공육/신선 과일·채소/식물류를 피하세요. 액체·오일·시럽·향수는 용량과 위탁/기내 기준을 따로 확인합니다.
+        </div>
+
+        <ul>
+          <li>신발 박스는 부피가 큽니다. 선물용 1켤레는 박스 보존, 본인용/가족용은 박스를 버리고 신발 안에 양말·초콜릿을 넣으면 공간이 살아납니다.</li>
+          <li>100ml 초과 액체·오일·시럽·스프레드는 위탁수하물. 유리병은 옷으로 감싸세요.</li>
+          <li>초콜릿/과자/밀봉 견과류는 비교적 쉽지만, 식품은 신고 기준을 보수적으로 보는 게 안전합니다.</li>
+        </ul>
+      </section>
+
+      <section id="screenshots">
+        <h2>근거 캡처</h2>
+        <p class="lead">공식 영업시간/가격 페이지와 한국 여행자 후기, 상품 페이지 캡처를 함께 넣었습니다. 이미지는 눌러서 크게 볼 수 있습니다.</p>
+
+        <details open>
+          <summary>Harvard/MIT/한국 후기 캡처</summary>
+          <div class="gallery">
+            <figure><a href="boston_guide_assets/screenshots/03_harvard_shop_locations.png"><img src="boston_guide_assets/screenshots/03_harvard_shop_locations.png" alt="The Harvard Shop 위치와 운영 정보"></a><figcaption>The Harvard Shop 지점/운영 정보</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/04_harvard_shop_hoodies_prices.png"><img src="boston_guide_assets/screenshots/04_harvard_shop_hoodies_prices.png" alt="The Harvard Shop 후드와 크루넥 가격 캡처"></a><figcaption>Harvard 후드/크루넥 가격대</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/17_korean_harvard_shop_review.png"><img src="boston_guide_assets/screenshots/17_korean_harvard_shop_review.png" alt="한국 여행자 하버드샵 후기 캡처"></a><figcaption>한국 여행자 후기: 하버드샵 기념품 선호</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/06_mit_coop_hours.png"><img src="boston_guide_assets/screenshots/06_mit_coop_hours.png" alt="MIT Coop 운영 정보 캡처"></a><figcaption>MIT Coop Kendall 운영 정보</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/19_korean_mit_coop_review.png"><img src="boston_guide_assets/screenshots/19_korean_mit_coop_review.png" alt="한국 여행자 MIT Coop 후기 캡처"></a><figcaption>한국 여행자 후기: MIT Coop 기념품 구매 사례</figcaption></figure>
+          </div>
+        </details>
+
+        <details>
+          <summary>Trader Joe's / 로컬 선물 / 박물관 캡처</summary>
+          <div class="gallery">
+            <figure><a href="boston_guide_assets/screenshots/02_trader_joes_fort_point.png"><img src="boston_guide_assets/screenshots/02_trader_joes_fort_point.png" alt="Trader Joe's Fort Point 공식 위치 캡처"></a><figcaption>Trader Joe's Fort Point: 숙소 근처 대량 선물 베이스</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/58_tj_500_boylston_store.png"><img src="boston_guide_assets/screenshots/58_tj_500_boylston_store.png" alt="Trader Joe's 500 Boylston 공식 위치 캡처"></a><figcaption>Trader Joe's 500 Boylston: 5/5 Back Bay 본진</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/59_tj_748_memorial_store.png"><img src="boston_guide_assets/screenshots/59_tj_748_memorial_store.png" alt="Trader Joe's Cambridge 748 Memorial 공식 위치 캡처"></a><figcaption>Trader Joe's 748 Memorial: 5/4 Cambridge 후보</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png"><img src="boston_guide_assets/screenshots/31_tj_mini_insulated_tote_official.png" alt="Trader Joe's Mini Insulated Tote 공식 상품 캡처"></a><figcaption>Trader Joe's Mini Insulated Tote: Mini Canvas가 없을 때 좋은 2순위</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png"><img src="boston_guide_assets/screenshots/44_tj_mini_canvas_tote_official.png" alt="Trader Joe's Mini Canvas Tote 공식 상품 캡처"></a><figcaption>Trader Joe's Mini Canvas Tote: 공식 상품 페이지 캡처</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/45_tj_mini_pastel_canvas_totes_official.png"><img src="boston_guide_assets/screenshots/45_tj_mini_pastel_canvas_totes_official.png" alt="Trader Joe's Mini Pastel Canvas Totes 공식 상품 캡처"></a><figcaption>Trader Joe's Mini Pastel Canvas Totes: 한정/재고 변동 후보</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/15_trader_joes_chili_onion.png"><img src="boston_guide_assets/screenshots/15_trader_joes_chili_onion.png" alt="Trader Joe's Crunchy Chili Onion 상품 캡처"></a><figcaption>Crunchy Chili Onion: 요리하는 사람에게만</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/01_boston_public_market_visit.png"><img src="boston_guide_assets/screenshots/01_boston_public_market_visit.png" alt="Boston Public Market 운영시간 캡처"></a><figcaption>Boston Public Market: 5/6 수요일 선물 마무리</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/20_curio_spice_bpm.png"><img src="boston_guide_assets/screenshots/20_curio_spice_bpm.png" alt="Curio Spice Boston Public Market 캡처"></a><figcaption>Curio Spice: 가족용 향신료</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/21_lifebloom_bpm.png"><img src="boston_guide_assets/screenshots/21_lifebloom_bpm.png" alt="Lifebloom Boston Public Market 캡처"></a><figcaption>Lifebloom: 향/캔들 후보</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/22_oohjacquelina_prices.png"><img src="boston_guide_assets/screenshots/22_oohjacquelina_prices.png" alt="Oohjacquelina 가격 캡처"></a><figcaption>Oohjacquelina: 커스텀 주얼리 가격대</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/24_mfa_shop_totes.png"><img src="boston_guide_assets/screenshots/24_mfa_shop_totes.png" alt="MFA Shop 토트백 가격 캡처"></a><figcaption>MFA Shop: 토트/스카프 가격대</figcaption></figure>
+          </div>
+        </details>
+
+        <details>
+          <summary>커뮤니티픽 / View Boston / CVS 보충 캡처</summary>
+          <div class="gallery">
+            <figure><a href="boston_guide_assets/screenshots/46_tj_lavender_canvas_tote_reddit.png"><img src="boston_guide_assets/screenshots/46_tj_lavender_canvas_tote_reddit.png" alt="Trader Joe's Lavender Canvas Tote 레딧 캡처"></a><figcaption>Lavender Canvas Tote: 2026 레딧 메가스레드 캡처</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/47_tj_dewy_skin_serum_reddit.png"><img src="boston_guide_assets/screenshots/47_tj_dewy_skin_serum_reddit.png" alt="Trader Joe's Dewy Skin Serum 레딧 캡처"></a><figcaption>Dewy Skin Serum: 2026년 5월 레딧 리뷰 캡처</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png"><img src="boston_guide_assets/screenshots/48_tj_garlic_butter_nut_mix_reddit.png" alt="Trader Joe's Garlic Butter Nut Mix 레딧 캡처"></a><figcaption>Garlic Butter Nut Mix: 2026 레딧 신상품 캡처</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png"><img src="boston_guide_assets/screenshots/49_tj_sweet_onion_pretzels_article.png" alt="Trader Joe's Sweet Onion Pretzels 기사 캡처"></a><figcaption>Sweet Onion Style Pretzel Twists: 2026 기사 캡처</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/51_mbta_gifts_wardmaps_store.png"><img src="boston_guide_assets/screenshots/51_mbta_gifts_wardmaps_store.png" alt="MBTA Gifts WardMaps 매장 공식 캡처"></a><figcaption>MBTA Gifts/WardMaps: Porter Square 근처 공식 매장</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/52_view_boston_official_hours.png"><img src="boston_guide_assets/screenshots/52_view_boston_official_hours.png" alt="View Boston 공식 운영시간 캡처"></a><figcaption>View Boston: 공식 운영시간/입구 정보</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/54_cvs_burts_bees_lip_balm.png"><img src="boston_guide_assets/screenshots/54_cvs_burts_bees_lip_balm.png" alt="Burt's Bees Lip Balm 공식 캡처"></a><figcaption>CVS 보충 후보: Burt's Bees</figcaption></figure>
+            <figure><a href="boston_guide_assets/screenshots/57_cvs_crest_whitestrips.png"><img src="boston_guide_assets/screenshots/57_cvs_crest_whitestrips.png" alt="Crest Whitestrips 공식 캡처"></a><figcaption>CVS 보충 후보: Crest Whitestrips</figcaption></figure>
+          </div>
+        </details>
+      </section>
+
+      <section id="evidence">
+        <h2>후기 근거를 다시 검증한 결론</h2>
+        <p class="lead">정확히 말하면, 초안은 “2025-2026초 한국인 후기만”으로 만든 문서가 아니라 <strong>공식 정보 + 한국어 후기 + 한국인 쇼핑 트렌드 글</strong>을 섞어 만든 상태였습니다. 그래서 아래처럼 근거 등급을 분리했습니다.</p>
+
+        <table>
+          <thead><tr><th>근거 구분</th><th>확인한 자료</th><th>문서에 반영한 방식</th><th>신뢰도</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>보스턴 실제 후기</td>
+              <td>2025.02.02 게시 보스턴 2일차 후기: Fenway, Newbury, Boston Public Library, Copley, Public Garden. 2025.05.06 게시 3일차 후기: Duck Tour, Boston Public Market.</td>
+              <td>5/5 도심 산책, Fenway, BPL, Public Garden, 5/6 Boston Public Market 동선의 한국어 후기 근거로 사용.</td>
+              <td class="ok">높음. 다만 글 안에 7월 방문 언급이 있어 “2025 실제 방문”이라고 단정하지 않고 “2025 게시 한국어 후기”로 표기.</td>
+            </tr>
+            <tr>
+              <td>Harvard/MIT 기념품</td>
+              <td>2024.09.23 게시 실제 후기: Harvard Coop에서 Harvard 후드/모자 구매, MIT Coop에서 후드/티셔츠 구매. 2025.05.18 게시 하버드·MIT 캠퍼스/기념품샵 가이드.</td>
+              <td>Harvard/MIT 의류·모자를 가족/친한친구용 프리미엄 선물로 둠.</td>
+              <td class="warn">중간-높음. 실제 구매 후기는 2024 게시라 연도 조건에는 완전히 맞지 않지만, 2025 가이드와 공식 가격으로 보강.</td>
+            </tr>
+            <tr>
+              <td>Trader Joe's 선물</td>
+              <td>2025.03.24 한국어 글에서 트레이더조 가방 종류/가격을 상세 정리. 2025.07 글에서 에코백, Mushroom & Company, Dark Chocolate Peanut Butter Cups, Ultra Moisturizing Hand Cream 확인. 2025.09 국내 기사와 2026.01 한국어 글에서 Mini Canvas Tote 품절/리셀 열풍 확인.</td>
+              <td>회사동료/가벼운 친구용은 Trader Joe's 중심. 에코백은 “Mini Canvas 있으면 즉시 구매, 없으면 대체 토트”로 우선순위화.</td>
+              <td class="ok">높음. Boston 특정 후기는 아니지만 “한국인이 미국 여행 선물로 실제 찾는 품목” 근거로는 강함.</td>
+            </tr>
+            <tr>
+              <td>Reddit/최신 커뮤니티</td>
+              <td>2026.03 Trader Joe's 토트 재입고/라벤더 토트 글, 2026.05 Dewy Skin Serum 리뷰, 2025-2026 r/boston 보스턴 선물 글을 추가 확인.</td>
+              <td>Lavender Canvas Tote, Dewy Skin Serum, Garlic Butter Nut Mix, MBTA Gifts, Make Way for Ducklings, Q's Nuts/Taza를 “보이면 추가” 후보로 반영.</td>
+              <td class="warn">중간-높음. 레딧은 개인 후기라 공식 가격/재고 근거는 아니지만 최신 취향과 현장감 파악에는 유용.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>정정:</strong> 이 문서는 지금 버전부터 “2025-2026초 실제 한국인 후기만 참고”가 아니라, <strong>한국어 후기에서 반복 확인된 동선/선물 + 공식 최신 가격/영업시간 + 현장 재고 변동 가능성</strong>을 조합한 가이드라고 명시합니다.
+        </div>
+      </section>
+
+      <section id="review-map">
+        <h2>후기/커뮤니티 링크맵</h2>
+        <p class="lead">아래 링크는 “그냥 출처”가 아니라, 들어가서 어떤 사진과 문장을 보면 되는지까지 적어둔 체크맵입니다. Trader Joe's는 Boston 전용 후기뿐 아니라 한국 여행 선물 트렌드와 Reddit 최신 반응을 함께 봤고, 최종 구매는 보스턴 매장 재고를 직접 확인하는 전제로 봐야 합니다.</p>
+
+        <table>
+          <thead><tr><th>열어볼 링크</th><th>확인할 것</th><th>문서에 반영한 판단</th><th>근거 등급</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="https://cyirene.tistory.com/13">2025.03.24 Trader Joe's 가방 종류/가격 리뷰</a></td>
+              <td>Mini Canvas Tote $2.99, Large Canvas Tote $3.99, Mini Insulated Tote $3.99, Citrus Jute Bag $3.99, Supernatural Paper Tote $8.99, Reusable Grocery Bag $0.99.</td>
+              <td>에코백 섹션의 구매 순서와 예상가를 이 글 기준으로 세분화.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.chosun.com/national/weekend/2025/09/06/DZN7SD66JBGIDDIWZM5MIFERQU/?outputType=amp">2025.09 조선일보 Trader Joe's 에코백 유행 기사</a></td>
+              <td>한국에서도 Mini Canvas Tote가 “미국 여행 전리품”처럼 소비되고, 여행자가 주변에 돌렸을 때 반응이 좋았다는 흐름.</td>
+              <td>Mini Canvas Tote를 동료/친구용 최우선 토트로 올림. 단, 품절 가능성을 크게 표시.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://diary3169.tistory.com/1626">2026.01 Mini Canvas Tote 리셀/품절 대란 정리</a></td>
+              <td>2026년 초에도 $2.99 미니 캔버스 토트 품절/리셀 이슈가 계속 언급됨.</td>
+              <td>“있으면 산다, 없으면 대체품으로 간다”는 재고 대응 룰을 추가.</td>
+              <td class="warn">중간</td>
+            </tr>
+            <tr>
+              <td><a href="https://petitfruits.tistory.com/418">2025.03 Mini Insulated Totes 구매 후기</a></td>
+              <td>보냉백 출시일 줄, 1인 2개 제한, 이베이 리셀 이야기가 있는 실제 구매 후기.</td>
+              <td>Mini Insulated Tote는 아내/친한친구용 2순위로 설정. 많이 사면 부피가 커진다는 주의 추가.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://frinds55591.tistory.com/entry/%EB%AF%B8%EA%B5%AD-%EC%95%A0%ED%8B%80%EB%9E%9C%ED%83%80-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8D%94%EC%A1%B0-%EC%87%BC%ED%95%91%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EA%B8%B0%EB%85%90%ED%92%88-%EC%84%A0%EB%AC%BC-%EC%B6%94%EC%B2%9C-%EC%97%90%EC%BD%94%EB%B0%B1-%ED%95%B8%EB%93%9C%ED%81%AC%EB%A6%BC-%EA%B3%BC%EC%9E%90">2025.07 Trader Joe's 쇼핑리스트 후기</a></td>
+              <td>Mushroom & Company Umami $2.99, Dark Chocolate Peanut Butter Cups $1.29, Ultra Moisturizing Hand Cream $4.99, 에코백 언급.</td>
+              <td>회사동료/친구용 상품명을 더 구체화하고, 핸드크림을 여성 지인/아내 보조 선물로 추가.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://todaypick124.tistory.com/1252">2025.07 Trader Joe's 미국여행 선물 추천</a></td>
+              <td>Dark Chocolate Covered Mini Pretzels, fig/olive crackers, 에코백, 시즈닝류처럼 한국 여행자가 선물로 생각하는 품목.</td>
+              <td>초콜릿 견과만 있던 목록을 초콜릿 프레첼/피넛버터컵/시즈닝까지 확장.</td>
+              <td class="warn">중간</td>
+            </tr>
+            <tr>
+              <td><a href="https://cyirene.tistory.com/17">2025.04 Harvard Coop 굿즈/가격 후기</a></td>
+              <td>하버드 티셔츠, 맨투맨, 후드티, 텀블러, 자석, 키링, 캔버스백 가격대.</td>
+              <td>Harvard 의류는 가족/친한친구용 고가 선물, 자석/키링은 보충용으로 분리.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://doing-ju.tistory.com/90">보스턴 1일차</a> / <a href="https://doing-ju.tistory.com/92">2일차</a> / <a href="https://doing-ju.tistory.com/106">3일차</a></td>
+              <td>Harvard/MIT/Quincy Market, Fenway/BPL/Public Garden, Duck Tour/Boston Public Market 동선.</td>
+              <td>5/4 Cambridge, 5/5 Back Bay/Fenway, 5/6 Boston Public Market 동선의 한국어 후기 근거.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.reddit.com/r/traderjoes/comments/1rt31ld/march_2026_update_trader_joes_pastel_mini_canvas/">2026.03 r/traderjoes 토트 재입고/라벤더 토트</a></td>
+              <td>Pastel Mini Canvas Tote 재입고와 Large Lavender Canvas Tote 입고가 지점별로 달라진다는 커뮤니티 확인.</td>
+              <td>Mini Canvas가 없으면 Lavender Canvas Tote를 보조 후보로 추가. 단, 대량 구매는 부피 때문에 제한.</td>
+              <td class="warn">중간-높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.reddit.com/r/traderjoes/comments/1t11ufz/trader_joes_skin_products_dewy_skin_serum/">2026.05 r/traderjoes Dewy Skin Serum</a></td>
+              <td>5월 1-3일 사이 Dewy Skin Serum 리뷰가 다수 올라오고, $9.99 가격과 글로우/듀프 반응 확인.</td>
+              <td>와이프/누나/여동생용 최신 보조 선물로 추가. 민감성 피부 주의.</td>
+              <td class="warn">중간</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.reddit.com/r/traderjoes/comments/1nolxfx/trader_joes_products_or_snacks_as_gift/">2025.09 r/traderjoes 선물용 스낵 추천</a></td>
+              <td>PB cups, Sweet & Spicy Pecans, nuts, maple cookies, dried fruit, hand cream, sunscreen 등이 반복 추천.</td>
+              <td>회사 공용 간식과 여동생 남편/매형용 무난 선물에 견과/간식 후보를 추가.</td>
+              <td class="warn">중간-높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.reddit.com/r/boston/comments/1kdgail/best_meaningful_giftboston_souvenir/">2025.05 r/boston meaningful Boston gift</a> / <a href="https://www.reddit.com/r/boston/comments/1pkjkak/souvenir_recommendations_for_family/">2025.12 가족용 보스턴 기념품</a></td>
+              <td>Make Way for Ducklings, MBTA/T 로고 굿즈, Q's Nuts, Taza, maple syrup, Boston Public Market, Quincy Market 등이 반복 언급.</td>
+              <td>조카용 책/플러시/MBTA 장난감, 가족용 Q's Nuts/Taza/maple syrup 후보를 보강.</td>
+              <td class="ok">높음</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.reddit.com/r/boston/comments/1jgqrqj/t_souvenir/">2025.03 r/boston T souvenir</a> / <a href="https://www.reddit.com/r/mbta/comments/1h57hsl/mbta_gift_store_has_ornaments_bus_subway_car_each/">2024.12 r/mbta MBTA Gift Store</a></td>
+              <td>Porter Square의 MBTA Gifts/WardMaps가 T 장난감, 오너먼트, 지도, 키체인류로 반복 추천됨.</td>
+              <td>Cambridge 동선이 맞으면 Harvard/MIT 외 보스턴다운 선물 후보로 추가.</td>
+              <td class="warn">중간-높음</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sources">
+        <h2>근거 링크</h2>
+        <ul class="source-list">
+          <li><a href="https://bostonpublicmarket.org/visit/">Boston Public Market visit</a></li>
+          <li><a href="https://locations.traderjoes.com/ma/boston/566/">Trader Joe's Fort Point</a></li>
+          <li><a href="https://locations.traderjoes.com/ma/boston/500/">Trader Joe's Boston (Boylston St) #500</a></li>
+          <li><a href="https://locations.traderjoes.com/ma/boston/510/">Trader Joe's Boston - Back Bay #510</a></li>
+          <li><a href="https://locations.traderjoes.com/ma/cambridge/502/">Trader Joe's Cambridge #502</a></li>
+          <li><a href="https://locations.traderjoes.com/ma/somerville/560/">Trader Joe's Somerville #560</a></li>
+          <li><a href="https://locations.traderjoes.com/ma/brookline/501/">Trader Joe's Brookline #501</a></li>
+          <li><a href="https://www.axios.com/local/boston/2023/05/05/trader-joes-back-bay-tiny">Axios Boston: Back Bay tiny Trader Joe's and larger 500 Boylston plan</a></li>
+          <li><a href="https://www.traderjoes.com/home/products/pdp/mini-insulated-totes-peach-blue-081833">Trader Joe's Mini Insulated Totes product page</a></li>
+          <li><a href="https://www.traderjoes.com/home/products/pdp/mini-canvas-tote-bag-076747">Trader Joe's Mini Canvas Tote official product page</a></li>
+          <li><a href="https://www.traderjoes.com/home/products/pdp/mini-pastel-canvas-tote-bags-079986">Trader Joe's Mini Pastel Canvas Tote official product page</a></li>
+          <li><a href="https://www.traderjoes.com/home/products/pdp/nori-komi-furikake-japanese-multi-purpose-seasoning-060255">Trader Joe's Nori Komi Furikake product page</a></li>
+          <li><a href="https://www.traderjoes.com/home/products/pdp/chili-onion-crunch-062480">Trader Joe's Crunchy Chili Onion product page</a></li>
+          <li><a href="https://hip2save.com/deals/trader-joes-totes/">Mini Canvas Tote reference image</a></li>
+          <li><a href="https://proshop.prontohomedelivery.com/product/tjs-mushroom-company-multipurpose-umami-seasoning-blend">Mushroom & Company product reference image</a></li>
+          <li><a href="https://proshop.prontohomedelivery.com/product/dark-chocolate-peanut-butter-cups">Dark Chocolate Peanut Butter Cups product reference image</a></li>
+          <li><a href="https://incidecoder.com/products/trader-joes-ultra-moisturizing-hand-cream">Ultra Moisturizing Hand Cream reference image</a></li>
+          <li><a href="https://foodisgood.com/product/trader-joes-dark-chocolate-covered-mini-pretzels/">Dark Chocolate Covered Mini Pretzels reference image</a></li>
+          <li><a href="https://www.traderjoes.com/content/dam/trjo/pdfs/transcripts/Inside-TJs-ICYMI-Mini-Tote-Bags.pdf">Inside Trader Joe's: Mini Tote Bags transcript</a></li>
+          <li><a href="https://www.traderjoes.com/home/products/category?categoryId=71">Trader Joe's official product list</a></li>
+          <li><a href="https://www.traderjoes.com/content/dam/trjo/pdfs/transcripts/ITJ-ep103-spring-list.pdf">Inside Trader Joe's Episode 103 spring 2026 products</a></li>
+          <li><a href="https://www.delish.com/food-news/a70872656/trader-joes-lavender-canvas-tote-shopper-reaction/">Delish: 2026 Trader Joe's Lavender Canvas Tote</a></li>
+          <li><a href="https://parade.com/food/best-trader-joes-finds-march-2026">Parade: 2026 Trader Joe's March finds</a></li>
+          <li><a href="https://www.traderjoesreviews.com/product/trader-joes-pinks-whites-cookies-reviews/">Trader Joe's Reviews: Pinks & Whites Cookies</a></li>
+          <li><a href="https://www.theharvardshop.com/">The Harvard Shop</a></li>
+          <li><a href="https://www.theharvardshop.com/collections/hoodies-and-crewnecks">The Harvard Shop hoodies</a></li>
+          <li><a href="https://www.theharvardshop.com/collections/hats">The Harvard Shop hats</a></li>
+          <li><a href="https://www.theharvardshop.com/products/adjustablehhat">The Harvard Shop Classic H Hat</a></li>
+          <li><a href="https://www.theharvardshop.com/products/harvard-h-infant-onesie">The Harvard Shop Infant Onesie</a></li>
+          <li><a href="https://www.theharvardshop.com/products/harvardcresttotebag">The Harvard Shop Crest Tote Bag</a></li>
+          <li><a href="https://thecoop.com/products/mit-league-heritage-hooded-sweatshirt">The Coop MIT League Heritage Hooded Sweatshirt</a></li>
+          <li><a href="https://thecoop.com/products/mit-genius-hat">The Coop MIT Genius Hat</a></li>
+          <li><a href="https://www.mfa.org/visit">MFA visit</a></li>
+          <li><a href="https://www.gardnermuseum.org/visit/admissions">Gardner Museum admissions</a></li>
+          <li><a href="https://www.mlb.com/redsox/ballpark/tours">Fenway tours</a></li>
+          <li><a href="https://www.mlb.com/redsox/ballpark/information/guide">Red Sox/Fenway guide</a></li>
+          <li><a href="https://www.seaportboston.com/visit-boston/boston-tea-party-ships-museum">Boston Tea Party Ships & Museum</a></li>
+          <li><a href="https://bostonpublicmarket.org/vendors/curio-spice-co/">Curio Spice at Boston Public Market</a></li>
+          <li><a href="https://bostonpublicmarket.org/vendors/qs-nuts/">Q's Nuts at Boston Public Market</a></li>
+          <li><a href="https://bostonpublicmarket.org/vendors/lifebloom/">Lifebloom at Boston Public Market</a></li>
+          <li><a href="https://bostonpublicmarket.org/bpm-events/oohjacquelina-make-your-own-permanent-jewelry/">Oohjacquelina at Boston Public Market</a></li>
+          <li><a href="https://www.tazachocolate.com/pages/factory-store-tours">Taza Factory Store</a></li>
+          <li><a href="https://mfashop.com/tote-bags/">MFA Shop tote bags</a></li>
+          <li><a href="https://mbtagifts.com/pages/mbtagifts-at-the-wardmaps-retail-store">MBTA Gifts / WardMaps retail store</a></li>
+          <li><a href="https://wardmaps.com/pages/our-story">WardMaps official story</a></li>
+          <li><a href="https://viewboston.com/">View Boston official site</a></li>
+          <li><a href="https://www.prudentialcenter.com/">Prudential Center official site</a></li>
+          <li><a href="https://www.cvs.com/store-locator/boston-ma-pharmacies/800-boylston-street-boston-ma-02199/storeid%3D11200">CVS 800 Boylston official store page</a></li>
+          <li><a href="https://www.cvs.com/store-locator/boston-ma-pharmacies/587-boylston-street-boston-ma-02116/storeid%3D1217">CVS 587 Boylston official store page</a></li>
+          <li><a href="https://www.burtsbees.com/product/beeswax-lip-balm/">Burt's Bees Beeswax Lip Balm official</a></li>
+          <li><a href="https://www.aquaphorus.com/products/aquaphor/aquaphor-lip-repair">Aquaphor Lip Repair official</a></li>
+          <li><a href="https://www.cerave.com/skincare/moisturizers/daily-moisturizing-lotion">CeraVe Daily Moisturizing Lotion official</a></li>
+          <li><a href="https://crest.com/en-us/oral-care-products/crest-3dwhitestrips-noticeably-white-at-home-teeth-whitening-kit">Crest 3DWhitestrips official</a></li>
+          <li><a href="https://customs.go.kr/english/cm/cntnts/cntntsView.do?cntntsId=2744&mi=8070">Korea Customs duty-free allowance</a></li>
+          <li><a href="https://doing-ju.tistory.com/90">한국 후기: 보스턴 1일차 Harvard/MIT/Quincy Market</a></li>
+          <li><a href="https://doing-ju.tistory.com/92">한국 후기: 보스턴 2일차 Fenway/BPL/Public Garden</a></li>
+          <li><a href="https://doing-ju.tistory.com/106">한국 후기: 보스턴 3일차 Duck Tour/Boston Public Market</a></li>
+          <li><a href="https://todaypick124.tistory.com/1252">한국어 글: 2025 Trader Joe's 미국여행 선물</a></li>
+          <li><a href="https://cyirene.tistory.com/13">한국 후기: 2025 Trader Joe's 가방 종류/가격 리뷰</a></li>
+          <li><a href="https://www.chosun.com/national/weekend/2025/09/06/DZN7SD66JBGIDDIWZM5MIFERQU/?outputType=amp">한국 기사: 2025 Trader Joe's 에코백 유행</a></li>
+          <li><a href="https://diary3169.tistory.com/1626">한국어 글: 2026 Trader Joe's Mini Canvas Tote 품절/리셀 현상</a></li>
+          <li><a href="https://petitfruits.tistory.com/418">한국 후기: 2025 Trader Joe's Mini Insulated Totes 구매</a></li>
+          <li><a href="https://frinds55591.tistory.com/entry/%EB%AF%B8%EA%B5%AD-%EC%95%A0%ED%8B%80%EB%9E%9C%ED%83%80-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8D%94%EC%A1%B0-%EC%87%BC%ED%95%91%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EA%B8%B0%EB%85%90%ED%92%88-%EC%84%A0%EB%AC%BC-%EC%B6%94%EC%B2%9C-%EC%97%90%EC%BD%94%EB%B0%B1-%ED%95%B8%EB%93%9C%ED%81%AC%EB%A6%BC-%EA%B3%BC%EC%9E%90">한국 후기: 2025 Trader Joe's 에코백/시즈닝/초콜릿</a></li>
+          <li><a href="https://guidefortravel.tistory.com/entry/%EB%AF%B8%EA%B5%AD%EC%87%BC%ED%95%91%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%AF%B8%EA%B5%AD%EC%97%AC%ED%96%89-LA-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8D%94-%EC%A1%B0-%EC%87%BC%ED%95%91%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%8A%A4%EB%82%B5-%EC%84%A0%EB%AC%BC-%EC%B6%94%EC%B2%9C-%EC%97%90%EC%BD%94%EB%B0%B1">한국 후기: 2025 Trader Joe's 스낵/시즈닝/선물</a></li>
+          <li><a href="https://www.reddit.com/r/traderjoes/comments/1rt31ld/march_2026_update_trader_joes_pastel_mini_canvas/">Reddit: 2026 Trader Joe's mini canvas/lavender tote update</a></li>
+          <li><a href="https://www.reddit.com/r/traderjoes/comments/1t11ufz/trader_joes_skin_products_dewy_skin_serum/">Reddit: 2026 Trader Joe's Dewy Skin Serum</a></li>
+          <li><a href="https://www.reddit.com/r/traderjoes/comments/1nolxfx/trader_joes_products_or_snacks_as_gift/">Reddit: Trader Joe's snacks as gifts</a></li>
+          <li><a href="https://www.reddit.com/r/boston/comments/1kdgail/best_meaningful_giftboston_souvenir/">Reddit: meaningful Boston souvenir</a></li>
+          <li><a href="https://www.reddit.com/r/boston/comments/1pkjkak/souvenir_recommendations_for_family/">Reddit: Boston souvenirs for family</a></li>
+          <li><a href="https://www.reddit.com/r/boston/comments/1jgqrqj/t_souvenir/">Reddit: T souvenir in Boston</a></li>
+          <li><a href="https://www.reddit.com/r/mbta/comments/1h57hsl/mbta_gift_store_has_ornaments_bus_subway_car_each/">Reddit: MBTA Gift Store ornaments</a></li>
+          <li><a href="https://cyirene.tistory.com/17">한국 후기: 2025 Harvard Coop 굿즈/가격</a></li>
+          <li><a href="https://www.myrealtrip.com/community/posts/27680">한국 후기: 하버드샵</a></li>
+          <li><a href="https://gomcine.tistory.com/entry/%EB%AF%B8%EA%B5%AD%EC%97%AC%ED%96%89-%EB%B3%B4%EC%8A%A4%ED%84%B4-%EB%89%B4%EC%9A%95-%EC%97%AC%ED%96%89-4-MIT">한국 후기: MIT Coop</a></li>
+        </ul>
+      </section>
+        </main>
+
+    <footer>
+      작성 기준: 사용자가 제공한 5/3 밤 보스턴 현지 상황 이후 5/4-5/7 일정. 가격과 영업시간은 공식 페이지/캡처 기준이며, 매장 재고와 프로모션은 현장 변동 가능성이 큽니다.
+    </footer>
+  </div>
+</body>
+</html>
