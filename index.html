@@ -310,112 +310,141 @@
       <!-- 0. 보스턴 가이드 허브 -->
       <section id="hub">
         <style>
-          .hub-card {
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            background: #fff;
-            padding: 14px 16px;
+          .tile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin: 8px 0 18px;
+          }
+          .tile-grid.cols-1 { grid-template-columns: 1fr; }
+          .tile {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            justify-content: center;
+            min-height: 78px;
+            padding: 12px 14px;
+            border: 1.5px solid var(--line);
+            border-left-width: 6px;
+            border-radius: 12px;
+            background: #fff;
+            text-decoration: none;
+            color: var(--ink);
+            -webkit-tap-highlight-color: rgba(15,93,102,.1);
+            transition: transform .1s ease, background .15s ease;
           }
-          .hub-card .eyebrow { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: 0.3px; margin: 0 0 2px; text-transform: uppercase; }
-          .hub-card h4 { margin: 0; color: var(--teal-dark); font-size: 15px; line-height: 1.25; }
-          .hub-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
-          .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 10px 0 0; }
-          @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } }
+          .tile:active { transform: scale(.97); background: var(--wash); }
+          .tile .t-emoji { font-size: 22px; line-height: 1; margin-bottom: 4px; }
+          .tile strong { font-size: 14.5px; color: var(--teal-dark); display: block; line-height: 1.2; }
+          .tile small { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+          .tile.hero {
+            min-height: 120px;
+            padding: 16px 18px;
+            border-left-width: 8px;
+            border-color: var(--wine);
+            background: linear-gradient(135deg, rgba(157,26,63,.10), #fff 55%);
+          }
+          .tile.hero .t-emoji { font-size: 30px; }
+          .tile.hero strong { font-size: 18px; color: var(--wine); }
+          .tile.hero small { font-size: 13.5px; color: #4a3640; }
+          .tile.tj      { border-left-color: var(--gold); background: linear-gradient(90deg, rgba(180,123,22,.08), #fff 50%); }
+          .tile.harvard { border-left-color: var(--wine); background: linear-gradient(90deg, rgba(157,26,63,.07), #fff 50%); }
+          .tile.cvs     { border-left-color: var(--warn); background: linear-gradient(90deg, rgba(192,57,43,.07), #fff 50%); }
+          .tile.wf      { border-left-color: var(--check); background: linear-gradient(90deg, rgba(22,160,133,.07), #fff 50%); }
+          .tile.day     { border-left-color: var(--teal); }
+          .tile.codex   { border-left-color: var(--blue); background: linear-gradient(90deg, rgba(35,75,109,.06), #fff 50%); }
+          .tile.warn-tile { border-left-color: var(--warn); background: linear-gradient(90deg, rgba(192,57,43,.10), #fff 50%); }
+          .tile-section-h { margin: 18px 0 4px; color: var(--teal-dark); font-size: 14px; font-weight: 900; letter-spacing: .2px; }
         </style>
-        <h2>🏠 보스턴 가이드 허브</h2>
-        <p class="lead">필요한 페이지로 바로 점프. 매장에서는 매장 페이지를, 이동중엔 일자별 페이지를.</p>
 
-        <h3>📚 풀스펙 가이드</h3>
-        <div class="cards">
-          <div class="hub-card">
-            <p class="eyebrow">풀스펙</p>
-            <h4>🛒 Codex 쇼핑·동선 풀스펙</h4>
-            <p>모든 매장·세트·수량</p>
-            <a class="btn" href="shopping.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">풀스펙</p>
-            <h4>🎁 Codex 선물 풀스펙</h4>
-            <p>사람별 + CVS·MFA·NB 등 옵션</p>
-            <a class="btn" href="gift.html">바로가기</a>
-          </div>
+        <h2>🏠 허브</h2>
+        <p class="lead" style="font-size:14px;margin-bottom:6px;">매장 가면 매장 페이지, 이동 중엔 일자별. 카드 통째로 탭.</p>
+
+        <p class="tile-section-h">📅 오늘 (월 5/4)</p>
+        <div class="tile-grid cols-1">
+          <a class="tile hero" href="days/mon.html">
+            <span class="t-emoji">📅</span>
+            <strong>월 풀 동선 — 09:00 출발</strong>
+            <small>Tea Party · Freedom Trail · North End · Harvard · TJ 748</small>
+          </a>
+        </div>
+        <div class="tile-grid">
+          <a class="tile warn-tile" href="stores/cvs.html">
+            <span class="t-emoji">🦶</span>
+            <strong>CVS — 출발 전 필수</strong>
+            <small>Hydro Seal 발에 미리</small>
+          </a>
+          <a class="tile day" href="days/freedom-trail.html">
+            <span class="t-emoji">🗺️</span>
+            <strong>Freedom Trail</strong>
+            <small>7 stops 빠른 패스</small>
+          </a>
         </div>
 
-        <h3>🏪 매장별 — 현장에서 카트 채우기</h3>
-        <div class="cards">
-          <div class="hub-card">
-            <p class="eyebrow">TJ · 월 메인</p>
-            <h4>🛒 TJ 748 Cambridge</h4>
-            <p>한정 토트 + 대량 쇼핑</p>
-            <a class="btn" href="stores/tj-748.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">TJ · 화 보충</p>
-            <h4>🛒 TJ 500 Boylston</h4>
-            <p>Back Bay 다운타운</p>
-            <a class="btn" href="stores/tj-500.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">TJ · 호텔 옆</p>
-            <h4>🛒 TJ Fort Point</h4>
-            <p>마감 보충</p>
-            <a class="btn" href="stores/tj-fortpoint.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">Harvard · 월 14:30</p>
-            <h4>🎓 Harvard Coop+Shop</h4>
-            <p>모자/후드/굿즈</p>
-            <a class="btn" href="stores/harvard.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">Whole Foods · 도보 5분</p>
-            <h4>🛒 Whole Foods Seaport</h4>
-            <p>RXBAR/Hu</p>
-            <a class="btn" href="stores/wholefoods.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">CVS · 출발 전 + 보충</p>
-            <h4>💊 CVS</h4>
-            <p>Hydro Seal/Burt's Bees</p>
-            <a class="btn" href="stores/cvs.html">바로가기</a>
-          </div>
+        <p class="tile-section-h">🏪 매장별 — 카트 채우기</p>
+        <div class="tile-grid">
+          <a class="tile tj" href="stores/tj-748.html">
+            <span class="t-emoji">🛒</span>
+            <strong>TJ 748 Cambridge</strong>
+            <small>월 메인 · 한정 토트</small>
+          </a>
+          <a class="tile harvard" href="stores/harvard.html">
+            <span class="t-emoji">🎓</span>
+            <strong>Harvard Coop+Shop</strong>
+            <small>월 14:30 · 모자·후드</small>
+          </a>
+          <a class="tile tj" href="stores/tj-500.html">
+            <span class="t-emoji">🛒</span>
+            <strong>TJ 500 Boylston</strong>
+            <small>화 · Back Bay</small>
+          </a>
+          <a class="tile tj" href="stores/tj-fortpoint.html">
+            <span class="t-emoji">🛒</span>
+            <strong>TJ Fort Point</strong>
+            <small>호텔 옆 · 보충</small>
+          </a>
+          <a class="tile wf" href="stores/wholefoods.html">
+            <span class="t-emoji">🥗</span>
+            <strong>Whole Foods Seaport</strong>
+            <small>도보 5분 · 프리미엄</small>
+          </a>
+          <a class="tile cvs" href="stores/cvs.html">
+            <span class="t-emoji">💊</span>
+            <strong>CVS</strong>
+            <small>약국 + 보조 선물</small>
+          </a>
         </div>
 
-        <h3>📅 일자별 동선</h3>
-        <div class="cards">
-          <div class="hub-card">
-            <p class="eyebrow">월 5/4 · 풀 동선</p>
-            <h4>📅 월 5/4 풀 동선</h4>
-            <p>Freedom Trail+Harvard+TJ</p>
-            <a class="btn" href="days/mon.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">화 5/5 · 짧은 오후</p>
-            <h4>📅 화 5/5 짧은 오후</h4>
-            <p>약속 사이</p>
-            <a class="btn" href="days/tue.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">수 5/6 · 보충+포장</p>
-            <h4>📅 수 5/6 보충+포장</h4>
-            <p>Fenway/MFA/포장</p>
-            <a class="btn" href="days/wed.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">목 5/7 · 출국</p>
-            <h4>📅 목 5/7 출국</h4>
-            <p>한국 검역</p>
-            <a class="btn" href="days/thu.html">바로가기</a>
-          </div>
-          <div class="hub-card">
-            <p class="eyebrow">Freedom Trail</p>
-            <h4>🗺️ Freedom Trail 7 stops</h4>
-            <p>빠른 패스</p>
-            <a class="btn" href="days/freedom-trail.html">바로가기</a>
-          </div>
+        <p class="tile-section-h">📅 다른 날</p>
+        <div class="tile-grid">
+          <a class="tile day" href="days/tue.html">
+            <span class="t-emoji">📅</span>
+            <strong>화 5/5</strong>
+            <small>약속 사이 짧은 오후</small>
+          </a>
+          <a class="tile day" href="days/wed.html">
+            <span class="t-emoji">📅</span>
+            <strong>수 5/6</strong>
+            <small>보충 + 포장 마라톤</small>
+          </a>
+          <a class="tile day" href="days/thu.html">
+            <span class="t-emoji">✈️</span>
+            <strong>목 5/7 출국</strong>
+            <small>12:30 비행 · 검역</small>
+          </a>
+        </div>
+
+        <p class="tile-section-h">📚 백업 풀스펙 (Codex)</p>
+        <div class="tile-grid">
+          <a class="tile codex" href="shopping.html">
+            <span class="t-emoji">🛒</span>
+            <strong>쇼핑·동선 풀스펙</strong>
+            <small>MIT·NB·MFA 다 포함</small>
+          </a>
+          <a class="tile codex" href="gift.html">
+            <span class="t-emoji">🎁</span>
+            <strong>선물 풀스펙</strong>
+            <small>사람별 상세 + 옵션</small>
+          </a>
         </div>
       </section>
 
